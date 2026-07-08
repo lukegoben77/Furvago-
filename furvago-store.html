@@ -220,8 +220,8 @@
   .pdp-info .eyebrow { margin-bottom:0.9rem; }
   .pdp-info h1 { font-size:clamp(2.4rem, 1.8rem + 1.8vw, 3.6rem); font-weight:800; letter-spacing:-0.03em; }
   .pdp-hook { font-size:var(--fs-lead); color:var(--ink-soft); margin-top:1rem; line-height:1.5; font-style:italic; }
-  .pdp-price { font-family:var(--font-display); font-weight:700; font-size:1.7rem; margin:1.3rem 0; letter-spacing:-0.02em; display:flex; align-items:center; flex-wrap:wrap; gap:0.6rem; }
-  .pdp-price del { font-family:var(--font-mono); font-weight:400; font-size:1.05rem; color:var(--ink-soft); text-decoration-color:var(--accent); }
+  .pdp-price { font-family:var(--font-display); font-weight:700; font-size:clamp(2.2rem,1.7rem + 1.4vw,2.8rem); margin:1.3rem 0; letter-spacing:-0.02em; display:flex; align-items:center; flex-wrap:wrap; gap:0.6rem; }
+  .pdp-price del { font-family:var(--font-mono); font-weight:400; font-size:1.3rem; color:var(--ink-soft); text-decoration-color:var(--accent); }
   .pdp-price .flag, .pdp-price .save { font-family:var(--font-mono); font-size:0.64rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--accent); border:1px dashed var(--accent); border-radius:999px; padding:0.25rem 0.6rem; font-weight:400; }
   .pdp-price .save { background:var(--accent); color:var(--text-on-dark); border-style:solid; }
   .opt-group { margin:1.5rem 0; }
@@ -690,7 +690,7 @@
 
       <div class="pdp-info">
         <p class="eyebrow">Furvago — the calming vest</p>
-        <h1>The Furvago Calming Vest</h1>
+        <h1>Furvago Calming Vest</h1>
         <p class="pdp-hook">The first time you put it on, watch their shoulders drop.</p>
         <p style="color:var(--ink-soft);font-size:1rem;margin-top:0.6rem;line-height:1.5;">Built for the exact moments that undo them — the thunder rolling in, the fireworks starting, the click of the door as you leave.</p>
         <div class="pdp-price">$44.99 <del>$59.99</del> <span class="save">Save 25%</span></div>
@@ -727,19 +727,19 @@
 
         <div class="acc" id="pdpHeroAcc" style="margin-top:1.6rem;">
           <div class="acc-item">
-            <button class="acc-q">Product description<span class="ic"></span></button>
+            <button class="acc-q">Product Description<span class="ic"></span></button>
             <div class="acc-a"><p>A snug, wraparound vest that applies steady, even pressure across your dog's torso — the same swaddle-and-weighted-blanket logic that helps calm an anxious body. Built for the moments that undo them: storms, fireworks, time alone. Slips over the head and fastens with a wide hook-and-loop closure in under a minute, in Black, Navy, or Rose.</p></div>
           </div>
           <div class="acc-item">
-            <button class="acc-q">Materials &amp; fit<span class="ic"></span></button>
-            <div class="acc-a"><p><span class="placeholder-note" style="margin-bottom:0;">Copy to confirm</span>Exact fabric composition and hardware specs are still being confirmed with our manufacturer, and we'd rather leave them blank than guess. What we can say: it's a soft, breathable knit with an adjustable hook-and-loop wrap that runs true to size for most dogs — check the size guide below before you order.</p></div>
+            <button class="acc-q">Materials &amp; Fit<span class="ic"></span></button>
+            <div class="acc-a"><p>Exact fabric composition and hardware specs are still being confirmed with our manufacturer, and we'd rather leave them blank than guess. What we can say: it's a soft, breathable knit with an adjustable hook-and-loop wrap that runs true to size for most dogs — check the size guide below before you order.</p></div>
           </div>
           <div class="acc-item">
-            <button class="acc-q">Shipping &amp; returns<span class="ic"></span></button>
+            <button class="acc-q">Shipping &amp; Returns<span class="ic"></span></button>
             <div class="acc-a"><p>Free shipping with no minimum, arriving in about 8–15 business days with tracking. Not right for your dog? Send it back within 30 days, used or not. <a href="#/shipping" data-link>See full shipping &amp; returns details →</a></p></div>
           </div>
           <div class="acc-item">
-            <button class="acc-q">Size guide<span class="ic"></span></button>
+            <button class="acc-q">Size Guide<span class="ic"></span></button>
             <div class="acc-a"><p>Measure the widest part of your dog's chest, just behind the front legs — if they fall between sizes, size up. <button type="button" id="jumpSizeGuideAcc" class="acc-jump">Jump to the full size guide ↓</button></p></div>
           </div>
         </div>
@@ -1297,7 +1297,7 @@
   var routes = ['home','product','about','faq','shipping','contact'];
   var titles = {
     home:'Furvago — The Calming Vest for Anxious Dogs',
-    product:'The Furvago Calming Vest',
+    product:'Furvago Calming Vest',
     about:'Our Story — Furvago',
     faq:'FAQ — Furvago',
     shipping:'Shipping & Returns — Furvago',
