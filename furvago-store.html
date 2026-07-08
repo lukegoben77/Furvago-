@@ -435,11 +435,11 @@
     .step-grid { margin:0 calc(clamp(2.5rem, 6vw, 4.5rem) * -1); padding-left:clamp(2.5rem, 6vw, 4.5rem); padding-right:clamp(2.5rem, 6vw, 4.5rem); }
     .trigger-grid::-webkit-scrollbar, .feature-grid::-webkit-scrollbar, .step-grid::-webkit-scrollbar, .expect-list::-webkit-scrollbar { display:none; }
     .trigger-grid > *, .feature-grid > *, .expect-list > * {
-      flex:0 0 87vw; max-width:87vw; scroll-snap-align:start;
+      flex:0 0 87vw; max-width:87vw; scroll-snap-align:center;
     }
     .step-grid > * {
       flex:0 0 min(87vw, calc(100vw - 2 * clamp(2.5rem, 6vw, 4.5rem) - 2rem));
-      scroll-snap-align:start;
+      scroll-snap-align:center;
     }
     .step-grid::before { content:none; }
     .expect-item { flex-direction:column; background:var(--card); border-radius:18px; padding:1.2rem; align-items:stretch !important; }
@@ -448,6 +448,24 @@
     .carousel-dots { display:flex; justify-content:center; gap:0.5rem; margin-top:1.3rem; }
     .carousel-dots .dot { width:6px; height:6px; border-radius:999px; background:var(--line); border:none; padding:0; flex:none; transition:width .2s ease, background .2s ease; }
     .carousel-dots .dot.active { width:20px; background:var(--accent); }
+
+    /* carousel cards: center card content (icon/heading/copy) to match centered snap */
+    .trigger-card, .feature-card, .step-card { text-align:center; }
+    .step-card { align-items:center; }
+
+    /* headlines: center heading blocks sitewide on mobile */
+    .hero-grid h1, .hero-lead,
+    .storm-grid h2, .storm-grid h2 + p,
+    .help-copy h2, .help-copy h2 + p,
+    .highlight-copy h2, .highlight-copy h2 + p,
+    .page-hero h1, .page-hero p.lead,
+    .pdp-info h1, .pdp-info .pdp-hook, .pdp-info .pdp-hook + p {
+      text-align:center;
+    }
+    .page-hero h1 { max-width:none; }
+    .eyebrow { justify-content:center; }
+    .section-head { flex-direction:column; align-items:center; text-align:center; }
+    .cta-band h2 { text-align:center; } /* overrides an inline text-align:left used for the How-to-Use band */
   }
   @media (max-width:560px){
     .footer-cols{grid-template-columns:1fr;}
