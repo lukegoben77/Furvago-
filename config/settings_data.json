@@ -1,3 +1,145 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-  "current": {}
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "header-0": {
+            "type": "link",
+            "settings": {
+              "label": "The Vest",
+              "link": "shopify://products/pet-anxiety-wrap"
+            }
+          },
+          "header-1": {
+            "type": "link",
+            "settings": {
+              "label": "Our Story",
+              "link": ""
+            }
+          },
+          "header-2": {
+            "type": "link",
+            "settings": {
+              "label": "FAQ",
+              "link": ""
+            }
+          },
+          "header-3": {
+            "type": "link",
+            "settings": {
+              "label": "Contact",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "header-0",
+          "header-1",
+          "header-2",
+          "header-3"
+        ],
+        "settings": {
+          "shop_label": "Shop",
+          "shop_link": "shopify://products/pet-anxiety-wrap",
+          "menu_foot": "Free shipping · 30-day returns"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "link",
+            "settings": {
+              "column": "col1",
+              "label": "The Vest",
+              "link": ""
+            }
+          },
+          "footer-1": {
+            "type": "link",
+            "settings": {
+              "column": "col1",
+              "label": "Sizes & colors",
+              "link": ""
+            }
+          },
+          "footer-2": {
+            "type": "link",
+            "settings": {
+              "column": "col2",
+              "label": "FAQ",
+              "link": ""
+            }
+          },
+          "footer-3": {
+            "type": "link",
+            "settings": {
+              "column": "col2",
+              "label": "Shipping & Returns",
+              "link": ""
+            }
+          },
+          "footer-4": {
+            "type": "link",
+            "settings": {
+              "column": "col2",
+              "label": "Contact",
+              "link": ""
+            }
+          },
+          "footer-5": {
+            "type": "link",
+            "settings": {
+              "column": "col2",
+              "label": "Our Story",
+              "link": ""
+            }
+          },
+          "footer-6": {
+            "type": "social",
+            "settings": {
+              "label": "Instagram",
+              "link": ""
+            }
+          },
+          "footer-7": {
+            "type": "social",
+            "settings": {
+              "label": "TikTok",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "footer-1",
+          "footer-2",
+          "footer-3",
+          "footer-4",
+          "footer-5",
+          "footer-6",
+          "footer-7"
+        ],
+        "settings": {
+          "brand_text": "A gentle, wrapped-hug pressure vest for the dogs who tremble through thunderstorms, fireworks, and time alone.",
+          "col1_title": "Shop",
+          "col2_title": "Help",
+          "newsletter_label": "Storm-season tips & new colors — no spam",
+          "newsletter_button": "Join",
+          "copyright": "Furvago Home Co."
+        }
+      }
+    },
+    "content_for_index": []
+  }
 }
