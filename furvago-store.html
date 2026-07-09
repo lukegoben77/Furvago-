@@ -171,7 +171,7 @@
   .help-grid { display:grid; grid-template-columns:0.9fr 1.1fr; gap:clamp(2rem,5vw,4rem); align-items:center; }
   .help-visual { grid-row:span 2; }
   .howworks-visual { grid-row:span 2; }
-  .help-heading h2 { font-size:var(--fs-h2); }
+  .help-heading h2, .howworks-heading h2, .expect-grid h2 { font-size:var(--fs-h2); }
   .help-body p { color:var(--ink-soft); font-size:1.05rem; margin-top:1.2rem; max-width:34rem; }
   .help-points { margin-top:1.9rem; display:grid; gap:1rem; }
   .help-point { display:flex; gap:1rem; align-items:flex-start; }
@@ -465,7 +465,9 @@
     .hero-heading h1, .hero-body .hero-lead,
     .storm-heading h2, .storm-body > p:first-child, .storm-grid .pdp-prose,
     .help-heading h2, .help-body > p:first-child,
+    .howworks-heading h2,
     .highlight-heading h2, .highlight-body > p:first-child,
+    .expect-grid h2, .expect-grid > div:first-child > p,
     .page-hero h1, .page-hero p.lead {
       text-align:center;
     }
