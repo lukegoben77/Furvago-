@@ -97,23 +97,23 @@
   .page-hero h1 { font-size:var(--fs-h1); font-weight:800; letter-spacing:-0.03em; max-width:20ch; }
   .page-hero p.lead { font-size:var(--fs-lead); color:var(--ink-soft); max-width:44ch; margin-top:1.3rem; line-height:1.5; }
 
-  /* ---------- HOME HERO ---------- */
-  .hero { padding-top:calc(var(--nav-h) + clamp(2rem,4vw,3.5rem)); padding-bottom:clamp(2.5rem,5vw,4rem); }
-  .hero-grid { display:grid; grid-template-columns:1.05fr 0.95fr; gap:clamp(2rem,5vw,4rem); align-items:center; }
-  .hero h1 { font-size:var(--fs-h1); font-weight:800; letter-spacing:-0.03em; margin:0.7rem 0 1.3rem; }
-  .hero h1 em { font-style:normal; color:var(--accent); }
-  .hero-lead { font-size:var(--fs-lead); color:var(--ink-soft); max-width:36rem; line-height:1.5; margin-bottom:1.9rem; }
+  /* ---------- HOME HERO (full-bleed, image + overlaid copy) ---------- */
+  .hero { position:relative; padding:0; margin:0; overflow:hidden; isolation:isolate; }
+  .hero-media { position:absolute; inset:0; z-index:0; }
+  .hero-bg { width:100%; height:100%; object-fit:cover; object-position:var(--hero-focal, center 32%); display:block; }
+  .hero-scrim { position:absolute; inset:0; background:linear-gradient(0deg, rgba(20,19,15,0.82) 0%, rgba(20,19,15,0.52) 30%, rgba(20,19,15,0.1) 58%, rgba(20,19,15,0) 74%); }
+  .hero-overlay { position:relative; z-index:1; min-height:86vh; display:flex; align-items:flex-end; padding-top:calc(var(--nav-h) + 2rem); padding-bottom:clamp(3rem,7vw,5.5rem); }
+  .hero-overlay.align-center { justify-content:center; text-align:center; }
+  .hero-overlay.align-center .hero-copy { align-items:center; margin:0 auto; }
+  .hero-copy { display:flex; flex-direction:column; align-items:flex-start; max-width:36rem; }
+  .hero-copy .eyebrow { color:rgba(241,233,223,0.85); }
+  .hero-copy h1 { color:var(--text-on-dark); font-size:var(--fs-h1); font-weight:800; letter-spacing:-0.03em; margin:0.7rem 0 1.1rem; }
+  .hero-copy h1 em { font-style:normal; color:var(--accent); }
+  .hero-copy .hero-lead { color:rgba(241,233,223,0.92); font-size:var(--fs-lead); max-width:32rem; line-height:1.5; margin-bottom:1.8rem; }
   .hero-ctas { display:flex; gap:0.85rem; flex-wrap:wrap; }
-  .hero-visual { position:relative; grid-row:span 2; }
-  .hero-panel { background:var(--card); border-radius:30px; padding:clamp(1.3rem,3vw,2rem); position:relative; overflow:hidden; }
-  .hero-panel .paw-print { position:absolute; top:-6%; right:-8%; width:46%; color:var(--dark); opacity:0.09; }
-  .product-frame { background:var(--bg); border-radius:20px; overflow:hidden; box-shadow:0 20px 40px -22px var(--shadow); position:relative; aspect-ratio:1/1; }
-  .product-frame img { width:100%; height:100%; object-fit:cover; }
-  .hero-tagchip { position:absolute; left:clamp(1.3rem,3vw,2rem); bottom:clamp(1.3rem,3vw,2rem); background:var(--dark); color:var(--text-on-dark); font-family:var(--font-body); font-weight:600; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; padding:0.5rem 0.85rem; border-radius:999px; display:flex; align-items:center; gap:0.5rem; }
-  .hero-tagchip::before { content:""; width:0.45rem; height:0.45rem; border-radius:50%; background:var(--card); }
-  .hero-badges { display:flex; gap:1.4rem; margin-top:1.7rem; padding-top:1.5rem; border-top:1px solid var(--line); flex-wrap:wrap; }
-  .hero-badges .b { font-size:0.84rem; color:var(--ink-soft); display:flex; align-items:center; gap:0.5rem; }
-  .hero-badges .b svg { width:1.1rem; height:1.1rem; color:var(--accent); flex:none; }
+  .hero-badges { display:flex; gap:1.4rem; margin-top:1.6rem; padding-top:1.4rem; border-top:1px solid rgba(241,233,223,0.25); flex-wrap:wrap; }
+  .hero-badges .b { font-size:0.84rem; color:rgba(241,233,223,0.85); display:flex; align-items:center; gap:0.5rem; }
+  .hero-badges .b svg { width:1.1rem; height:1.1rem; color:var(--card); flex:none; }
 
   /* ---------- STORM / PROBLEM ---------- */
   .storm { background:var(--dark); color:var(--text-on-dark); position:relative; overflow:hidden; }
@@ -432,17 +432,17 @@
   }
   @media (max-width:860px){
     .nav-links{display:none;} .menu-btn{display:flex;}
-    .hero-grid,.storm-grid,.help-grid,.highlight-card,.about-story,.contact-grid,.pdp-grid,.footer-top{grid-template-columns:1fr;}
-    .help-visual,.hero-visual{max-width:30rem;}
+    .storm-grid,.help-grid,.highlight-card,.about-story,.contact-grid,.pdp-grid,.footer-top{grid-template-columns:1fr;}
+    .help-visual{max-width:30rem;}
     .footer-cols{grid-template-columns:1fr 1fr;}
     .gallery{position:static;}
     .about-values{grid-template-columns:1fr;}
     .sticky-atc{display:flex;}
 
     /* image+text sections: force headline, then picture, then description */
-    .hero-heading, .storm-heading, .help-heading, .highlight-heading, .howworks-heading { order:1; }
-    .hero-visual, .storm-visual, .help-visual, .highlight-order-1, .howworks-visual { order:2; grid-row:auto; }
-    .hero-body, .storm-body, .help-body, .highlight-body, .howworks-body { order:3; }
+    .storm-heading, .help-heading, .highlight-heading, .howworks-heading { order:1; }
+    .storm-visual, .help-visual, .highlight-order-1, .howworks-visual { order:2; grid-row:auto; }
+    .storm-body, .help-body, .highlight-body, .howworks-body { order:3; }
 
     /* PDP carousels: triggers, features, steps, expect-stages */
     .expect-grid { grid-template-columns:minmax(0,1fr); }
@@ -478,7 +478,6 @@
     .carousel-dots .dot.active { width:20px; background:var(--accent); }
 
     /* headlines: center heading blocks sitewide on mobile (PDP hero title/subtitle, carousel cards stay left — see overrides below) */
-    .hero-heading h1, .hero-body .hero-lead,
     .storm-heading h2, .storm-body > p:first-child, .storm-grid .pdp-prose,
     .help-heading h2, .help-body > p:first-child,
     .howworks-heading h2,
@@ -492,6 +491,12 @@
     .pdp-info .eyebrow { justify-content:flex-start; } /* PDP hero title/eyebrow/subtitle keep their original left alignment */
     .section-head { flex-direction:column; align-items:center; text-align:center; }
     .cta-band h2 { text-align:center; } /* overrides an inline text-align:left used for the How-to-Use band */
+
+    /* full-bleed hero: shorter on mobile, badges dropped so headline/subhead/CTA stay comfortably reachable */
+    .hero-overlay { min-height:64vh; padding-top:calc(var(--nav-h) + 1.1rem); padding-bottom:2rem; }
+    .hero-copy { max-width:100%; }
+    .hero-copy .hero-lead { max-width:100%; }
+    .hero-badges { display:none; }
   }
   @media (max-width:560px){
     .footer-cols{grid-template-columns:1fr;}
