@@ -183,10 +183,16 @@
   .trust-item strong { font-family:var(--font-display); font-weight:700; font-size:1.02rem; }
   .trust-item span { color:var(--ink-soft); font-size:0.9rem; }
 
+  /* ---------- SHARED IMAGE FRAME (used by Product highlight, How it helps, collection grid) ---------- */
+  .hero-panel { background:var(--card); border-radius:30px; padding:clamp(1.3rem,3vw,2rem); position:relative; overflow:hidden; }
+  .hero-panel .paw-print { position:absolute; top:-6%; right:-8%; width:46%; color:var(--dark); opacity:0.09; }
+  .product-frame { background:var(--bg); border-radius:20px; overflow:hidden; box-shadow:0 20px 40px -22px var(--shadow); position:relative; width:100%; aspect-ratio:1/1; }
+  .product-frame::before { content:""; display:block; width:100%; padding-top:100%; }
+  .product-frame img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+
   /* ---------- PRODUCT HIGHLIGHT CARD ---------- */
   .highlight { }
   .highlight-card { background:var(--card); border-radius:30px; padding:clamp(1.6rem,4vw,3rem); display:grid; grid-template-columns:0.9fr 1.1fr; gap:clamp(1.5rem,4vw,3rem); align-items:center; }
-  .highlight-card .product-frame img { aspect-ratio:1/1; }
   .highlight-order-1 { grid-row:span 2; }
   .highlight-heading .eyebrow { margin-bottom:0.9rem; }
   .highlight-heading h2 { font-size:var(--fs-h2); }
