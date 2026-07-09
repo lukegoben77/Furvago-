@@ -24,21 +24,21 @@
             "type": "link",
             "settings": {
               "label": "Our Story",
-              "link": ""
+              "link": "shopify://pages/about"
             }
           },
           "header-2": {
             "type": "link",
             "settings": {
               "label": "FAQ",
-              "link": ""
+              "link": "shopify://pages/faq"
             }
           },
           "header-3": {
             "type": "link",
             "settings": {
               "label": "Contact",
-              "link": ""
+              "link": "shopify://pages/contact"
             }
           }
         },
