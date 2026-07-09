@@ -449,8 +449,9 @@
     }
     /* mobile card treatment: full-bleed top image, left-aligned headline/body/pill below */
     .step-card { flex-direction:column; }
+    .card-media { aspect-ratio:1/1; }
     .expect-item { flex-direction:column; background:var(--bg); border:1px solid var(--line); border-radius:20px; overflow:hidden; align-items:stretch !important; }
-    .expect-item .expect-media { width:100%; height:auto; aspect-ratio:4/5; margin:0; border-radius:0; }
+    .expect-item .expect-media { width:100%; height:auto; aspect-ratio:1/1; margin:0; border-radius:0; }
     .expect-item .card-copy { flex-direction:column; align-items:flex-start; padding:1.2rem 1.3rem 1.5rem; }
     .expect-item h3 { font-size:1.05rem; }
     .expect-item p { font-size:0.93rem; }
