@@ -1,0 +1,53 @@
+<section style="padding-top:0;">
+  <div class="wrap contact-grid">
+    <div class="contact-intro">
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.body }}</p>
+      <div class="contact-meta">
+        {%- for block in section.blocks -%}
+          <div class="cm" {{ block.shopify_attributes }}>{% render 'icon', name: block.settings.icon, width: '1.7' %}<div><strong>{{ block.settings.title }}</strong><span>{{ block.settings.text }}</span></div></div>
+        {%- endfor -%}
+      </div>
+    </div>
+    {% form 'contact', class: 'contact-form', id: 'contactForm' %}
+      <div class="field"><label for="cf-name">Your name</label><input id="cf-name" name="contact[name]" type="text" autocomplete="name" required value="{{ form.name }}" /></div>
+      <div class="field"><label for="cf-email">Email</label><input id="cf-email" name="contact[email]" type="email" autocomplete="email" placeholder="you@email.com" required value="{{ form.email }}" /></div>
+      <div class="field"><label for="cf-msg">Message</label><textarea id="cf-msg" name="contact[body]" required>{{ form.body }}</textarea></div>
+      <button type="submit" class="btn btn-primary btn-block">{{ section.settings.button_label }}</button>
+      <p class="form-msg" id="contactMsg" role="status">
+        {%- if form.posted_successfully? -%}
+          Thanks — your message is on its way. We'll reply within a couple of days.
+        {%- elsif form.errors -%}
+          Please add your name, a valid email, and a message.
+        {%- endif -%}
+      </p>
+    {% endform %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact form",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "We're a small team, and a real person reads this." },
+    { "type": "textarea", "id": "body", "label": "Body", "default": "Whether you're not sure which size to choose or you want to tell us how the vest worked for your dog, write to us. We usually reply within a couple of days." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Send message" }
+  ],
+  "blocks": [
+    {
+      "type": "meta",
+      "name": "Contact detail",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "options": [
+          { "value": "envelope", "label": "Envelope" },
+          { "value": "returns", "label": "Reply arrow" },
+          { "value": "pin", "label": "Teardrop" }
+        ], "default": "envelope" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Email" },
+        { "type": "text", "id": "text", "label": "Text", "default": "hello@furvago.com" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Contact form" } ]
+}
+{% endschema %}

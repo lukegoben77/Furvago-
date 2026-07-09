@@ -1,0 +1,31 @@
+<header class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Your cart</p>
+    <h1>{% if cart.item_count == 0 %}Your cart is empty.{% else %}Almost there.{% endif %}</h1>
+  </div>
+</header>
+<section style="padding-top:0;">
+  <div class="wrap" style="max-width:52rem;">
+    {% if cart.item_count == 0 %}
+      <p style="color:var(--ink-soft);">When you add the vest to your cart, it'll show up here.</p>
+      <p style="margin-top:1.5rem;"><a href="{{ routes.all_products_collection_url }}" class="btn btn-primary">Shop the vest</a></p>
+    {% else %}
+      <form action="{{ routes.cart_url }}" method="post">
+        {% for item in cart.items %}
+          <div class="cart-line">
+            {% if item.image %}<img src="{{ item.image | image_url: width: 260 }}" alt="" />{% endif %}
+            <div class="cl-info">
+              <div class="cl-name">{{ item.product.title }}</div>
+              <div class="cl-variant">{{ item.variant.title }}</div>
+              <div class="cl-qty"><span>Qty {{ item.quantity }}</span></div>
+            </div>
+            <div class="cl-price">{{ item.final_line_price | money }}</div>
+          </div>
+        {% endfor %}
+        <div class="cart-subtotal" style="margin-top:1.5rem;"><span class="lbl">Subtotal</span><span class="val">{{ cart.total_price | money }}</span></div>
+        <p class="cart-note">Shipping &amp; taxes calculated at checkout.</p>
+        <button type="submit" name="checkout" class="btn btn-dark btn-block" style="margin-top:1rem;">Checkout</button>
+      </form>
+    {% endif %}
+  </div>
+</section>

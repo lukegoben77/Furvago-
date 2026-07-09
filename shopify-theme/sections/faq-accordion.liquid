@@ -1,0 +1,40 @@
+<section{% if section.settings.flush_top %} style="padding-top:0;"{% endif %}>
+  <div class="wrap" style="max-width:52rem;">
+    {%- if section.settings.heading != blank -%}
+      <div class="section-head reveal">
+        <h2>{{ section.settings.heading }}</h2>
+        {%- if section.settings.note != blank -%}<p class="note">{{ section.settings.note }}</p>{%- endif -%}
+      </div>
+    {%- endif -%}
+    <div class="acc" id="acc-{{ section.id }}">
+      {%- for block in section.blocks -%}
+        <div class="acc-item" {{ block.shopify_attributes }}>
+          <button class="acc-q">{{ block.settings.question }}<span class="ic"></span></button>
+          <div class="acc-a">{{ block.settings.answer }}</div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ accordion",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Questions people ask before they buy." },
+    { "type": "text", "id": "note", "label": "Note", "default": "The ones we actually get, most weeks." },
+    { "type": "checkbox", "id": "flush_top", "label": "Remove top padding (when directly under a page header)", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "qa",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "How do I know what size to order?" },
+        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>Answer goes here.</p>" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "FAQ accordion" } ]
+}
+{% endschema %}

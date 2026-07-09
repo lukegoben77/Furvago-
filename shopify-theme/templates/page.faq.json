@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "Questions & answers",
+        "heading": "The things owners actually ask us.",
+        "lead": "Honest answers about how the vest works, sizing, and getting it to your door."
+      }
+    },
+    "faq": {
+      "type": "faq-accordion",
+      "blocks": {
+        "q1": { "type": "qa", "settings": { "question": "Does this really work?", "answer": "<p>Honestly? It depends on the dog. Gentle, constant pressure has a long history of helping with anxiety — it's the same idea as swaddling a baby or using a weighted blanket — and many owners tell us their dogs settle faster and rest more easily with it on. It isn't a cure, and it isn't a substitute for veterinary care if your dog's anxiety is severe. For some dogs it's a small help; for many, it becomes part of the routine on stormy nights.</p>" } },
+        "q2": { "type": "qa", "settings": { "question": "When should I put it on?", "answer": "<p>Ideally before the stressful moment starts — as a storm rolls in, before fireworks begin, or a little while before you leave the house. Giving your dog a chance to relax into it beforehand tends to work better than waiting until they're already panicking.</p>" } },
+        "q3": { "type": "qa", "settings": { "question": "How do I choose the right size?", "answer": "<p>Measure the widest part of your dog's chest (just behind the front legs) and check it against the size guide on the product page. If your dog is between sizes, size up for a comfortable fit. <em>Note: final measurements are being confirmed and will be updated before launch.</em></p>" } },
+        "q4": { "type": "qa", "settings": { "question": "Can my dog wear it for a long time?", "answer": "<p>It's designed to be comfortable enough to wear through a storm or an evening of fireworks. As with anything your dog wears, check that the fit is snug but not tight, make sure they can move and breathe easily, and take it off for sleep and unsupervised time.</p>" } },
+        "q5": { "type": "qa", "settings": { "question": "Is it safe?", "answer": "<p>The vest works through gentle pressure alone — no medication, no scents, nothing your dog ingests. Always supervise your dog while they're wearing it, and if your dog has severe anxiety or a medical condition, talk to your vet about the best approach. Furvago is meant to complement that care, not replace it.</p>" } },
+        "q6": { "type": "qa", "settings": { "question": "How fast does it ship?", "answer": "<p>Orders arrive in about 8–15 business days. We'll send tracking as soon as your vest leaves the warehouse, and shipping is free on every order with no minimum.</p>" } },
+        "q7": { "type": "qa", "settings": { "question": "What if it doesn't help my dog?", "answer": "<p>Send it back within 30 days for a refund — used or not. We'd rather you try it with your dog and return it than never try it at all.</p>" } },
+        "q8": { "type": "qa", "settings": { "question": "How do I wash it?", "answer": "<p><em>Care instructions are being finalized with the manufacturer and will be listed here before launch.</em> We'll publish the exact washing guidance rather than guess at it.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8"],
+      "settings": {
+        "heading": "",
+        "note": "",
+        "flush_top": true
+      }
+    },
+    "cta": {
+      "type": "cta-band",
+      "settings": {
+        "eyebrow": "Still wondering?",
+        "heading": "Ask us anything.",
+        "body": "If your question isn't here, send it our way — we read every message.",
+        "button_label": "Contact us"
+      }
+    }
+  },
+  "order": ["hero", "faq", "cta"]
+}

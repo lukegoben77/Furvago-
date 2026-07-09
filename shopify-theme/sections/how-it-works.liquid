@@ -1,0 +1,33 @@
+<section>
+  <div class="wrap help-grid howworks-grid">
+    <div class="howworks-heading">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 style="margin-top:0.6rem;">{{ section.settings.heading }}</h2>
+    </div>
+    <div class="howworks-visual">
+      <div class="help-media">
+        {%- if section.settings.image -%}
+          <img src="{{ section.settings.image | image_url: width: 1200 }}" alt="{{ section.settings.image.alt | escape }}" />
+        {%- else -%}
+          <img src="{{ 'product-pink.jpg' | asset_url }}" alt="A dog resting calmly while wearing the Furvago vest" />
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="howworks-body">
+      <div class="prose" style="margin-top:1.3rem;">{{ section.settings.body }}</div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How it works",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The mechanism, honestly explained" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Why gentle pressure helps at all." },
+    { "type": "image_picker", "id": "image", "label": "Photo (falls back to the bundled rose vest photo)" },
+    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>The idea behind Furvago isn't new or complicated: steady, even pressure has a long, well-understood history of helping calm an anxious body.</p>" }
+  ],
+  "presets": [ { "name": "How it works" } ]
+}
+{% endschema %}

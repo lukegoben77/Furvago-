@@ -1,0 +1,23 @@
+<header class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Search</p>
+    <h1>{% if search.performed %}Results for "{{ search.terms | escape }}"{% else %}Search{% endif %}</h1>
+  </div>
+</header>
+<section style="padding-top:0;">
+  <div class="wrap" style="max-width:52rem;">
+    <form action="{{ routes.search_url }}" method="get" class="newsletter-row" role="search">
+      <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search" style="flex:1;border:1px solid var(--line);border-radius:999px;padding:0.7em 1.1em;font-family:inherit;font-size:0.95rem;background:transparent;">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    {% if search.performed %}
+      <div style="margin-top:2rem;display:grid;gap:1rem;">
+        {% for item in search.results %}
+          <a href="{{ item.url }}" style="color:var(--accent);">{{ item.title }}</a>
+        {% else %}
+          <p style="color:var(--ink-soft);">Nothing found — try a different search.</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,79 @@
+<section id="pdp-sizeguide">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>{{ section.settings.heading }}</h2>
+      <p class="note">{{ section.settings.note }}</p>
+    </div>
+    <div class="sizeguide-block reveal">
+      <div>
+        {%- if section.settings.placeholder_note != blank -%}
+          <span class="placeholder-note">{{ section.settings.placeholder_note }}</span>
+        {%- endif -%}
+        <table class="size-guide">
+          <thead><tr><th>{{ section.settings.col1 }}</th><th>{{ section.settings.col2 }}</th><th>{{ section.settings.col3 }}</th></tr></thead>
+          <tbody>
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'row' -%}
+                <tr {{ block.shopify_attributes }}><td>{{ block.settings.size }}</td><td>{{ block.settings.weight }}</td><td>{{ block.settings.girth }}</td></tr>
+              {%- endif -%}
+            {%- endfor -%}
+          </tbody>
+        </table>
+      </div>
+      <div class="sizeguide-steps">
+        <svg class="sizeguide-diagram" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <ellipse cx="95" cy="70" rx="55" ry="26"/>
+          <circle cx="160" cy="46" r="17"/>
+          <path d="M70 94v16M90 94v16M118 94v16M138 94v16"/>
+          <path d="M43 58c-9-6-19-1-14 9"/>
+          <ellipse cx="95" cy="68" rx="28" ry="32" stroke-dasharray="4 4" opacity="0.65"/>
+        </svg>
+        <p style="text-align:center;font-family:var(--font-body);font-weight:600;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-soft);margin:-0.8rem 0 1.3rem;">{{ section.settings.diagram_caption }}</p>
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'tip' -%}
+            <div class="r" {{ block.shopify_attributes }}>{% render 'icon', name: block.settings.icon %}{{ block.settings.text }}</div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Size guide",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How to measure your dog in under a minute." },
+    { "type": "text", "id": "note", "label": "Note", "default": "Getting the fit right matters more than picking a favorite color." },
+    { "type": "text", "id": "placeholder_note", "label": "Placeholder flag (clear when sizing is final)", "default": "Placeholder sizing — final measurements to be confirmed" },
+    { "type": "text", "id": "col1", "label": "Column 1 header", "default": "Size" },
+    { "type": "text", "id": "col2", "label": "Column 2 header", "default": "Approx. weight" },
+    { "type": "text", "id": "col3", "label": "Column 3 header", "default": "Chest girth" },
+    { "type": "text", "id": "diagram_caption", "label": "Diagram caption", "default": "Chest girth — measured here" }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Size row",
+      "settings": [
+        { "type": "text", "id": "size", "label": "Size", "default": "S" },
+        { "type": "text", "id": "weight", "label": "Weight", "default": "10–25 lb" },
+        { "type": "text", "id": "girth", "label": "Chest girth", "default": "14–19 in" }
+      ]
+    },
+    {
+      "type": "tip",
+      "name": "Measuring tip",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "options": [
+          { "value": "circle", "label": "Circle" },
+          { "value": "pin", "label": "Teardrop" },
+          { "value": "plus", "label": "Plus" }
+        ], "default": "circle" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Wrap a soft measuring tape around the widest part of your dog's chest." }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Size guide" } ]
+}
+{% endschema %}

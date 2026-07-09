@@ -1,0 +1,48 @@
+{%- assign featured = all_products[settings.product_handle] -%}
+<section class="highlight">
+  <div class="wrap">
+    <div class="highlight-card reveal">
+      <div class="product-frame highlight-order-1">
+        {%- if section.settings.image -%}
+          <img src="{{ section.settings.image | image_url: width: 1000 }}" alt="{{ section.settings.image.alt | escape }}" width="1000" height="1000" />
+        {%- else -%}
+          <img src="{{ 'product-pink.jpg' | asset_url }}" alt="The Furvago calming vest in rose" width="1000" height="1000" />
+        {%- endif -%}
+      </div>
+      <div class="highlight-heading">
+        <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+        <h2>{{ section.settings.heading }}</h2>
+      </div>
+      <div class="highlight-body">
+        <p>{{ section.settings.body }}</p>
+        <div class="highlight-price">
+          {%- if featured != blank -%}
+            {{ featured.price | money }}
+            {%- if featured.compare_at_price > featured.price %} <del style="font-family:var(--font-mono);font-weight:400;font-size:1.05rem;color:var(--ink);opacity:0.6;">{{ featured.compare_at_price | money }}</del>{% endif -%}
+          {%- else -%}
+            {{ section.settings.fallback_price }}
+          {%- endif -%}
+        </div>
+        {%- assign highlight_link = section.settings.button_link -%}
+        {%- if highlight_link == blank and featured != blank -%}{%- assign highlight_link = featured.url -%}{%- endif -%}
+        <a href="{{ highlight_link | default: routes.all_products_collection_url }}" class="btn btn-primary">{{ section.settings.button_label }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product highlight",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Furvago calming vest" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "One vest. Three colors. A calmer dog." },
+    { "type": "image_picker", "id": "image", "label": "Photo (falls back to the bundled rose vest photo)" },
+    { "type": "textarea", "id": "body", "label": "Body", "default": "Our whole store is built around getting this one thing right — a vest that helps your dog feel safe when the world feels like too much. Choose your size and color, and we'll take it from there." },
+    { "type": "text", "id": "fallback_price", "label": "Fallback price text (shown until the featured product exists)", "default": "$44.99" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop the vest" },
+    { "type": "url", "id": "button_link", "label": "Button link (defaults to the featured product)" }
+  ],
+  "presets": [ { "name": "Product highlight" } ]
+}
+{% endschema %}

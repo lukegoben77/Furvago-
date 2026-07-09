@@ -1,0 +1,62 @@
+<div class="nav-shell">
+  <nav class="nav" id="nav" aria-label="Primary">
+    <a href="{{ routes.root_url }}" class="nav-logo" aria-label="{{ shop.name }} home">
+      {%- if section.settings.logo -%}
+        <img src="{{ section.settings.logo | image_url: width: 720 }}" alt="{{ shop.name }}" width="720" height="169" />
+      {%- else -%}
+        <img src="{{ 'logo-dark.png' | asset_url }}" alt="{{ shop.name }}" width="720" height="169" />
+      {%- endif -%}
+    </a>
+    <ul class="nav-links">
+      {%- for block in section.blocks -%}
+        <li {{ block.shopify_attributes }}><a href="{{ block.settings.link | default: routes.root_url }}"{% if block.settings.link == request.path %} class="active"{% endif %}>{{ block.settings.label }}</a></li>
+      {%- endfor -%}
+    </ul>
+    <div class="nav-right">
+      <a href="{{ section.settings.shop_link | default: routes.all_products_collection_url }}" class="btn btn-primary" style="padding:0.6em 1.2em;">{{ section.settings.shop_label }}</a>
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
+        <span class="cart-count" id="cartCount">{{ cart.item_count }}</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span></button>
+    </div>
+  </nav>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  {%- for block in section.blocks -%}
+    <a href="{{ block.settings.link | default: routes.root_url }}">{{ block.settings.label }}</a>
+  {%- endfor -%}
+  <p class="mm-foot">{{ section.settings.menu_foot }}</p>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo (falls back to the bundled Furvago logo)" },
+    { "type": "text", "id": "shop_label", "label": "Shop button label", "default": "Shop" },
+    { "type": "url", "id": "shop_link", "label": "Shop button link" },
+    { "type": "text", "id": "menu_foot", "label": "Mobile menu footer line", "default": "Free shipping · 30-day returns" }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Nav link",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Link" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "default": {
+    "blocks": [
+      { "type": "link", "settings": { "label": "The Vest" } },
+      { "type": "link", "settings": { "label": "Our Story" } },
+      { "type": "link", "settings": { "label": "FAQ" } },
+      { "type": "link", "settings": { "label": "Contact" } }
+    ]
+  }
+}
+{% endschema %}

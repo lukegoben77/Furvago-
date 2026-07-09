@@ -1,0 +1,51 @@
+<section>
+  <div class="wrap help-grid">
+    <div class="help-visual reveal">
+      <div class="hero-panel">
+        <div class="product-frame">
+          {%- if section.settings.image -%}
+            <img src="{{ section.settings.image | image_url: width: 1000 }}" alt="{{ section.settings.image.alt | escape }}" width="1000" height="1000" />
+          {%- else -%}
+            <img src="{{ 'product-navy.jpg' | asset_url }}" alt="A dog resting calmly in the navy Furvago vest" width="1000" height="1000" />
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+    <div class="help-heading">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+    <div class="help-body">
+      <p>{{ section.settings.body }}</p>
+      <div class="help-points">
+        {%- for block in section.blocks -%}
+          <div class="help-point" {{ block.shopify_attributes }}><span class="pnum">{{ forloop.index | prepend: '0' }}</span><div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div></div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How it helps",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "How it helps" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Like a hug that doesn't let go." },
+    { "type": "image_picker", "id": "image", "label": "Photo (falls back to the bundled navy vest photo)" },
+    { "type": "textarea", "id": "body", "label": "Body", "default": "Furvago is designed to apply gentle, constant pressure around your dog's torso — the same comforting principle behind swaddling a baby or a weighted blanket. Many dog owners report their dogs settle faster and rest more easily once it's on." }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Numbered point",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Gentle, constant pressure" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "A snug wrap-around fit that stays with them, so the comfort doesn't stop when your hands do." }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [ { "name": "How it helps" } ]
+}
+{% endschema %}

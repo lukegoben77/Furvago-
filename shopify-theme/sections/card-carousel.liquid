@@ -1,0 +1,87 @@
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>{{ section.settings.heading }}</h2>
+      <p class="note">{{ section.settings.note }}</p>
+    </div>
+    <div class="{{ section.settings.layout }}-grid reveal" data-carousel="dots-{{ section.id }}">
+      {%- for block in section.blocks -%}
+        <div class="{{ section.settings.layout }}-card" {{ block.shopify_attributes }}>
+          {%- assign img_style = '' -%}
+          {%- if block.settings.image_position != blank -%}
+            {%- assign img_style = 'object-position:' | append: block.settings.image_position | append: ';' -%}
+          {%- endif -%}
+          {%- if block.settings.image_zoom > 1.0 -%}
+            {%- assign img_style = img_style | append: ' transform:scale(' | append: block.settings.image_zoom | append: ');' -%}
+          {%- endif -%}
+          {%- if block.settings.image -%}
+            <div class="card-media"><img src="{{ block.settings.image | image_url: width: 900 }}" alt="{{ block.settings.image.alt | default: block.settings.title | escape }}"{% if img_style != blank %} style="{{ img_style }}"{% endif %} /></div>
+          {%- elsif block.settings.default_asset != 'none' -%}
+            <div class="card-media"><img src="{{ block.settings.default_asset | append: '.jpg' | asset_url }}" alt="{{ block.settings.title | escape }}"{% if img_style != blank %} style="{{ img_style }}"{% endif %} /></div>
+          {%- else -%}
+            <div class="card-media mood {{ block.settings.tone }}">
+              {% render 'icon', name: block.settings.motif, width: '1.6' %}
+            </div>
+          {%- endif -%}
+          <div class="card-copy">
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.text }}</p>
+            {%- if block.settings.pill != blank -%}<span class="card-pill">{{ block.settings.pill }}</span>{%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+    <div class="carousel-dots" id="dots-{{ section.id }}"></div>
+    {%- if section.settings.closing != blank -%}
+      <p class="carousel-closing">{{ section.settings.closing }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Card carousel",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Three moments you already brace for." },
+    { "type": "text", "id": "note", "label": "Note", "default": "Not every trigger looks the same — here's where the vest actually earns its keep." },
+    { "type": "select", "id": "layout", "label": "Card layout", "options": [
+      { "value": "trigger", "label": "3 across (triggers)" },
+      { "value": "feature", "label": "2 across (features)" }
+    ], "default": "trigger" },
+    { "type": "text", "id": "closing", "label": "Closing line (italic, centered)" }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Photo" },
+        { "type": "select", "id": "default_asset", "label": "Bundled photo (used if no photo chosen)", "options": [
+          { "value": "none", "label": "None — show mood panel" },
+          { "value": "product-black", "label": "Black vest photo" },
+          { "value": "product-navy", "label": "Navy vest photo" },
+          { "value": "product-pink", "label": "Rose vest photo" }
+        ], "default": "none" },
+        { "type": "text", "id": "image_position", "label": "Image crop position (CSS object-position)", "info": "e.g. 50% 62%" },
+        { "type": "range", "id": "image_zoom", "label": "Image zoom", "min": 1.0, "max": 2.0, "step": 0.1, "default": 1.0 },
+        { "type": "select", "id": "tone", "label": "Mood panel tone", "options": [
+          { "value": "tone-a", "label": "Deep olive" },
+          { "value": "tone-b", "label": "Warm brown" },
+          { "value": "tone-c", "label": "Clay pink" }
+        ], "default": "tone-a" },
+        { "type": "select", "id": "motif", "label": "Mood panel icon", "options": [
+          { "value": "cloud-rain", "label": "Rain cloud" },
+          { "value": "firework", "label": "Firework" },
+          { "value": "house", "label": "House" },
+          { "value": "pin", "label": "Teardrop" },
+          { "value": "heart", "label": "Heart" }
+        ], "default": "cloud-rain" },
+        { "type": "text", "id": "title", "label": "Headline", "default": "Thunderstorms" },
+        { "type": "textarea", "id": "text", "label": "Body", "default": "Card body copy." },
+        { "type": "text", "id": "pill", "label": "Pill badge", "default": "Calm through the storm" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Card carousel" } ]
+}
+{% endschema %}

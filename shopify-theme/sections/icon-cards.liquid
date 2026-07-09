@@ -1,0 +1,38 @@
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="info-cards reveal">
+      {%- for block in section.blocks -%}
+        <div class="info-card" {{ block.shopify_attributes }}>{% render 'icon', name: block.settings.icon, width: '1.7' %}<h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div>
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.body != blank -%}
+      <div class="prose">{{ section.settings.body }}</div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Info cards + prose",
+  "settings": [
+    { "type": "html", "id": "body", "label": "Prose below the cards (supports h2 headings)" }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Info card",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "options": [
+          { "value": "truck", "label": "Shipping truck" },
+          { "value": "calendar", "label": "Calendar" },
+          { "value": "returns", "label": "Return arrow" },
+          { "value": "pin", "label": "Teardrop" }
+        ], "default": "truck" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Free shipping" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "On every order, with no minimum to reach." }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Info cards + prose" } ]
+}
+{% endschema %}

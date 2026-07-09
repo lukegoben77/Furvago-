@@ -1,0 +1,32 @@
+<section class="trust">
+  <div class="wrap trust-row">
+    {%- for block in section.blocks -%}
+      <div class="trust-item" {{ block.shopify_attributes }}>{% render 'icon', name: block.settings.icon, width: '1.7' %}<strong>{{ block.settings.title }}</strong><span>{{ block.settings.text }}</span></div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trust strip",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Trust item",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "options": [
+          { "value": "truck", "label": "Shipping truck" },
+          { "value": "returns", "label": "Return arrow" },
+          { "value": "pin-dot", "label": "Teardrop + dot" },
+          { "value": "shirt", "label": "Vest" },
+          { "value": "check", "label": "Checkmark" }
+        ], "default": "truck" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Free shipping" },
+        { "type": "text", "id": "text", "label": "Text", "default": "On every order, no minimum" }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [ { "name": "Trust strip" } ]
+}
+{% endschema %}

@@ -1,0 +1,68 @@
+<section class="storm reveal-trigger">
+  <div class="wrap storm-grid">
+    <div class="storm-heading">
+      <p class="eyebrow on-dark">{{ section.settings.eyebrow }}</p>
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+    <div class="storm-visual">
+      <div class="photo-slot mood-storm">
+        {%- if section.settings.image -%}
+          <img src="{{ section.settings.image | image_url: width: 1200 }}" alt="{{ section.settings.image.alt | escape }}" />
+        {%- else -%}
+          <div class="mood-cap">
+            {% render 'icon', name: 'cloud-rain', width: '1.6' %}
+            <p class="q">{{ section.settings.mood_quote }}</p>
+            <p class="sub">{{ section.settings.mood_sub }}</p>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="storm-body">
+      {%- if section.settings.prose_style == 'pdp' -%}
+        <div class="pdp-prose">{{ section.settings.body }}</div>
+      {%- else -%}
+        {{ section.settings.body }}
+      {%- endif -%}
+      <ul class="{% if section.settings.prose_style == 'pdp' %}pdp-signs{% else %}storm-list{% endif %}">
+        {%- for block in section.blocks -%}
+          <li {{ block.shopify_attributes }}>{% render 'icon', name: block.settings.icon %}{{ block.settings.text }}</li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Storm panel",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "You know the signs" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The pacing. The panting. The eyes that follow you to the door." },
+    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Every storm season, every firework night, every time you reach for your keys — it starts again.</p>" },
+    { "type": "select", "id": "prose_style", "label": "Body style", "options": [
+      { "value": "plain", "label": "Single paragraph (home)" },
+      { "value": "pdp", "label": "Story prose (product page)" }
+    ], "default": "plain" },
+    { "type": "image_picker", "id": "image", "label": "Photo (replaces the mood panel)" },
+    { "type": "text", "id": "mood_quote", "label": "Mood panel quote", "default": "The sound they can't unhear — and the corner they hide in until it stops." },
+    { "type": "text", "id": "mood_sub", "label": "Mood panel subline", "default": "Thunder · Fireworks · The empty house" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "List item",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "options": [
+          { "value": "bolt", "label": "Lightning bolt" },
+          { "value": "firework", "label": "Firework" },
+          { "value": "house", "label": "House" },
+          { "value": "activity", "label": "Pacing line" },
+          { "value": "pin", "label": "Teardrop" }
+        ], "default": "bolt" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Thunderstorms and the low rumble before them" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Storm panel" } ]
+}
+{% endschema %}

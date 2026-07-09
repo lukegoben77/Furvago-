@@ -1,0 +1,32 @@
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="about-values reveal">
+      {%- for block in section.blocks -%}
+        <div class="value-card" {{ block.shopify_attributes }}>{% render 'icon', name: block.settings.icon, width: '1.7' %}<h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Value cards",
+  "blocks": [
+    {
+      "type": "value",
+      "name": "Value card",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "options": [
+          { "value": "pin", "label": "Teardrop" },
+          { "value": "basket", "label": "Basket" },
+          { "value": "returns", "label": "Return arrow" },
+          { "value": "heart", "label": "Heart" }
+        ], "default": "pin" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Honest by default" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "We say what the vest can do and what it can't." }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Value cards" } ]
+}
+{% endschema %}

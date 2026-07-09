@@ -1,0 +1,52 @@
+<section>
+  <div class="cta-band reveal" style="text-align:left;">
+    <p class="eyebrow" style="margin-bottom:0.4rem;">{{ section.settings.eyebrow }}</p>
+    <h2 style="margin-bottom:2rem;">{{ section.settings.heading }}</h2>
+    <div class="step-grid" data-carousel="dots-{{ section.id }}">
+      {%- for block in section.blocks -%}
+        <div class="step-card" {{ block.shopify_attributes }}>
+          <div class="step-visual">{% render 'icon', name: block.settings.icon, width: '1.7' %}</div>
+          <div class="card-copy">
+            <span class="step-num">{{ forloop.index }}</span>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.text }}</p>
+            {%- if block.settings.pill != blank -%}<span class="card-pill">{{ block.settings.pill }}</span>{%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+    <div class="carousel-dots" id="dots-{{ section.id }}"></div>
+    {%- if section.settings.closing != blank -%}
+      <p class="carousel-closing on-dark">{{ section.settings.closing }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How to use steps",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "In practice" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How to put it on — and when." },
+    { "type": "text", "id": "closing", "label": "Closing line", "default": "Three minutes of prep, and they're ready for whatever's coming." }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "options": [
+          { "value": "head-slide", "label": "Over the head" },
+          { "value": "clasp", "label": "Clasp" },
+          { "value": "clock", "label": "Clock" },
+          { "value": "check-circle", "label": "Check circle" }
+        ], "default": "head-slide" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Slide it over their head" },
+        { "type": "textarea", "id": "text", "label": "Body", "default": "Let the collar opening rest naturally at the base of the neck." },
+        { "type": "text", "id": "pill", "label": "Pill badge", "default": "Under a minute" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "How to use steps" } ]
+}
+{% endschema %}

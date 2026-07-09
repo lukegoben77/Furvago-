@@ -1,0 +1,35 @@
+<section style="padding-top:0;">
+  <div class="wrap about-story">
+    <div>
+      <h2>{{ section.settings.heading }}</h2>
+      {{ section.settings.body }}
+    </div>
+    <div>
+      <div class="photo-slot mood-comfort">
+        {%- if section.settings.image -%}
+          <img src="{{ section.settings.image | image_url: width: 1200 }}" alt="{{ section.settings.image.alt | escape }}" />
+        {%- else -%}
+          <div class="mood-cap">
+            {% render 'icon', name: 'heart-soft', width: '1.5' %}
+            <p class="q">{{ section.settings.mood_quote }}</p>
+            <p class="sub">{{ section.settings.mood_sub }}</p>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About story",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The night that started it." },
+    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>There's a specific kind of helplessness in watching your dog come apart during a storm.</p>" },
+    { "type": "image_picker", "id": "image", "label": "Photo (replaces the mood panel)" },
+    { "type": "text", "id": "mood_quote", "label": "Mood panel quote", "default": "Some nights, they just need to be held a little longer than you can manage." },
+    { "type": "text", "id": "mood_sub", "label": "Mood panel subline", "default": "Why Furvago exists" }
+  ],
+  "presets": [ { "name": "About story" } ]
+}
+{% endschema %}

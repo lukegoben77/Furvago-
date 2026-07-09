@@ -1,0 +1,107 @@
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        {%- if section.settings.logo -%}
+          <img src="{{ section.settings.logo | image_url: width: 720 }}" alt="{{ shop.name }}" width="720" height="169" />
+        {%- else -%}
+          <img src="{{ 'logo-dark.png' | asset_url }}" alt="{{ shop.name }}" width="720" height="169" />
+        {%- endif -%}
+        <p>{{ section.settings.brand_text }}</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>{{ section.settings.col1_title }}</h5>
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'link' and block.settings.column == 'col1' -%}
+              <a href="{{ block.settings.link | default: routes.root_url }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+        <div class="footer-col">
+          <h5>{{ section.settings.col2_title }}</h5>
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'link' and block.settings.column == 'col2' -%}
+              <a href="{{ block.settings.link | default: routes.root_url }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+        <div class="footer-col">
+          <div class="newsletter">
+            {% form 'customer', id: 'newsletterForm' %}
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <label for="nlEmail">{{ section.settings.newsletter_label }}</label>
+              <div class="newsletter-row">
+                <input id="nlEmail" name="contact[email]" type="email" placeholder="you@email.com" required autocomplete="email" />
+                <button type="submit">{{ section.settings.newsletter_button }}</button>
+              </div>
+              <p class="newsletter-msg" id="nlMsg" role="status">
+                {%- if form.posted_successfully? -%}
+                  You're in — we'll only write when it matters.
+                {%- elsif form.errors -%}
+                  {{ form.errors | default_errors }}
+                {%- endif -%}
+              </p>
+            {% endform %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">{{ 'now' | date: '%Y' }}</span> {{ section.settings.copyright }}</p>
+      <div class="socials">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'social' -%}
+            <a href="{{ block.settings.link | default: routes.root_url }}" aria-label="{{ shop.name }} on {{ block.settings.label }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo (falls back to the bundled Furvago logo)" },
+    { "type": "textarea", "id": "brand_text", "label": "Brand text", "default": "A gentle, wrapped-hug pressure vest for the dogs who tremble through thunderstorms, fireworks, and time alone." },
+    { "type": "text", "id": "col1_title", "label": "Column 1 title", "default": "Shop" },
+    { "type": "text", "id": "col2_title", "label": "Column 2 title", "default": "Help" },
+    { "type": "text", "id": "newsletter_label", "label": "Newsletter label", "default": "Storm-season tips & new colors — no spam" },
+    { "type": "text", "id": "newsletter_button", "label": "Newsletter button", "default": "Join" },
+    { "type": "text", "id": "copyright", "label": "Copyright name", "default": "Furvago Home Co." }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Footer link",
+      "settings": [
+        { "type": "select", "id": "column", "label": "Column", "options": [ { "value": "col1", "label": "Column 1" }, { "value": "col2", "label": "Column 2" } ], "default": "col1" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Link" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    },
+    {
+      "type": "social",
+      "name": "Social link",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Instagram" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "link", "settings": { "column": "col1", "label": "The Vest" } },
+      { "type": "link", "settings": { "column": "col1", "label": "Sizes & colors" } },
+      { "type": "link", "settings": { "column": "col2", "label": "FAQ" } },
+      { "type": "link", "settings": { "column": "col2", "label": "Shipping & Returns" } },
+      { "type": "link", "settings": { "column": "col2", "label": "Contact" } },
+      { "type": "link", "settings": { "column": "col2", "label": "Our Story" } },
+      { "type": "social", "settings": { "label": "Instagram" } },
+      { "type": "social", "settings": { "label": "TikTok" } }
+    ]
+  }
+}
+{% endschema %}

@@ -1,0 +1,96 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "blocks": {
+        "badge1": { "type": "badge", "settings": { "icon": "truck", "text": "Free shipping" } },
+        "badge2": { "type": "badge", "settings": { "icon": "returns", "text": "30-day returns" } },
+        "badge3": { "type": "badge", "settings": { "icon": "pin", "text": "Gentle constant pressure" } }
+      },
+      "block_order": ["badge1", "badge2", "badge3"],
+      "settings": {
+        "eyebrow": "Furvago — the calming vest",
+        "heading": "When the world gets loud, this",
+        "heading_accent": "holds them steady.",
+        "tagchip": "Calming vest · Sizes XS–XL",
+        "lead": "A gentle, wrapped-hug pressure vest for the dogs who tremble through thunderstorms, panic at fireworks, and pace by the door the moment you leave.",
+        "button1_label": "Shop the vest",
+        "button2_label": "See how it works"
+      }
+    },
+    "storm": {
+      "type": "storm",
+      "blocks": {
+        "item1": { "type": "item", "settings": { "icon": "bolt", "text": "Thunderstorms and the low rumble before them" } },
+        "item2": { "type": "item", "settings": { "icon": "firework", "text": "Fireworks and sudden loud noise" } },
+        "item3": { "type": "item", "settings": { "icon": "house", "text": "The long, quiet minutes after you leave" } }
+      },
+      "block_order": ["item1", "item2", "item3"],
+      "settings": {
+        "eyebrow": "You know the signs",
+        "heading": "The pacing. The panting. The eyes that follow you to the door.",
+        "body": "<p>Every storm season, every firework night, every time you reach for your keys — it starts again. The shaking you can't soothe. The hiding you can't coax them out of. You've tried holding them close, and wished you could stay that way all night.</p>",
+        "prose_style": "plain",
+        "mood_quote": "The sound they can't unhear — and the corner they hide in until it stops.",
+        "mood_sub": "Thunder · Fireworks · The empty house"
+      }
+    },
+    "helps": {
+      "type": "how-it-helps",
+      "blocks": {
+        "point1": { "type": "point", "settings": { "title": "Gentle, constant pressure", "text": "A snug wrap-around fit that stays with them, so the comfort doesn't stop when your hands do." } },
+        "point2": { "type": "point", "settings": { "title": "Soft, light, breathable", "text": "Made to be worn through a whole storm without overheating or weighing them down." } },
+        "point3": { "type": "point", "settings": { "title": "On in seconds", "text": "An adjustable hook-and-loop closure means you can get it on before the first thunderclap." } }
+      },
+      "block_order": ["point1", "point2", "point3"],
+      "settings": {
+        "eyebrow": "How it helps",
+        "heading": "Like a hug that doesn't let go.",
+        "body": "Furvago is designed to apply gentle, constant pressure around your dog's torso — the same comforting principle behind swaddling a baby or a weighted blanket. Many dog owners report their dogs settle faster and rest more easily once it's on."
+      }
+    },
+    "trust": {
+      "type": "trust-strip",
+      "blocks": {
+        "t1": { "type": "item", "settings": { "icon": "truck", "title": "Free shipping", "text": "On every order, no minimum" } },
+        "t2": { "type": "item", "settings": { "icon": "returns", "title": "30-day returns", "text": "Used or not — send it back" } },
+        "t3": { "type": "item", "settings": { "icon": "pin-dot", "title": "Made to comfort", "text": "Gentle, wrap-around pressure" } },
+        "t4": { "type": "item", "settings": { "icon": "shirt", "title": "Sizes XS–XL", "text": "Fitted for every dog" } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4"]
+    },
+    "highlight": {
+      "type": "product-highlight",
+      "settings": {
+        "eyebrow": "The Furvago calming vest",
+        "heading": "One vest. Three colors. A calmer dog.",
+        "body": "Our whole store is built around getting this one thing right — a vest that helps your dog feel safe when the world feels like too much. Choose your size and color, and we'll take it from there.",
+        "fallback_price": "$44.99",
+        "button_label": "Shop the vest"
+      }
+    },
+    "homereviews": {
+      "type": "reviews",
+      "blocks": {
+        "rev1": { "type": "review", "settings": { "stars": 5, "quote": "\"First thunderstorm with it on, and she actually lay down instead of shaking in the bathroom. That was everything.\"", "byline": "Placeholder — replace with real review" } },
+        "rev2": { "type": "review", "settings": { "stars": 5, "quote": "\"We put it on before we leave now. The neighbors say the barking has really settled down.\"", "byline": "Placeholder — replace with real review" } },
+        "rev3": { "type": "review", "settings": { "stars": 5, "quote": "\"Easy to get on a squirmy dog, and he doesn't try to wriggle out of it. That alone was worth it.\"", "byline": "Placeholder — replace with real review" } }
+      },
+      "block_order": ["rev1", "rev2", "rev3"],
+      "settings": {
+        "heading": "What early owners are telling us.",
+        "tag": "Placeholder reviews"
+      }
+    },
+    "cta": {
+      "type": "cta-band",
+      "settings": {
+        "eyebrow": "Give them somewhere safe to go",
+        "heading": "The next storm is coming. Be ready for it.",
+        "body": "Free shipping, a 30-day return window, and a vest built to help your dog through the nights that scare them most.",
+        "button_label": "Shop the vest"
+      }
+    }
+  },
+  "order": ["hero", "storm", "helps", "trust", "highlight", "homereviews", "cta"]
+}

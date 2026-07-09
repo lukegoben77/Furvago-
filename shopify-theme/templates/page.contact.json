@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "Contact",
+        "heading": "Tell us about your dog.",
+        "lead": "Questions about sizing, or just want to tell us your storm-night story? We read every message."
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "blocks": {
+        "m1": { "type": "meta", "settings": { "icon": "envelope", "title": "Email", "text": "hello@furvago.com" } },
+        "m2": { "type": "meta", "settings": { "icon": "returns", "title": "Typical reply time", "text": "A couple of business days" } },
+        "m3": { "type": "meta", "settings": { "icon": "pin", "title": "Sizing help", "text": "Tell us your dog's chest measurement and we'll point you to a size" } }
+      },
+      "block_order": ["m1", "m2", "m3"],
+      "settings": {
+        "heading": "We're a small team, and a real person reads this.",
+        "body": "Whether you're not sure which size to choose or you want to tell us how the vest worked for your dog, write to us. We usually reply within a couple of days.",
+        "button_label": "Send message"
+      }
+    }
+  },
+  "order": ["hero", "form"]
+}

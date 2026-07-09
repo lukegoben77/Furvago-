@@ -1,0 +1,146 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign has_compare = false -%}
+{%- if current_variant.compare_at_price > current_variant.price -%}{%- assign has_compare = true -%}{%- endif -%}
+
+<section class="pdp">
+  <div class="wrap pdp-grid">
+    <div class="gallery">
+      <div class="gallery-main">
+        {%- if current_variant.featured_image -%}
+          <img id="galleryMain" src="{{ current_variant.featured_image | image_url: width: 1000 }}" alt="{{ current_variant.featured_image.alt | escape }}" width="1000" height="1000" fetchpriority="high" />
+        {%- elsif product.featured_image -%}
+          <img id="galleryMain" src="{{ product.featured_image | image_url: width: 1000 }}" alt="{{ product.featured_image.alt | escape }}" width="1000" height="1000" fetchpriority="high" />
+        {%- else -%}
+          <img id="galleryMain" src="{{ 'product-black.jpg' | asset_url }}" alt="{{ product.title | escape }}" width="1000" height="1000" fetchpriority="high" />
+        {%- endif -%}
+      </div>
+      {%- if product.images.size > 1 -%}
+        <div class="gallery-thumbs" role="tablist" aria-label="Product images">
+          {%- for image in product.images -%}
+            <button {% if image == product.featured_image %}class="active" {% endif %}data-img="{{ image | image_url: width: 1000 }}" data-position="{{ image.position }}" aria-label="{{ image.alt | default: product.title | escape }}"><img src="{{ image | image_url: width: 260 }}" alt="" width="260" height="260" /></button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="pdp-info">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      <h1>{{ product.title }}</h1>
+      {%- if section.settings.hook != blank -%}
+        <p class="pdp-hook">{{ section.settings.hook }}</p>
+      {%- endif -%}
+      {%- if section.settings.subhead != blank -%}
+        <p style="color:var(--ink-soft);font-size:1rem;margin-top:0.6rem;line-height:1.5;">{{ section.settings.subhead }}</p>
+      {%- endif -%}
+      <div class="pdp-price">
+        <span id="priceCurrent">{{ current_variant.price | money }}</span>
+        <del id="priceCompare"{% unless has_compare %} style="display:none;"{% endunless %}>{{ current_variant.compare_at_price | money }}</del>
+        <span class="save" id="priceSave"{% unless has_compare %} style="display:none;"{% endunless %}>
+          {%- if has_compare -%}
+            {%- assign save_pct = current_variant.compare_at_price | minus: current_variant.price | times: 100 | divided_by: current_variant.compare_at_price -%}
+            Save {{ save_pct }}%
+          {%- endif -%}
+        </span>
+      </div>
+
+      <div data-selected-options='{{ current_variant.options | json }}'>
+        {%- for option in product.options_with_values -%}
+          {%- assign opt_name_down = option.name | downcase -%}
+          <div class="opt-group">
+            <div class="opt-label">
+              <span>{{ option.name }}{% if opt_name_down == 'color' or opt_name_down == 'colour' %} — <span id="colorName" data-option-name="{{ forloop.index }}">{{ option.selected_value }}</span>{% endif %}</span>
+              {%- if opt_name_down == 'size' -%}<a id="openSizeGuide">Size guide</a>{%- endif -%}
+            </div>
+            {%- if opt_name_down == 'color' or opt_name_down == 'colour' -%}
+              <div class="swatches" id="swatches">
+                {%- for value in option.values -%}
+                  <button type="button" class="swatch{% if value == option.selected_value %} active{% endif %}" data-option-button data-option-pos="{{ forloop.parentloop.index }}" data-value="{{ value | escape }}" data-color="{{ value | handleize }}" aria-label="{{ value | escape }}"></button>
+                {%- endfor -%}
+              </div>
+            {%- else -%}
+              <div class="sizes"{% if opt_name_down == 'size' %} id="sizes"{% endif %}>
+                {%- for value in option.values -%}
+                  <button type="button" class="size-btn{% if value == option.selected_value %} active{% endif %}" data-option-button data-option-pos="{{ forloop.parentloop.index }}" data-value="{{ value | escape }}">{{ value }}</button>
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <form method="post" action="{{ routes.cart_add_url }}" id="productForm" class="atc-row">
+        <input type="hidden" name="id" id="variantId" value="{{ current_variant.id }}">
+        <button type="submit" class="btn btn-primary" id="addToCart"{% unless current_variant.available %} disabled{% endunless %}>
+          {%- if current_variant.available -%}Add to cart — {{ current_variant.price | money }}{%- else -%}Sold out{%- endif -%}
+        </button>
+      </form>
+
+      <div class="pdp-reassure">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'reassure' -%}
+            <div class="r" {{ block.shopify_attributes }}>{% render 'icon', name: block.settings.icon %}{{ block.settings.text }}</div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      <div class="acc" id="pdpHeroAcc" style="margin-top:1.6rem;">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'accordion' -%}
+            <div class="acc-item" {{ block.shopify_attributes }}>
+              <button class="acc-q">{{ block.settings.title }}<span class="ic"></span></button>
+              <div class="acc-a"><p>{{ block.settings.content | remove: '<p>' | remove: '</p>' }}
+                {%- if block.settings.link_label != blank %} <a href="{{ block.settings.link_url | default: routes.root_url }}">{{ block.settings.link_label }}</a>{% endif -%}
+                {%- if block.settings.show_size_jump %} <button type="button" id="jumpSizeGuideAcc" class="acc-jump">Jump to the full size guide ↓</button>{% endif -%}
+              </p></div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sticky-atc" id="stickyAtc">
+  <div class="sa-info"><span class="sa-name">{{ product.title }}</span><span class="sa-price">{{ current_variant.price | money }} · {{ current_variant.title | replace: ' / ', ' · ' }}</span></div>
+  <button class="btn btn-primary" id="stickyAdd">Add to cart</button>
+</div>
+
+<script type="application/json" id="ProductJson">{{ product | json }}</script>
+
+{% schema %}
+{
+  "name": "Product hero",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Furvago — the calming vest" },
+    { "type": "text", "id": "hook", "label": "Hook line (italic)", "default": "The first time you put it on, watch their shoulders drop." },
+    { "type": "textarea", "id": "subhead", "label": "Subhead", "default": "Built for the exact moments that undo them — the thunder rolling in, the fireworks starting, the click of the door as you leave." }
+  ],
+  "blocks": [
+    {
+      "type": "reassure",
+      "name": "Trust row line",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "options": [
+          { "value": "truck", "label": "Shipping truck" },
+          { "value": "returns", "label": "Return arrow" },
+          { "value": "calendar", "label": "Calendar" },
+          { "value": "pin", "label": "Teardrop" },
+          { "value": "check", "label": "Checkmark" }
+        ], "default": "truck" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Free shipping, no minimum" }
+      ]
+    },
+    {
+      "type": "accordion",
+      "name": "Accordion item",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Product Description" },
+        { "type": "richtext", "id": "content", "label": "Content", "default": "<p>Describe the product here.</p>" },
+        { "type": "text", "id": "link_label", "label": "Trailing link label (optional)" },
+        { "type": "url", "id": "link_url", "label": "Trailing link URL" },
+        { "type": "checkbox", "id": "show_size_jump", "label": "Show \"Jump to the full size guide\" button", "default": false }
+      ]
+    }
+  ]
+}
+{% endschema %}

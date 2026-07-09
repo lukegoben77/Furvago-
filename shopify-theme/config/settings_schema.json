@@ -1,0 +1,22 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Furvago",
+    "theme_version": "1.0.0",
+    "theme_author": "Furvago",
+    "theme_documentation_url": "https://github.com/lukegoben77/Slumbori-store",
+    "theme_support_url": "https://github.com/lukegoben77/Slumbori-store"
+  },
+  {
+    "name": "Product",
+    "settings": [
+      {
+        "type": "text",
+        "id": "product_handle",
+        "label": "Featured product handle",
+        "info": "The handle of the calming vest product (used by Shop buttons and price displays outside the product page).",
+        "default": "furvago-calming-vest"
+      }
+    ]
+  }
+]

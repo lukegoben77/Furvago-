@@ -1,0 +1,11 @@
+<header class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">{{ article.published_at | date: '%B %d, %Y' }}</p>
+    <h1>{{ article.title }}</h1>
+  </div>
+</header>
+<section style="padding-top:0;">
+  <div class="wrap" style="max-width:52rem;">
+    <div class="prose">{{ article.content }}</div>
+  </div>
+</section>

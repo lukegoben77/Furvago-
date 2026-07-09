@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "Shipping & returns",
+        "heading": "The practical part, kept simple.",
+        "lead": "Ordering something to help your dog shouldn't come with fine-print anxiety of its own."
+      }
+    },
+    "cards": {
+      "type": "icon-cards",
+      "blocks": {
+        "c1": { "type": "card", "settings": { "icon": "truck", "title": "Free shipping", "text": "On every order, with no minimum to reach." } },
+        "c2": { "type": "card", "settings": { "icon": "calendar", "title": "8–15 business days", "text": "With tracking emailed the moment it ships." } },
+        "c3": { "type": "card", "settings": { "icon": "returns", "title": "30-day returns", "text": "Used or not — if it's not right, send it back." } }
+      },
+      "block_order": ["c1", "c2", "c3"],
+      "settings": {
+        "body": "<h2>Shipping</h2><p>Shipping is free on every Furvago order — there's no threshold to hit and no upsell to skip. Most orders arrive within 8 to 15 business days. As soon as your vest leaves the warehouse, we'll email you a tracking link so you can follow it to your door.</p><p>We ship to most destinations. If checkout won't accept your address, send us a message and we'll let you know honestly whether we can reach you.</p><h2>Returns</h2><p>If the vest isn't right for your dog, you have 30 days to send it back for a refund — used or not. Dog hair, a rainy-night test run, a size that didn't quite fit: none of it disqualifies you. Start a return by contacting us and we'll walk you through it.</p><p>We ask for two simple things: reach out within 30 days of delivery, and send the vest back so we can keep it out of a landfill where we can.</p><h2>Exchanges</h2><p>Need a different size or color? The quickest route is to start a return and place a new order so your replacement ships right away — but if you'd rather we handle it directly, just ask.</p>"
+      }
+    }
+  },
+  "order": ["hero", "cards"]
+}

@@ -1,0 +1,23 @@
+<header class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Shop</p>
+    <h1>{{ collection.title }}</h1>
+  </div>
+</header>
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="review-strip">
+      {% for product in collection.products %}
+        <a href="{{ product.url }}" class="review-card" style="text-decoration:none;color:inherit;">
+          {% if product.featured_image %}
+            <div class="product-frame"><img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.featured_image.alt | escape }}" /></div>
+          {% endif %}
+          <h3 style="margin-top:1rem;">{{ product.title }}</h3>
+          <p style="color:var(--ink-soft);">{{ product.price | money }}{% if product.compare_at_price > product.price %} <del>{{ product.compare_at_price | money }}</del>{% endif %}</p>
+        </a>
+      {% else %}
+        <p style="color:var(--ink-soft);">No products here yet.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
