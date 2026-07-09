@@ -1,23 +1,56 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-product",
       "blocks": {
-        "reassure1": { "type": "reassure", "settings": { "icon": "truck", "text": "Free shipping, no minimum" } },
-        "reassure2": { "type": "reassure", "settings": { "icon": "returns", "text": "30-day returns, used or not" } },
-        "reassure3": { "type": "reassure", "settings": { "icon": "calendar", "text": "Ships in 8–15 business days with tracking" } },
+        "reassure1": {
+          "type": "reassure",
+          "settings": {
+            "icon": "truck",
+            "text": "Free shipping, no minimum"
+          }
+        },
+        "reassure2": {
+          "type": "reassure",
+          "settings": {
+            "icon": "returns",
+            "text": "30-day returns, used or not"
+          }
+        },
+        "reassure3": {
+          "type": "reassure",
+          "settings": {
+            "icon": "calendar",
+            "text": "Ships in 8–15 business days with tracking"
+          }
+        },
         "acc1": {
           "type": "accordion",
           "settings": {
             "title": "Product Description",
-            "content": "<p>A snug, wraparound vest that applies steady, even pressure across your dog's torso — the same swaddle-and-weighted-blanket logic that helps calm an anxious body. Built for the moments that undo them: storms, fireworks, time alone. Slips over the head and fastens with a wide hook-and-loop closure in under a minute, in Black, Navy, or Rose.</p>"
+            "content": "<p>A snug, wraparound vest that applies steady, even pressure across your dog's torso — the same swaddle-and-weighted-blanket logic that helps calm an anxious body. Built for the moments that undo them: storms, fireworks, time alone. Slips over the head and fastens with a wide hook-and-loop closure in under a minute, in Black, Navy, or Rose.</p>",
+            "link_label": "",
+            "link_url": "",
+            "show_size_jump": false
           }
         },
         "acc2": {
           "type": "accordion",
           "settings": {
             "title": "Materials & Fit",
-            "content": "<p>Exact fabric composition and hardware specs are still being confirmed with our manufacturer, and we'd rather leave them blank than guess. What we can say: it's a soft, breathable knit with an adjustable hook-and-loop wrap that runs true to size for most dogs — check the size guide below before you order.</p>"
+            "content": "<p>Exact fabric composition and hardware specs are still being confirmed with our manufacturer, and we'd rather leave them blank than guess. What we can say: it's a soft, breathable knit with an adjustable hook-and-loop wrap that runs true to size for most dogs — check the size guide below before you order.</p>",
+            "link_label": "",
+            "link_url": "",
+            "show_size_jump": false
           }
         },
         "acc3": {
@@ -26,7 +59,8 @@
             "title": "Shipping & Returns",
             "content": "<p>Free shipping with no minimum, arriving in about 8–15 business days with tracking. Not right for your dog? Send it back within 30 days, used or not.</p>",
             "link_label": "See full shipping & returns details →",
-            "link_url": "/pages/shipping-returns"
+            "link_url": "/pages/shipping-returns",
+            "show_size_jump": false
           }
         },
         "acc4": {
@@ -34,11 +68,21 @@
           "settings": {
             "title": "Size Guide",
             "content": "<p>Measure the widest part of your dog's chest, just behind the front legs — if they fall between sizes, size up.</p>",
+            "link_label": "",
+            "link_url": "",
             "show_size_jump": true
           }
         }
       },
-      "block_order": ["reassure1", "reassure2", "reassure3", "acc1", "acc2", "acc3", "acc4"],
+      "block_order": [
+        "reassure1",
+        "reassure2",
+        "reassure3",
+        "acc1",
+        "acc2",
+        "acc3",
+        "acc4"
+      ],
       "settings": {
         "eyebrow": "Furvago — the calming vest",
         "hook": "The first time you put it on, watch their shoulders drop.",
@@ -48,11 +92,33 @@
     "problem": {
       "type": "storm",
       "blocks": {
-        "sign1": { "type": "item", "settings": { "icon": "activity", "text": "Pacing that won't stop, even when you're right there" } },
-        "sign2": { "type": "item", "settings": { "icon": "pin", "text": "Panting, drooling, or hiding in the smallest space in the house" } },
-        "sign3": { "type": "item", "settings": { "icon": "house", "text": "Whining, barking, or scratching at doors when you leave" } }
+        "sign1": {
+          "type": "item",
+          "settings": {
+            "icon": "activity",
+            "text": "Pacing that won't stop, even when you're right there"
+          }
+        },
+        "sign2": {
+          "type": "item",
+          "settings": {
+            "icon": "pin",
+            "text": "Panting, drooling, or hiding in the smallest space in the house"
+          }
+        },
+        "sign3": {
+          "type": "item",
+          "settings": {
+            "icon": "house",
+            "text": "Whining, barking, or scratching at doors when you leave"
+          }
+        }
       },
-      "block_order": ["sign1", "sign2", "sign3"],
+      "block_order": [
+        "sign1",
+        "sign2",
+        "sign3"
+      ],
       "settings": {
         "eyebrow": "Before we made this",
         "heading": "You know the exact moment it starts.",
@@ -68,7 +134,11 @@
         "card1": {
           "type": "card",
           "settings": {
-            "default_asset": "none", "tone": "tone-a", "motif": "cloud-rain",
+            "default_asset": "none",
+            "image_position": "",
+            "image_zoom": 1,
+            "tone": "tone-a",
+            "motif": "cloud-rain",
             "title": "Thunderstorms",
             "text": "The sky darkens and the pressure drops, and your dog knows before you do. Put the vest on as the first clouds roll in, and let the steady pressure work while the storm does its worst.",
             "pill": "Calm through the storm"
@@ -77,7 +147,11 @@
         "card2": {
           "type": "card",
           "settings": {
-            "default_asset": "none", "tone": "tone-b", "motif": "firework",
+            "default_asset": "none",
+            "image_position": "",
+            "image_zoom": 1,
+            "tone": "tone-b",
+            "motif": "firework",
             "title": "Fireworks & holidays",
             "text": "New Year's Eve, block parties, a neighbor's back yard — sudden loud noise with no warning at all. Slip the vest on before the sun goes down on a night you already know is coming.",
             "pill": "Ready in seconds"
@@ -86,14 +160,22 @@
         "card3": {
           "type": "card",
           "settings": {
-            "default_asset": "none", "tone": "tone-c", "motif": "house",
+            "default_asset": "none",
+            "image_position": "",
+            "image_zoom": 1,
+            "tone": "tone-c",
+            "motif": "house",
             "title": "Being left alone",
             "text": "The jingle of keys, the click of the door, the sound of your car pulling away. Put it on a few minutes before you go, so the last thing they feel isn't just your absence.",
             "pill": "Comfort while away"
           }
         }
       },
-      "block_order": ["card1", "card2", "card3"],
+      "block_order": [
+        "card1",
+        "card2",
+        "card3"
+      ],
       "settings": {
         "heading": "Three moments you already brace for.",
         "note": "Not every trigger looks the same — here's where the vest actually earns its keep.",
@@ -107,7 +189,11 @@
         "feat1": {
           "type": "card",
           "settings": {
-            "default_asset": "product-navy", "image_position": "50% 62%",
+            "default_asset": "product-navy",
+            "image_position": "50% 62%",
+            "image_zoom": 1,
+            "tone": "tone-a",
+            "motif": "cloud-rain",
             "title": "Gentle, constant pressure",
             "text": "Modeled on the same swaddle-and-weighted-blanket logic that calms a fussy newborn: even, snug pressure around the torso — not squeezing, not loose enough to slide. It stays where you put it, so the comfort doesn't stop when your hands do.",
             "pill": "Always-on comfort"
@@ -116,7 +202,11 @@
         "feat2": {
           "type": "card",
           "settings": {
-            "default_asset": "product-navy", "image_position": "18% 40%", "image_zoom": 1.8,
+            "default_asset": "product-navy",
+            "image_position": "18% 40%",
+            "image_zoom": 1.8,
+            "tone": "tone-a",
+            "motif": "cloud-rain",
             "title": "Adjustable hook-and-loop closure",
             "text": "Wide closure points let you dial in a fit that's snug but never restrictive, even on a dog who won't hold still for it. Once it's fastened, it stays fastened — no wriggling loose mid-storm.",
             "pill": "Fits every dog"
@@ -125,7 +215,11 @@
         "feat3": {
           "type": "card",
           "settings": {
-            "default_asset": "product-pink", "image_position": "78% 38%", "image_zoom": 1.6,
+            "default_asset": "product-pink",
+            "image_position": "78% 38%",
+            "image_zoom": 1.6,
+            "tone": "tone-a",
+            "motif": "cloud-rain",
             "title": "Soft, light, breathable fabric",
             "text": "Lightweight and made to breathe, so your dog can wear it through a whole evening of fireworks or a long afternoon alone without overheating or feeling weighed down.",
             "pill": "Breathable all day"
@@ -134,14 +228,23 @@
         "feat4": {
           "type": "card",
           "settings": {
-            "default_asset": "product-black", "image_position": "40% 55%",
+            "default_asset": "product-black",
+            "image_position": "40% 55%",
+            "image_zoom": 1,
+            "tone": "tone-a",
+            "motif": "cloud-rain",
             "title": "Easy on, easy off",
             "text": "No wrestling match required. Slip it over the head, wrap, fasten — on in under a minute, even when your dog is already starting to pace.",
             "pill": "On in seconds"
           }
         }
       },
-      "block_order": ["feat1", "feat2", "feat3", "feat4"],
+      "block_order": [
+        "feat1",
+        "feat2",
+        "feat3",
+        "feat4"
+      ],
       "settings": {
         "heading": "Every detail, built around one job.",
         "note": "Nothing here is decorative — each piece earns its place.",
@@ -160,12 +263,49 @@
     "howtouse": {
       "type": "how-to-use",
       "blocks": {
-        "step1": { "type": "step", "settings": { "icon": "head-slide", "title": "Slide it over their head", "text": "Let the collar opening rest naturally at the base of the neck.", "pill": "Under a minute" } },
-        "step2": { "type": "step", "settings": { "icon": "clasp", "title": "Wrap and fasten", "text": "Snug but not tight — you should be able to slip two flat fingers underneath.", "pill": "Two-finger fit" } },
-        "step3": { "type": "step", "settings": { "icon": "clock", "title": "Time it right", "text": "When you can, put it on 15–20 minutes before a trigger you know is coming.", "pill": "15–20 min early" } },
-        "step4": { "type": "step", "settings": { "icon": "check-circle", "title": "Leave it on as needed", "text": "Most owners remove it once the storm passes or once they're back home.", "pill": "Until they're settled" } }
+        "step1": {
+          "type": "step",
+          "settings": {
+            "icon": "head-slide",
+            "title": "Slide it over their head",
+            "text": "Let the collar opening rest naturally at the base of the neck.",
+            "pill": "Under a minute"
+          }
+        },
+        "step2": {
+          "type": "step",
+          "settings": {
+            "icon": "clasp",
+            "title": "Wrap and fasten",
+            "text": "Snug but not tight — you should be able to slip two flat fingers underneath.",
+            "pill": "Two-finger fit"
+          }
+        },
+        "step3": {
+          "type": "step",
+          "settings": {
+            "icon": "clock",
+            "title": "Time it right",
+            "text": "When you can, put it on 15–20 minutes before a trigger you know is coming.",
+            "pill": "15–20 min early"
+          }
+        },
+        "step4": {
+          "type": "step",
+          "settings": {
+            "icon": "check-circle",
+            "title": "Leave it on as needed",
+            "text": "Most owners remove it once the storm passes or once they're back home.",
+            "pill": "Until they're settled"
+          }
+        }
       },
-      "block_order": ["step1", "step2", "step3", "step4"],
+      "block_order": [
+        "step1",
+        "step2",
+        "step3",
+        "step4"
+      ],
       "settings": {
         "eyebrow": "In practice",
         "heading": "How to put it on — and when.",
@@ -175,13 +315,44 @@
     "expect": {
       "type": "what-to-expect",
       "blocks": {
-        "stage1": { "type": "stage", "settings": { "tone": "tone-a", "motif": "pin", "title": "A tail that drops and softens", "text": "Instead of staying tucked or stiff.", "pill": "First sign of calm" } },
-        "stage2": { "type": "stage", "settings": { "tone": "tone-b", "motif": "calm-face", "title": "Breathing that slows", "text": "Or a sigh as they settle into lying down.", "pill": "Settling in" } },
-        "stage3": { "type": "stage", "settings": { "tone": "tone-c", "motif": "heart", "title": "Choosing to lie near you", "text": "Instead of pacing or hiding.", "pill": "Fully at ease" } }
+        "stage1": {
+          "type": "stage",
+          "settings": {
+            "tone": "tone-a",
+            "motif": "pin",
+            "title": "A tail that drops and softens",
+            "text": "Instead of staying tucked or stiff.",
+            "pill": "First sign of calm"
+          }
+        },
+        "stage2": {
+          "type": "stage",
+          "settings": {
+            "tone": "tone-b",
+            "motif": "calm-face",
+            "title": "Breathing that slows",
+            "text": "Or a sigh as they settle into lying down.",
+            "pill": "Settling in"
+          }
+        },
+        "stage3": {
+          "type": "stage",
+          "settings": {
+            "tone": "tone-c",
+            "motif": "heart",
+            "title": "Choosing to lie near you",
+            "text": "Instead of pacing or hiding.",
+            "pill": "Fully at ease"
+          }
+        }
       },
-      "block_order": ["stage1", "stage2", "stage3"],
+      "block_order": [
+        "stage1",
+        "stage2",
+        "stage3"
+      ],
       "settings": {
-        "eyebrow": "What to expect",
+        "eyebrow": "",
         "heading": "It's not always instant.",
         "intro": "Some dogs settle within the first few minutes: a lowered tail, slower breathing, lying down instead of pacing. Others need two or three wears before they stop noticing the vest is even there and start associating it with the calm that follows. A small number of dogs don't respond much at all — that's a real, honest possibility, and not every dog reacts to gentle pressure the same way.",
         "note": "If your dog seems more distressed in the vest — not less — take it off and talk to your vet before trying again.",
@@ -192,34 +363,148 @@
     "sizeguide": {
       "type": "size-guide",
       "blocks": {
-        "row1": { "type": "row", "settings": { "size": "XS", "weight": "5–10 lb", "girth": "11–14 in" } },
-        "row2": { "type": "row", "settings": { "size": "S", "weight": "10–25 lb", "girth": "14–19 in" } },
-        "row3": { "type": "row", "settings": { "size": "M", "weight": "25–45 lb", "girth": "19–25 in" } },
-        "row4": { "type": "row", "settings": { "size": "L", "weight": "45–70 lb", "girth": "25–31 in" } },
-        "row5": { "type": "row", "settings": { "size": "XL", "weight": "70–100 lb", "girth": "31–37 in" } },
-        "tip1": { "type": "tip", "settings": { "icon": "circle", "text": "Wrap a soft measuring tape around the widest part of your dog's chest, just behind the front legs." } },
-        "tip2": { "type": "tip", "settings": { "icon": "pin", "text": "Keep the tape snug but not tight — you should be able to slip two flat fingers underneath." } },
-        "tip3": { "type": "tip", "settings": { "icon": "plus", "text": "Right between two sizes? Size up — a slightly looser vest is more comfortable than a tight one." } }
+        "row1": {
+          "type": "row",
+          "settings": {
+            "size": "XS",
+            "weight": "5–10 lb",
+            "girth": "11–14 in"
+          }
+        },
+        "row2": {
+          "type": "row",
+          "settings": {
+            "size": "S",
+            "weight": "10–25 lb",
+            "girth": "14–19 in"
+          }
+        },
+        "row3": {
+          "type": "row",
+          "settings": {
+            "size": "M",
+            "weight": "25–45 lb",
+            "girth": "19–25 in"
+          }
+        },
+        "row4": {
+          "type": "row",
+          "settings": {
+            "size": "L",
+            "weight": "45–70 lb",
+            "girth": "25–31 in"
+          }
+        },
+        "row5": {
+          "type": "row",
+          "settings": {
+            "size": "XL",
+            "weight": "70–100 lb",
+            "girth": "31–37 in"
+          }
+        },
+        "tip1": {
+          "type": "tip",
+          "settings": {
+            "icon": "circle",
+            "text": "Wrap a soft measuring tape around the widest part of your dog's chest, just behind the front legs."
+          }
+        },
+        "tip2": {
+          "type": "tip",
+          "settings": {
+            "icon": "pin",
+            "text": "Keep the tape snug but not tight — you should be able to slip two flat fingers underneath."
+          }
+        },
+        "tip3": {
+          "type": "tip",
+          "settings": {
+            "icon": "plus",
+            "text": "Right between two sizes? Size up — a slightly looser vest is more comfortable than a tight one."
+          }
+        }
       },
-      "block_order": ["row1", "row2", "row3", "row4", "row5", "tip1", "tip2", "tip3"],
+      "block_order": [
+        "row1",
+        "row2",
+        "row3",
+        "row4",
+        "row5",
+        "tip1",
+        "tip2",
+        "tip3"
+      ],
       "settings": {
         "heading": "How to measure your dog in under a minute.",
         "note": "Getting the fit right matters more than picking a favorite color.",
         "placeholder_note": "Placeholder sizing — final measurements to be confirmed",
+        "col1": "Size",
+        "col2": "Approx. weight",
+        "col3": "Chest girth",
         "diagram_caption": "Chest girth — measured here"
       }
     },
     "compare": {
       "type": "comparison-table",
       "blocks": {
-        "crow1": { "type": "row", "settings": { "label": "Adjustable, secure fit", "other_value": "Varies" } },
-        "crow2": { "type": "row", "settings": { "label": "Machine washable cover", "other_value": "Varies" } },
-        "crow3": { "type": "row", "settings": { "label": "Multiple sizes (XS–XL)", "other_value": "Often limited" } },
-        "crow4": { "type": "row", "settings": { "label": "30-day returns, used or not", "other_value": "Varies" } },
-        "crow5": { "type": "row", "settings": { "label": "Free shipping", "other_value": "Varies" } },
-        "crow6": { "type": "row", "settings": { "label": "Price", "brand_value": "$44.99", "other_value": "$35–$65" } }
+        "crow1": {
+          "type": "row",
+          "settings": {
+            "label": "Adjustable, secure fit",
+            "brand_value": "",
+            "other_value": "Varies"
+          }
+        },
+        "crow2": {
+          "type": "row",
+          "settings": {
+            "label": "Machine washable cover",
+            "brand_value": "",
+            "other_value": "Varies"
+          }
+        },
+        "crow3": {
+          "type": "row",
+          "settings": {
+            "label": "Multiple sizes (XS–XL)",
+            "brand_value": "",
+            "other_value": "Often limited"
+          }
+        },
+        "crow4": {
+          "type": "row",
+          "settings": {
+            "label": "30-day returns, used or not",
+            "brand_value": "",
+            "other_value": "Varies"
+          }
+        },
+        "crow5": {
+          "type": "row",
+          "settings": {
+            "label": "Free shipping",
+            "brand_value": "",
+            "other_value": "Varies"
+          }
+        },
+        "crow6": {
+          "type": "row",
+          "settings": {
+            "label": "Price",
+            "brand_value": "$44.99",
+            "other_value": "$35–$65"
+          }
+        }
       },
-      "block_order": ["crow1", "crow2", "crow3", "crow4", "crow5", "crow6"],
+      "block_order": [
+        "crow1",
+        "crow2",
+        "crow3",
+        "crow4",
+        "crow5",
+        "crow6"
+      ],
       "settings": {
         "heading": "Not All Calming Vests Are the Same.",
         "subhead": "Here's why it matters.",
@@ -230,33 +515,122 @@
     "pdpreviews": {
       "type": "reviews",
       "blocks": {
-        "rev1": { "type": "review", "settings": { "stars": 5, "quote": "\"She actually lay down during the storm instead of shaking in the tub. First time in years.\"", "byline": "Placeholder review" } },
-        "rev2": { "type": "review", "settings": { "stars": 5, "quote": "\"We put it on before we leave the house now, and come home to a much calmer dog.\"", "byline": "Placeholder review" } },
-        "rev3": { "type": "review", "settings": { "stars": 5, "quote": "\"Fits my wiggly little guy perfectly and he doesn't fuss when it goes on.\"", "byline": "Placeholder review" } }
+        "rev1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "\"She actually lay down during the storm instead of shaking in the tub. First time in years.\"",
+            "byline": "Placeholder review"
+          }
+        },
+        "rev2": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "\"We put it on before we leave the house now, and come home to a much calmer dog.\"",
+            "byline": "Placeholder review"
+          }
+        },
+        "rev3": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "\"Fits my wiggly little guy perfectly and he doesn't fuss when it goes on.\"",
+            "byline": "Placeholder review"
+          }
+        }
       },
-      "block_order": ["rev1", "rev2", "rev3"],
+      "block_order": [
+        "rev1",
+        "rev2",
+        "rev3"
+      ],
       "settings": {
         "heading": "What early owners say.",
-        "tag": "Placeholder reviews — replace before launch"
+        "tag": "Placeholder reviews — replace before launch",
+        "note": ""
       }
     },
     "pdpfaq": {
       "type": "faq-accordion",
       "blocks": {
-        "q1": { "type": "qa", "settings": { "question": "How do I know what size to order?", "answer": "<p>Measure the widest part of your dog's chest, just behind the front legs, and check it against the size guide above. If your dog is between sizes, size up for a comfortable fit.</p>" } },
-        "q2": { "type": "qa", "settings": { "question": "What is it made of?", "answer": "<p><strong>Copy to confirm:</strong> Final fabric composition is being confirmed with our manufacturer and will be listed here before launch — we'd rather leave this blank than guess.</p>" } },
-        "q3": { "type": "qa", "settings": { "question": "How fast will it ship?", "answer": "<p>About 8–15 business days. We'll email tracking as soon as your vest leaves the warehouse, and shipping is free on every order with no minimum.</p>" } },
-        "q4": { "type": "qa", "settings": { "question": "Is it safe for anxious or reactive dogs?", "answer": "<p>Yes — it works through pressure alone, with no scents or medication, so it's generally safe to introduce to anxious or reactive dogs. Go slowly the first time: let them sniff it and wear it briefly during a calm moment before a real trigger, and supervise the first few wears.</p>" } },
-        "q5": { "type": "qa", "settings": { "question": "Can I leave my dog alone while wearing it?", "answer": "<p>For the first several wears, we'd recommend supervising to make sure the fit stays comfortable and your dog isn't chewing at the closure. Once you're both comfortable with it, most owners do leave it on during short periods alone.</p>" } },
-        "q6": { "type": "qa", "settings": { "question": "How do I clean it?", "answer": "<p><strong>Copy to confirm:</strong> Washing instructions are being finalized with the manufacturer and will be published here before launch, rather than guessed at.</p>" } },
-        "q7": { "type": "qa", "settings": { "question": "What if it doesn't help my dog?", "answer": "<p>Send it back within 30 days for a refund — used or not. We'd rather you try it with your dog and return it than never try it at all.</p>" } }
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "How do I know what size to order?",
+            "answer": "<p>Measure the widest part of your dog's chest, just behind the front legs, and check it against the size guide above. If your dog is between sizes, size up for a comfortable fit.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "What is it made of?",
+            "answer": "<p><strong>Copy to confirm:</strong> Final fabric composition is being confirmed with our manufacturer and will be listed here before launch — we'd rather leave this blank than guess.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "How fast will it ship?",
+            "answer": "<p>About 8–15 business days. We'll email tracking as soon as your vest leaves the warehouse, and shipping is free on every order with no minimum.</p>"
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
+            "question": "Is it safe for anxious or reactive dogs?",
+            "answer": "<p>Yes — it works through pressure alone, with no scents or medication, so it's generally safe to introduce to anxious or reactive dogs. Go slowly the first time: let them sniff it and wear it briefly during a calm moment before a real trigger, and supervise the first few wears.</p>"
+          }
+        },
+        "q5": {
+          "type": "qa",
+          "settings": {
+            "question": "Can I leave my dog alone while wearing it?",
+            "answer": "<p>For the first several wears, we'd recommend supervising to make sure the fit stays comfortable and your dog isn't chewing at the closure. Once you're both comfortable with it, most owners do leave it on during short periods alone.</p>"
+          }
+        },
+        "q6": {
+          "type": "qa",
+          "settings": {
+            "question": "How do I clean it?",
+            "answer": "<p><strong>Copy to confirm:</strong> Washing instructions are being finalized with the manufacturer and will be published here before launch, rather than guessed at.</p>"
+          }
+        },
+        "q7": {
+          "type": "qa",
+          "settings": {
+            "question": "What if it doesn't help my dog?",
+            "answer": "<p>Send it back within 30 days for a refund — used or not. We'd rather you try it with your dog and return it than never try it at all.</p>"
+          }
+        }
       },
-      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ],
       "settings": {
         "heading": "Questions people ask before they buy.",
-        "note": "The ones we actually get, most weeks."
+        "note": "The ones we actually get, most weeks.",
+        "flush_top": false
       }
     }
   },
-  "order": ["main", "problem", "triggers", "features", "howworks", "howtouse", "expect", "sizeguide", "compare", "pdpreviews", "pdpfaq"]
+  "order": [
+    "main",
+    "problem",
+    "triggers",
+    "features",
+    "howworks",
+    "howtouse",
+    "expect",
+    "sizeguide",
+    "compare",
+    "pdpreviews",
+    "pdpfaq"
+  ]
 }
