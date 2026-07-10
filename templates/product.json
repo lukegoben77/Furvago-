@@ -257,15 +257,6 @@
     "howtouse": {
       "type": "how-to-use",
       "blocks": {
-        "step1": {
-          "type": "step",
-          "settings": {
-            "icon": "head-slide",
-            "title": "Slide it over their head",
-            "text": "Let the collar opening rest naturally at the base of the neck.",
-            "pill": "Under a minute"
-          }
-        },
         "step2": {
           "type": "step",
           "settings": {
@@ -295,7 +286,6 @@
         }
       },
       "block_order": [
-        "step1",
         "step2",
         "step3",
         "step4"
