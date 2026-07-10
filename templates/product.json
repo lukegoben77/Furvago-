@@ -121,7 +121,7 @@
       ],
       "settings": {
         "eyebrow": "",
-        "heading": "Recognizing the signs of anxiety.",
+        "heading": "The Moments You Already Recognize",
         "body": "<p>The barometric pressure drops, or the first firework cracks, or you just pick up your keys — and something in your dog changes. The pacing starts. The panting. Some dogs try to fold themselves into the smallest space they can find: behind the toilet, under the bed, in the shower stall. Others chew at a doorframe or claw at a crate trying to get to you.</p><p>You call their name and it doesn't quite land. You sit on the floor with them and it helps, some — until you have to get up. That's the specific kind of helpless this vest was made for. Not to fix the storm. Just to give your dog something steady to lean on when you can't be the one holding them.</p>",
         "prose_style": "pdp",
         "mood_quote": "The moment right before the vest goes on.",
@@ -177,7 +177,7 @@
         "card3"
       ],
       "settings": {
-        "heading": "Common triggers for anxious dogs.",
+        "heading": "The Moments That Undo Them",
         "note": "Not every trigger looks the same — here's where the vest actually earns its keep.",
         "layout": "trigger",
         "closing": "Every scenario above is a moment your dog doesn't have to face alone."
@@ -246,7 +246,7 @@
         "feat4"
       ],
       "settings": {
-        "heading": "Designed with one purpose in mind.",
+        "heading": "Designed With One Purpose In Mind",
         "note": "Nothing here is decorative — each piece earns its place.",
         "layout": "feature",
         "closing": "Every detail here has one job — keeping your dog steady."
@@ -256,7 +256,7 @@
       "type": "how-it-works",
       "settings": {
         "eyebrow": "",
-        "heading": "How gentle pressure helps.",
+        "heading": "How Gentle Pressure Helps",
         "body": "<p>The idea behind Furvago isn't new or complicated: steady, even pressure has a long, well-understood history of helping calm an anxious body — it's the same principle behind swaddling a newborn or wrapping up in a weighted blanket. The vest wraps snugly around your dog's chest and torso and stays there, applying that same gentle, constant pressure for as long as it's on.</p><p>Many dog owners report their dogs settle faster, pace less, and seem more comfortable with it on — especially during storms, fireworks, and time alone. It isn't a sedative, and it isn't a cure. We haven't run a clinical trial and we won't pretend we have. For some dogs, it's a small help. For a lot of dogs, it becomes part of the routine on the nights that are hardest.</p><p>If your dog's anxiety is severe, or you're not seeing any difference after several tries, that's worth a conversation with your vet — the vest is meant to sit alongside good veterinary care, not replace it.</p>"
       }
     },
@@ -308,7 +308,7 @@
       ],
       "settings": {
         "eyebrow": "",
-        "heading": "How and when to use it.",
+        "heading": "Ten Minutes Ahead Of The Moment",
         "closing": "Three minutes of prep, and they're ready for whatever's coming."
       }
     },
@@ -353,7 +353,7 @@
       ],
       "settings": {
         "eyebrow": "",
-        "heading": "What to expect.",
+        "heading": "What To Expect",
         "intro": "Some dogs settle within the first few minutes: a lowered tail, slower breathing, lying down instead of pacing. Others need two or three wears before they stop noticing the vest is even there and start associating it with the calm that follows. A small number of dogs don't respond much at all — that's a real, honest possibility, and not every dog reacts to gentle pressure the same way.",
         "note": "If your dog seems more distressed in the vest — not less — take it off and talk to your vet before trying again.",
         "closing": "Every dog settles differently — but they don't have to do it alone.",
@@ -436,7 +436,7 @@
         "tip3"
       ],
       "settings": {
-        "heading": "How to measure your dog.",
+        "heading": "How To Measure Your Dog",
         "note": "Getting the fit right matters more than picking a favorite color.",
         "placeholder_note": "Placeholder sizing — final measurements to be confirmed",
         "col1": "Size",
@@ -506,7 +506,7 @@
         "crow6"
       ],
       "settings": {
-        "heading": "How Furvago compares.",
+        "heading": "How Furvago Compares",
         "subhead": "Here's why it matters.",
         "col_brand": "Furvago",
         "col_other": "Generic Vest"
@@ -614,7 +614,7 @@
         "q7"
       ],
       "settings": {
-        "heading": "Frequently asked questions.",
+        "heading": "Frequently Asked Questions.",
         "note": "The ones we actually get, most weeks.",
         "flush_top": false
       }

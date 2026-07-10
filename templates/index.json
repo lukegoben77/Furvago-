@@ -1,13 +1,44 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
       "blocks": {
-        "badge1": { "type": "badge", "settings": { "icon": "truck", "text": "Free shipping" } },
-        "badge2": { "type": "badge", "settings": { "icon": "returns", "text": "30-day returns" } },
-        "badge3": { "type": "badge", "settings": { "icon": "pin", "text": "Gentle constant pressure" } }
+        "badge1": {
+          "type": "badge",
+          "settings": {
+            "icon": "truck",
+            "text": "Free shipping"
+          }
+        },
+        "badge2": {
+          "type": "badge",
+          "settings": {
+            "icon": "returns",
+            "text": "30-day returns"
+          }
+        },
+        "badge3": {
+          "type": "badge",
+          "settings": {
+            "icon": "pin",
+            "text": "Gentle constant pressure"
+          }
+        }
       },
-      "block_order": ["badge1", "badge2", "badge3"],
+      "block_order": [
+        "badge1",
+        "badge2",
+        "badge3"
+      ],
       "settings": {
         "eyebrow": "Furvago — the calming vest",
         "heading": "A calming vest for",
@@ -22,11 +53,33 @@
     "storm": {
       "type": "storm",
       "blocks": {
-        "item1": { "type": "item", "settings": { "icon": "bolt", "text": "Thunderstorms and the low rumble before them" } },
-        "item2": { "type": "item", "settings": { "icon": "firework", "text": "Fireworks and sudden loud noise" } },
-        "item3": { "type": "item", "settings": { "icon": "house", "text": "The long, quiet minutes after you leave" } }
+        "item1": {
+          "type": "item",
+          "settings": {
+            "icon": "bolt",
+            "text": "Thunderstorms and the low rumble before them"
+          }
+        },
+        "item2": {
+          "type": "item",
+          "settings": {
+            "icon": "firework",
+            "text": "Fireworks and sudden loud noise"
+          }
+        },
+        "item3": {
+          "type": "item",
+          "settings": {
+            "icon": "house",
+            "text": "The long, quiet minutes after you leave"
+          }
+        }
       },
-      "block_order": ["item1", "item2", "item3"],
+      "block_order": [
+        "item1",
+        "item2",
+        "item3"
+      ],
       "settings": {
         "eyebrow": "You know the signs",
         "heading": "Recognizing anxiety in your dog.",
@@ -39,11 +92,33 @@
     "helps": {
       "type": "how-it-helps",
       "blocks": {
-        "point1": { "type": "point", "settings": { "title": "Gentle, constant pressure", "text": "A snug wrap-around fit that stays with them, so the comfort doesn't stop when your hands do." } },
-        "point2": { "type": "point", "settings": { "title": "Soft, light, breathable", "text": "Made to be worn through a whole storm without overheating or weighing them down." } },
-        "point3": { "type": "point", "settings": { "title": "On in seconds", "text": "An adjustable hook-and-loop closure means you can get it on before the first thunderclap." } }
+        "point1": {
+          "type": "point",
+          "settings": {
+            "title": "Gentle, constant pressure",
+            "text": "A snug wrap-around fit that stays with them, so the comfort doesn't stop when your hands do."
+          }
+        },
+        "point2": {
+          "type": "point",
+          "settings": {
+            "title": "Soft, light, breathable",
+            "text": "Made to be worn through a whole storm without overheating or weighing them down."
+          }
+        },
+        "point3": {
+          "type": "point",
+          "settings": {
+            "title": "On in seconds",
+            "text": "An adjustable hook-and-loop closure means you can get it on before the first thunderclap."
+          }
+        }
       },
-      "block_order": ["point1", "point2", "point3"],
+      "block_order": [
+        "point1",
+        "point2",
+        "point3"
+      ],
       "settings": {
         "eyebrow": "How it helps",
         "heading": "How gentle, constant pressure helps.",
@@ -53,12 +128,46 @@
     "trust": {
       "type": "trust-strip",
       "blocks": {
-        "t1": { "type": "item", "settings": { "icon": "truck", "title": "Free shipping", "text": "On every order, no minimum" } },
-        "t2": { "type": "item", "settings": { "icon": "returns", "title": "30-day returns", "text": "Used or not — send it back" } },
-        "t3": { "type": "item", "settings": { "icon": "pin-dot", "title": "Made to comfort", "text": "Gentle, wrap-around pressure" } },
-        "t4": { "type": "item", "settings": { "icon": "shirt", "title": "Sizes XS–XL", "text": "Fitted for every dog" } }
+        "t1": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Free shipping",
+            "text": "On every order, no minimum"
+          }
+        },
+        "t2": {
+          "type": "item",
+          "settings": {
+            "icon": "returns",
+            "title": "30-day returns",
+            "text": "Used or not — send it back"
+          }
+        },
+        "t3": {
+          "type": "item",
+          "settings": {
+            "icon": "pin-dot",
+            "title": "Made to comfort",
+            "text": "Gentle, wrap-around pressure"
+          }
+        },
+        "t4": {
+          "type": "item",
+          "settings": {
+            "icon": "shirt",
+            "title": "Sizes XS–XL",
+            "text": "Fitted for every dog"
+          }
+        }
       },
-      "block_order": ["t1", "t2", "t3", "t4"]
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
+      "settings": {}
     },
     "highlight": {
       "type": "product-highlight",
@@ -73,11 +182,36 @@
     "homereviews": {
       "type": "reviews",
       "blocks": {
-        "rev1": { "type": "review", "settings": { "stars": 5, "quote": "\"First thunderstorm with it on, and she actually lay down instead of shaking in the bathroom. That was everything.\"", "byline": "Placeholder — replace with real review" } },
-        "rev2": { "type": "review", "settings": { "stars": 5, "quote": "\"We put it on before we leave now. The neighbors say the barking has really settled down.\"", "byline": "Placeholder — replace with real review" } },
-        "rev3": { "type": "review", "settings": { "stars": 5, "quote": "\"Easy to get on a squirmy dog, and he doesn't try to wriggle out of it. That alone was worth it.\"", "byline": "Placeholder — replace with real review" } }
+        "rev1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "\"First thunderstorm with it on, and she actually lay down instead of shaking in the bathroom. That was everything.\"",
+            "byline": "Placeholder — replace with real review"
+          }
+        },
+        "rev2": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "\"We put it on before we leave now. The neighbors say the barking has really settled down.\"",
+            "byline": "Placeholder — replace with real review"
+          }
+        },
+        "rev3": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "\"Easy to get on a squirmy dog, and he doesn't try to wriggle out of it. That alone was worth it.\"",
+            "byline": "Placeholder — replace with real review"
+          }
+        }
       },
-      "block_order": ["rev1", "rev2", "rev3"],
+      "block_order": [
+        "rev1",
+        "rev2",
+        "rev3"
+      ],
       "settings": {
         "heading": "What customers are saying.",
         "tag": "Placeholder reviews"
@@ -93,5 +227,13 @@
       }
     }
   },
-  "order": ["hero", "storm", "helps", "trust", "highlight", "homereviews", "cta"]
+  "order": [
+    "hero",
+    "storm",
+    "helps",
+    "trust",
+    "highlight",
+    "homereviews",
+    "cta"
+  ]
 }

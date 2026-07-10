@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -20,11 +29,37 @@
     "values": {
       "type": "about-values",
       "blocks": {
-        "v1": { "type": "value", "settings": { "icon": "pin", "title": "Honest by default", "text": "We say what the vest can do and what it can't. Gentle pressure helps many dogs — it isn't a cure, and we won't pretend otherwise." } },
-        "v2": { "type": "value", "settings": { "icon": "basket", "title": "One thing, done well", "text": "We're not trying to sell you a catalog. We're trying to get one product genuinely right." } },
-        "v3": { "type": "value", "settings": { "icon": "returns", "title": "Easy to undo", "text": "Free shipping and a 30-day return window, because trying something for an anxious dog shouldn't feel risky." } }
+        "v1": {
+          "type": "value",
+          "settings": {
+            "icon": "pin",
+            "title": "Honest by default",
+            "text": "We say what the vest can do and what it can't. Gentle pressure helps many dogs — it isn't a cure, and we won't pretend otherwise."
+          }
+        },
+        "v2": {
+          "type": "value",
+          "settings": {
+            "icon": "basket",
+            "title": "One thing, done well",
+            "text": "We're not trying to sell you a catalog. We're trying to get one product genuinely right."
+          }
+        },
+        "v3": {
+          "type": "value",
+          "settings": {
+            "icon": "returns",
+            "title": "Easy to undo",
+            "text": "Free shipping and a 30-day return window, because trying something for an anxious dog shouldn't feel risky."
+          }
+        }
       },
-      "block_order": ["v1", "v2", "v3"]
+      "block_order": [
+        "v1",
+        "v2",
+        "v3"
+      ],
+      "settings": {}
     },
     "cta": {
       "type": "cta-band",
@@ -36,5 +71,10 @@
       }
     }
   },
-  "order": ["hero", "story", "values", "cta"]
+  "order": [
+    "hero",
+    "story",
+    "values",
+    "cta"
+  ]
 }
