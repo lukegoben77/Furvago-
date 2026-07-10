@@ -52,9 +52,24 @@
               {%- if opt_name_down == 'size' -%}<a id="openSizeGuide">Size guide</a>{%- endif -%}
             </div>
             {%- if opt_name_down == 'color' or opt_name_down == 'colour' -%}
+              {%- assign opt_index = option.position | minus: 1 -%}
               <div class="swatches" id="swatches">
                 {%- for value in option.values -%}
-                  <button type="button" class="swatch{% if value == option.selected_value %} active{% endif %}" data-option-button data-option-pos="{{ forloop.parentloop.index }}" data-value="{{ value | escape }}" data-color="{{ value | handleize }}" aria-label="{{ value | escape }}"></button>
+                  {%- assign swatch_image = blank -%}
+                  {%- for v in product.variants -%}
+                    {%- assign v_color = v.options[opt_index] -%}
+                    {%- if swatch_image == blank and v_color == value and v.featured_image -%}
+                      {%- assign swatch_image = v.featured_image -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                  {%- assign swatch_key = value | handleize -%}
+                  {%- case swatch_key -%}
+                    {%- when 'charcoal', 'dark-gray', 'dark-grey' -%}{%- assign swatch_fallback = '#3a3a3c' -%}
+                    {%- when 'rose', 'magenta' -%}{%- assign swatch_fallback = '#a83b63' -%}
+                    {%- when 'navy' -%}{%- assign swatch_fallback = '#2f3a63' -%}
+                    {%- else -%}{%- assign swatch_fallback = value | downcase -%}
+                  {%- endcase -%}
+                  <button type="button" class="swatch{% if value == option.selected_value %} active{% endif %}" data-option-button data-option-pos="{{ forloop.parentloop.index }}" data-value="{{ value | escape }}" data-color="{{ swatch_key }}" aria-label="{{ value | escape }}"{% if swatch_image != blank %} style="background-image:url('{{ swatch_image | image_url: width: 80 }}');"{% else %} style="background-color:{{ swatch_fallback }};"{% endif %}></button>
                 {%- endfor -%}
               </div>
             {%- else -%}
