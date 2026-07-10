@@ -135,6 +135,7 @@
         "card1": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/hf_20260710_202815_fa335075-2127-4be9-9861-d163befa6b36.png",
             "default_asset": "none",
             "image_position": "",
             "image_zoom": 1,
@@ -148,6 +149,7 @@
         "card2": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/hf_20260710_202819_d3438af9-b0de-49be-a980-92316de9b750.png",
             "default_asset": "none",
             "image_position": "",
             "image_zoom": 1,
@@ -161,6 +163,7 @@
         "card3": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/hf_20260710_202823_9d58343e-e4be-4974-86e8-91213012a350.png",
             "default_asset": "none",
             "image_position": "",
             "image_zoom": 1,
@@ -547,7 +550,7 @@
         "rev3"
       ],
       "settings": {
-        "heading": "Customer reviews.",
+        "heading": "Customer Reviews",
         "tag": "Placeholder reviews — replace before launch",
         "note": ""
       }
@@ -615,7 +618,7 @@
         "q7"
       ],
       "settings": {
-        "heading": "Frequently Asked Questions.",
+        "heading": "Frequently Asked Questions",
         "note": "The ones we actually get, most weeks.",
         "flush_top": false
       }
