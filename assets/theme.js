@@ -11,20 +11,43 @@
     return format.replace(/\{\{\s*amount[a-z_]*\s*\}\}/, value);
   }
 
+  /* ---------- SCROLL LOCK ----------
+     iOS Safari can leave a stale repaint behind the status bar/notch after a
+     fixed full-screen overlay (menu, cart drawer) closes if body is locked
+     with overflow:hidden alone. Pinning body's position while locked (and
+     restoring scroll position after) avoids it. */
+  var scrollLockY = 0;
+  function lockScroll(){
+    scrollLockY = window.scrollY || window.pageYOffset;
+    document.body.style.position = 'fixed';
+    document.body.style.top = -scrollLockY + 'px';
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.overflow = 'hidden';
+  }
+  function unlockScroll(){
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.overflow = '';
+    window.scrollTo(0, scrollLockY);
+  }
+
   /* ---------- MOBILE MENU ---------- */
   var menuBtn = document.getElementById('menuBtn'), mobileMenu = document.getElementById('mobileMenu');
   function closeMenu(){
     if(!menuBtn) return;
     menuBtn.setAttribute('aria-expanded','false');
     mobileMenu.classList.remove('is-open');
-    document.body.style.overflow='';
+    unlockScroll();
   }
   if(menuBtn){
     menuBtn.addEventListener('click', function(){
       var open = menuBtn.getAttribute('aria-expanded')==='true';
       menuBtn.setAttribute('aria-expanded', String(!open));
       mobileMenu.classList.toggle('is-open', !open);
-      document.body.style.overflow = !open ? 'hidden' : '';
+      if(!open){ lockScroll(); } else { unlockScroll(); }
     });
   }
 
@@ -146,8 +169,8 @@
 
   /* ---------- CART (Shopify AJAX API) ---------- */
   var scrim = document.getElementById('scrim'), drawer = document.getElementById('cartDrawer');
-  function openCart(){ if(!drawer) return; scrim.classList.add('show'); drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
-  function closeCart(){ if(!drawer) return; scrim.classList.remove('show'); drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  function openCart(){ if(!drawer) return; scrim.classList.add('show'); drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false'); lockScroll(); }
+  function closeCart(){ if(!drawer) return; scrim.classList.remove('show'); drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); unlockScroll(); }
   var cartBtn = document.getElementById('cartBtn');
   if(cartBtn) cartBtn.addEventListener('click', openCart);
   var cartClose = document.getElementById('cartClose');
