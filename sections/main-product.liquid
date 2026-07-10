@@ -24,7 +24,7 @@
     </div>
 
     <div class="pdp-info">
-      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
       <h1>{{ product.title }}</h1>
       {%- if section.settings.hook != blank -%}
         <p class="pdp-hook">{{ section.settings.hook }}</p>

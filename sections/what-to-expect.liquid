@@ -1,7 +1,7 @@
 <section>
   <div class="wrap expect-grid">
     <div>
-      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
       <h2 style="margin-top:0.6rem;">{{ section.settings.heading }}</h2>
       <p style="color:var(--ink-soft);margin-top:1.1rem;font-size:1.03rem;line-height:1.6;">{{ section.settings.intro }}</p>
     </div>

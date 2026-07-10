@@ -1,7 +1,7 @@
 <section>
   <div class="wrap help-grid howworks-grid">
     <div class="howworks-heading">
-      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
       <h2 style="margin-top:0.6rem;">{{ section.settings.heading }}</h2>
     </div>
     <div class="howworks-visual">

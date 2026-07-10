@@ -1,6 +1,6 @@
 <section>
   <div class="cta-band reveal" style="text-align:left;">
-    <p class="eyebrow" style="margin-bottom:0.4rem;">{{ section.settings.eyebrow }}</p>
+    {%- if section.settings.eyebrow != blank -%}<p class="eyebrow" style="margin-bottom:0.4rem;">{{ section.settings.eyebrow }}</p>{%- endif -%}
     <h2 style="margin-bottom:2rem;">{{ section.settings.heading }}</h2>
     <div class="step-grid" data-carousel="dots-{{ section.id }}">
       {%- for block in section.blocks -%}
