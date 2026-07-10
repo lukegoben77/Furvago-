@@ -221,6 +221,7 @@
         "feat4": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/1f502946-7267-4410-9ac3-0aa8e9df0fcd.png",
             "default_asset": "product-black",
             "image_position": "40% 55%",
             "image_zoom": 1,
