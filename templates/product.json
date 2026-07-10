@@ -324,6 +324,7 @@
         "stage3": {
           "type": "stage",
           "settings": {
+            "image": "shopify://shop_images/a301266e-51a0-4526-acc9-c728c3f43b7d.png",
             "tone": "tone-c",
             "motif": "heart",
             "title": "Choosing to lie near you",
