@@ -313,6 +313,7 @@
         "stage2": {
           "type": "stage",
           "settings": {
+            "image": "shopify://shop_images/d24ce055-6c74-426c-9392-ede435769115.png",
             "tone": "tone-b",
             "motif": "calm-face",
             "title": "Breathing that slows",
