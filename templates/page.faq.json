@@ -4,7 +4,7 @@
       "type": "page-hero",
       "settings": {
         "eyebrow": "Questions & answers",
-        "heading": "The things owners actually ask us.",
+        "heading": "Frequently asked questions.",
         "lead": "Honest answers about how the vest works, sizing, and getting it to your door."
       }
     },
@@ -31,7 +31,7 @@
       "type": "cta-band",
       "settings": {
         "eyebrow": "Still wondering?",
-        "heading": "Ask us anything.",
+        "heading": "Still have questions?",
         "body": "If your question isn't here, send it our way — we read every message.",
         "button_label": "Contact us"
       }

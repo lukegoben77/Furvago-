@@ -4,14 +4,14 @@
       "type": "page-hero",
       "settings": {
         "eyebrow": "Our story",
-        "heading": "We built this on a bad thunderstorm night.",
+        "heading": "Why we created Furvago.",
         "lead": "Furvago started with one dog, one storm, and the awful feeling of not being able to help."
       }
     },
     "story": {
       "type": "about-story",
       "settings": {
-        "heading": "The night that started it.",
+        "heading": "Our story.",
         "body": "<p>There's a specific kind of helplessness in watching your dog come apart during a storm — the shaking, the panting, the way they press into you like you're the only solid thing left. You hold them, and it helps a little, until you have to let go.</p><p>We went looking for something that could keep holding them when we couldn't. What we found was the simple, well-understood idea that gentle, steady pressure can calm an anxious body. So we set out to make a vest around it — one that fits properly, goes on easily, and is soft enough to wear through a whole bad night.</p><p>Furvago is a small brand with a narrow focus: help dogs feel safe when the world feels like too much. That's the whole mission. No miracle claims — just a thoughtful thing that has helped a lot of dogs settle.</p>",
         "mood_quote": "Some nights, they just need to be held a little longer than you can manage.",
         "mood_sub": "Why Furvago exists"
@@ -30,7 +30,7 @@
       "type": "cta-band",
       "settings": {
         "eyebrow": "Ready when they need it",
-        "heading": "Help them through the next one.",
+        "heading": "Help your dog through the next storm.",
         "body": "The Furvago calming vest, in three colors and five sizes.",
         "button_label": "Shop the vest"
       }

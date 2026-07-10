@@ -4,7 +4,7 @@
       "type": "page-hero",
       "settings": {
         "eyebrow": "Contact",
-        "heading": "Tell us about your dog.",
+        "heading": "Get in touch.",
         "lead": "Questions about sizing, or just want to tell us your storm-night story? We read every message."
       }
     },
@@ -17,7 +17,7 @@
       },
       "block_order": ["m1", "m2", "m3"],
       "settings": {
-        "heading": "We're a small team, and a real person reads this.",
+        "heading": "Send us a message.",
         "body": "Whether you're not sure which size to choose or you want to tell us how the vest worked for your dog, write to us. We usually reply within a couple of days.",
         "button_label": "Send message"
       }
