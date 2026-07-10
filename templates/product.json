@@ -207,9 +207,10 @@
         "feat3": {
           "type": "card",
           "settings": {
-            "default_asset": "product-pink",
+            "image": "shopify://shop_images/0106702c-eb7f-4663-bb06-3908625e0d3f.png",
+            "default_asset": "none",
             "image_position": "78% 38%",
-            "image_zoom": 1.6,
+            "image_zoom": 1,
             "tone": "tone-a",
             "motif": "cloud-rain",
             "title": "Soft, light, breathable fabric",
