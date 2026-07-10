@@ -84,8 +84,8 @@
         "acc4"
       ],
       "settings": {
-        "eyebrow": "",
-        "hook": "The first time you put it on, watch their shoulders drop.",
+        "eyebrow": "Furvago — the calming vest",
+        "hook": "The first time you put it on, watch the pacing stop.",
         "subhead": "Built for the exact moments that undo them — the thunder rolling in, the fireworks starting, the click of the door as you leave."
       }
     },
@@ -120,7 +120,7 @@
         "sign3"
       ],
       "settings": {
-        "eyebrow": "",
+        "eyebrow": "Before we made this",
         "heading": "You know the exact moment it starts.",
         "body": "<p>The barometric pressure drops, or the first firework cracks, or you just pick up your keys — and something in your dog changes. The pacing starts. The panting. Some dogs try to fold themselves into the smallest space they can find: behind the toilet, under the bed, in the shower stall. Others chew at a doorframe or claw at a crate trying to get to you.</p><p>You call their name and it doesn't quite land. You sit on the floor with them and it helps, some — until you have to get up. That's the specific kind of helpless this vest was made for. Not to fix the storm. Just to give your dog something steady to lean on when you can't be the one holding them.</p>",
         "prose_style": "pdp",
@@ -255,7 +255,7 @@
     "howworks": {
       "type": "how-it-works",
       "settings": {
-        "eyebrow": "",
+        "eyebrow": "The mechanism, honestly explained",
         "heading": "Why gentle pressure helps at all.",
         "body": "<p>The idea behind Furvago isn't new or complicated: steady, even pressure has a long, well-understood history of helping calm an anxious body — it's the same principle behind swaddling a newborn or wrapping up in a weighted blanket. The vest wraps snugly around your dog's chest and torso and stays there, applying that same gentle, constant pressure for as long as it's on.</p><p>Many dog owners report their dogs settle faster, pace less, and seem more comfortable with it on — especially during storms, fireworks, and time alone. It isn't a sedative, and it isn't a cure. We haven't run a clinical trial and we won't pretend we have. For some dogs, it's a small help. For a lot of dogs, it becomes part of the routine on the nights that are hardest.</p><p>If your dog's anxiety is severe, or you're not seeing any difference after several tries, that's worth a conversation with your vet — the vest is meant to sit alongside good veterinary care, not replace it.</p>"
       }
@@ -307,7 +307,7 @@
         "step4"
       ],
       "settings": {
-        "eyebrow": "",
+        "eyebrow": "In practice",
         "heading": "How to put it on — and when.",
         "closing": "Three minutes of prep, and they're ready for whatever's coming."
       }
