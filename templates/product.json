@@ -302,6 +302,7 @@
         "stage1": {
           "type": "stage",
           "settings": {
+            "image": "shopify://shop_images/7e4afa7b-3d6c-499a-a4ea-5267b958bd17.png",
             "tone": "tone-a",
             "motif": "pin",
             "title": "A tail that drops and softens",
