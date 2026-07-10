@@ -193,6 +193,7 @@
         "feat1": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/5f28497b-f18b-40a5-bd54-04d970ca7f35.png",
             "default_asset": "product-navy",
             "image_position": "50% 62%",
             "image_zoom": 1,
@@ -201,19 +202,6 @@
             "title": "Gentle, constant pressure",
             "text": "Modeled on the same swaddle-and-weighted-blanket logic that calms a fussy newborn: even, snug pressure around the torso — not squeezing, not loose enough to slide. It stays where you put it, so the comfort doesn't stop when your hands do.",
             "pill": "Always-on comfort"
-          }
-        },
-        "feat2": {
-          "type": "card",
-          "settings": {
-            "default_asset": "product-navy",
-            "image_position": "18% 40%",
-            "image_zoom": 1.8,
-            "tone": "tone-a",
-            "motif": "cloud-rain",
-            "title": "Adjustable hook-and-loop closure",
-            "text": "Wide closure points let you dial in a fit that's snug but never restrictive, even on a dog who won't hold still for it. Once it's fastened, it stays fastened — no wriggling loose mid-storm.",
-            "pill": "Fits every dog"
           }
         },
         "feat3": {
@@ -245,7 +233,6 @@
       },
       "block_order": [
         "feat1",
-        "feat2",
         "feat3",
         "feat4"
       ],
