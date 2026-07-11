@@ -135,7 +135,7 @@
         "card1": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/63bd6856-8209-4bcd-a40b-1009e26fb987.png",
+            "image": "shopify://shop_images/5d5b95b7-a5f6-4844-a658-2c7caec8bd3e.png",
             "default_asset": "none",
             "image_position": "",
             "image_zoom": 1,
@@ -149,7 +149,7 @@
         "card2": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/af23c47d-20a6-433e-a953-b8f978df97b4.png",
+            "image": "shopify://shop_images/5d5b95b7-a5f6-4844-a658-2c7caec8bd3e.png",
             "default_asset": "none",
             "image_position": "",
             "image_zoom": 1,
