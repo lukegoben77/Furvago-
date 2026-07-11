@@ -5,7 +5,13 @@
     <div class="step-grid" data-carousel="dots-{{ section.id }}">
       {%- for block in section.blocks -%}
         <div class="step-card" {{ block.shopify_attributes }}>
-          <div class="step-visual">{% render 'icon', name: block.settings.icon, width: '1.7' %}</div>
+          <div class="step-visual">
+            {%- if block.settings.image -%}
+              <img src="{{ block.settings.image | image_url: width: 700 }}" alt="{{ block.settings.image.alt | default: block.settings.title | escape }}" loading="lazy" />
+            {%- else -%}
+              {% render 'icon', name: block.settings.icon, width: '1.7' %}
+            {%- endif -%}
+          </div>
           <div class="card-copy">
             <span class="step-num">{{ forloop.index }}</span>
             <h3>{{ block.settings.title }}</h3>
@@ -35,7 +41,8 @@
       "type": "step",
       "name": "Step",
       "settings": [
-        { "type": "select", "id": "icon", "label": "Icon", "options": [
+        { "type": "image_picker", "id": "image", "label": "Photo (replaces the icon below if set)" },
+        { "type": "select", "id": "icon", "label": "Icon (used if no photo is chosen)", "options": [
           { "value": "head-slide", "label": "Over the head" },
           { "value": "clasp", "label": "Clasp" },
           { "value": "clock", "label": "Clock" },
