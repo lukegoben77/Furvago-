@@ -269,6 +269,7 @@
         "step3": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/6a59789e-8282-44a9-acc3-e55740bae380.png",
             "icon": "clock",
             "title": "Time it right",
             "text": "When you can, put it on 15–20 minutes before a trigger you know is coming.",
