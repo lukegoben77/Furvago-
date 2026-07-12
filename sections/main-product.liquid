@@ -37,8 +37,8 @@
         <del id="priceCompare"{% unless has_compare %} style="display:none;"{% endunless %}>{{ current_variant.compare_at_price | money }}</del>
         <span class="save" id="priceSave"{% unless has_compare %} style="display:none;"{% endunless %}>
           {%- if has_compare -%}
-            {%- assign save_pct = current_variant.compare_at_price | minus: current_variant.price | times: 100 | divided_by: current_variant.compare_at_price -%}
-            Save {{ save_pct }}%
+            {%- assign save_amount = current_variant.compare_at_price | minus: current_variant.price -%}
+            Save {{ save_amount | money }}
           {%- endif -%}
         </span>
       </div>

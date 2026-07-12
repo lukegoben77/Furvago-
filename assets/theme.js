@@ -106,8 +106,7 @@
       if(saveEl){
         saveEl.style.display = hasCompare ? '' : 'none';
         if(hasCompare){
-          var pct = Math.round((1 - currentVariant.price / currentVariant.compare_at_price) * 100);
-          saveEl.textContent = 'Save ' + pct + '%';
+          saveEl.textContent = 'Save ' + money(currentVariant.compare_at_price - currentVariant.price);
         }
       }
       if(atc){
