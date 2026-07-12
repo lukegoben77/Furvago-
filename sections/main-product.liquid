@@ -63,13 +63,15 @@
                     {%- endif -%}
                   {%- endfor -%}
                   {%- assign swatch_key = value | handleize -%}
+                  {%- assign swatch_position = 'center' -%}
                   {%- case swatch_key -%}
                     {%- when 'charcoal', 'dark-gray', 'dark-grey' -%}{%- assign swatch_fallback = '#3a3a3c' -%}
                     {%- when 'rose', 'magenta' -%}{%- assign swatch_fallback = '#a83b63' -%}
                     {%- when 'navy' -%}{%- assign swatch_fallback = '#2f3a63' -%}
+                    {%- when 'gray', 'grey' -%}{%- assign swatch_fallback = value | downcase -%}{%- assign swatch_position = 'center 75%' -%}
                     {%- else -%}{%- assign swatch_fallback = value | downcase -%}
                   {%- endcase -%}
-                  <button type="button" class="swatch{% if value == option.selected_value %} active{% endif %}" data-option-button data-option-pos="{{ forloop.parentloop.index }}" data-value="{{ value | escape }}" data-color="{{ swatch_key }}" aria-label="{{ value | escape }}"{% if swatch_image != blank %} style="background-image:url('{{ swatch_image | image_url: width: 80 }}');"{% else %} style="background-color:{{ swatch_fallback }};"{% endif %}></button>
+                  <button type="button" class="swatch{% if value == option.selected_value %} active{% endif %}" data-option-button data-option-pos="{{ forloop.parentloop.index }}" data-value="{{ value | escape }}" data-color="{{ swatch_key }}" aria-label="{{ value | escape }}"{% if swatch_image != blank %} style="background-image:url('{{ swatch_image | image_url: width: 120 }}');background-position:{{ swatch_position }};"{% else %} style="background-color:{{ swatch_fallback }};"{% endif %}></button>
                 {%- endfor -%}
               </div>
             {%- else -%}
