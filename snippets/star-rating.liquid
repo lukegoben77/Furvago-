@@ -1,0 +1,19 @@
+{%- comment -%}
+  Renders a 5-star row proportionally filled to `rating` (e.g. 4.9 fills
+  98% of the star row, leaving a sliver of the 5th star unfilled) plus
+  the numeric value. Usage: {% render 'star-rating', rating: section.settings.rating_value %}
+{%- endcomment -%}
+{%- assign rating_pct = rating | times: 20 -%}
+{%- if rating_pct > 100 -%}{%- assign rating_pct = 100 -%}{%- endif -%}
+{%- if rating_pct < 0 -%}{%- assign rating_pct = 0 -%}{%- endif -%}
+<div class="star-rating">
+  <span class="star-rating-stars" aria-label="{{ rating }} out of 5 stars">
+    <span class="star-row star-row-empty" aria-hidden="true">
+      {%- for i in (1..5) -%}<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 17l-6.2 3.6 1.6-6.7L2.2 8.9l6.9-.6z"/></svg>{%- endfor -%}
+    </span>
+    <span class="star-row star-row-filled" aria-hidden="true" style="width:{{ rating_pct }}%;">
+      {%- for i in (1..5) -%}<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 17l-6.2 3.6 1.6-6.7L2.2 8.9l6.9-.6z"/></svg>{%- endfor -%}
+    </span>
+  </span>
+  <span class="star-rating-value">{{ rating }}</span>
+</div>
