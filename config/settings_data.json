@@ -62,7 +62,7 @@
             "settings": {
               "column": "col1",
               "label": "The Vest",
-              "link": ""
+              "link": "shopify://products/furvago-calming-vest"
             }
           },
           "footer-1": {
@@ -70,7 +70,7 @@
             "settings": {
               "column": "col1",
               "label": "Sizes & colors",
-              "link": ""
+              "link": "shopify://products/furvago-calming-vest"
             }
           },
           "footer-2": {
@@ -78,7 +78,7 @@
             "settings": {
               "column": "col2",
               "label": "FAQ",
-              "link": ""
+              "link": "shopify://pages/faq"
             }
           },
           "footer-3": {
@@ -86,7 +86,7 @@
             "settings": {
               "column": "col2",
               "label": "Shipping & Returns",
-              "link": ""
+              "link": "shopify://pages/shipping"
             }
           },
           "footer-4": {
@@ -94,7 +94,7 @@
             "settings": {
               "column": "col2",
               "label": "Contact",
-              "link": ""
+              "link": "shopify://pages/contact"
             }
           },
           "footer-5": {
@@ -102,11 +102,12 @@
             "settings": {
               "column": "col2",
               "label": "Our Story",
-              "link": ""
+              "link": "shopify://pages/about"
             }
           },
           "footer-6": {
             "type": "social",
+            "disabled": true,
             "settings": {
               "label": "Instagram",
               "link": ""
@@ -114,6 +115,7 @@
           },
           "footer-7": {
             "type": "social",
+            "disabled": true,
             "settings": {
               "label": "TikTok",
               "link": ""
