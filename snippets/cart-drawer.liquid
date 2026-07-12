@@ -1,8 +1,20 @@
 {%- assign cart_product = all_products[settings.product_handle] -%}
+{%- assign cvcd_any = false -%}
 <script type="application/json" id="CartVariantCompareData">
 {
   {%- for v in cart_product.variants -%}
-    "{{ v.id }}": {{ v.compare_at_price | default: 0 }}{% unless forloop.last %},{% endunless %}
+    {%- if cvcd_any %},{% endif -%}"{{ v.id }}": {{ v.compare_at_price | default: 0 }}
+    {%- assign cvcd_any = true -%}
+  {%- endfor -%}
+  {%- if product -%}
+    {%- for v in product.variants -%}
+      {%- if cvcd_any %},{% endif -%}"{{ v.id }}": {{ v.compare_at_price | default: 0 }}
+      {%- assign cvcd_any = true -%}
+    {%- endfor -%}
+  {%- endif -%}
+  {%- for item in cart.items -%}
+    {%- if cvcd_any %},{% endif -%}"{{ item.variant_id }}": {{ item.variant.compare_at_price | default: 0 }}
+    {%- assign cvcd_any = true -%}
   {%- endfor -%}
 }
 </script>
