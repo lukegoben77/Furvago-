@@ -68,7 +68,7 @@
                     {%- when 'charcoal', 'dark-gray', 'dark-grey' -%}{%- assign swatch_fallback = '#3a3a3c' -%}
                     {%- when 'rose', 'magenta' -%}{%- assign swatch_fallback = '#a83b63' -%}
                     {%- when 'navy' -%}{%- assign swatch_fallback = '#2f3a63' -%}
-                    {%- when 'gray', 'grey' -%}{%- assign swatch_fallback = value | downcase -%}{%- assign swatch_position = 'center 75%' -%}
+                    {%- when 'gray', 'grey' -%}{%- assign swatch_fallback = value | downcase -%}{%- assign swatch_position = section.settings.gray_swatch_position | default: 'center 55%' -%}
                     {%- else -%}{%- assign swatch_fallback = value | downcase -%}
                   {%- endcase -%}
                   <button type="button" class="swatch{% if value == option.selected_value %} active{% endif %}" data-option-button data-option-pos="{{ forloop.parentloop.index }}" data-value="{{ value | escape }}" data-color="{{ swatch_key }}" aria-label="{{ value | escape }}"{% if swatch_image != blank %} style="background-image:url('{{ swatch_image | image_url: width: 120 }}');background-position:{{ swatch_position }};"{% else %} style="background-color:{{ swatch_fallback }};"{% endif %}></button>
@@ -130,7 +130,8 @@
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Furvago — the calming vest" },
     { "type": "text", "id": "hook", "label": "Hook line (italic)", "default": "The first time you put it on, watch their shoulders drop." },
-    { "type": "textarea", "id": "subhead", "label": "Subhead", "default": "Built for the exact moments that undo them — the thunder rolling in, the fireworks starting, the click of the door as you leave." }
+    { "type": "textarea", "id": "subhead", "label": "Subhead", "default": "Built for the exact moments that undo them — the thunder rolling in, the fireworks starting, the click of the door as you leave." },
+    { "type": "text", "id": "gray_swatch_position", "label": "Gray swatch photo focal point (CSS background-position)", "info": "Nudge this if the Gray color swatch crops awkwardly. Lower percentage moves the visible crop up (toward the head), higher moves it down (toward the vest/body). e.g. \"center 40%\" or \"center 65%\".", "default": "center 55%" }
   ],
   "blocks": [
     {
