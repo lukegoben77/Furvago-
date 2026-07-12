@@ -85,8 +85,11 @@
       ],
       "settings": {
         "eyebrow": "",
+        "show_rating": true,
+        "rating_value": "4.9",
         "hook": "The first time you put it on, watch the pacing stop.",
-        "subhead": "Built for the exact moments that undo them — the thunder rolling in, the fireworks starting, the click of the door as you leave."
+        "subhead": "Built for the exact moments that undo them — the thunder rolling in, the fireworks starting, the click of the door as you leave.",
+        "gray_swatch_position": "center 55%"
       }
     },
     "problem": {
@@ -261,6 +264,7 @@
         "step2": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/6a59789e-8282-44a9-acc3-e55740bae380.png",
             "icon": "clasp",
             "title": "Wrap and fasten",
             "text": "Snug but not tight — you should be able to slip two flat fingers underneath.",
@@ -537,6 +541,8 @@
       ],
       "settings": {
         "heading": "Customer Reviews",
+        "show_rating": true,
+        "rating_value": "4.9",
         "tag": "Placeholder reviews — replace before launch",
         "note": ""
       }
