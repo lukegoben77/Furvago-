@@ -25,7 +25,6 @@
 
     <div class="pdp-info">
       {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
-      <h1>{{ product.title }}</h1>
       {%- if section.settings.show_rating -%}
         <div class="pdp-rating">
           <span class="pdp-stars" aria-hidden="true">
@@ -36,6 +35,7 @@
           <span class="pdp-rating-value">{{ section.settings.rating_value }}</span>
         </div>
       {%- endif -%}
+      <h1>{{ product.title }}</h1>
       {%- if section.settings.hook != blank -%}
         <p class="pdp-hook">{{ section.settings.hook }}</p>
       {%- endif -%}

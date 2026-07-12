@@ -1,7 +1,19 @@
 <section>
   <div class="wrap">
     <div class="section-head reveal">
-      <h2>{{ section.settings.heading }}</h2>
+      <div class="reviews-heading">
+        {%- if section.settings.show_rating -%}
+          <div class="reviews-rating">
+            <span class="reviews-stars" aria-hidden="true">
+              {%- for i in (1..5) -%}
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 17l-6.2 3.6 1.6-6.7L2.2 8.9l6.9-.6z"/></svg>
+              {%- endfor -%}
+            </span>
+            <span class="reviews-rating-value">{{ section.settings.rating_value }}</span>
+          </div>
+        {%- endif -%}
+        <h2>{{ section.settings.heading }}</h2>
+      </div>
       <p class="note">{% if section.settings.tag != blank %}<span class="placeholder-tag">{{ section.settings.tag }}</span>{% else %}{{ section.settings.note }}{% endif %}</p>
     </div>
     <div class="review-strip reveal">
@@ -25,6 +37,8 @@
   "name": "Reviews",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "What early owners say." },
+    { "type": "checkbox", "id": "show_rating", "label": "Show star rating above the heading", "default": true },
+    { "type": "text", "id": "rating_value", "label": "Rating value", "default": "4.9" },
     { "type": "text", "id": "tag", "label": "Placeholder tag (clear when reviews are real)", "default": "Placeholder reviews — replace before launch" },
     { "type": "text", "id": "note", "label": "Note (shown when tag is empty)" }
   ],

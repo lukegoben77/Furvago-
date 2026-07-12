@@ -203,6 +203,11 @@
   .highlight-price .flag { font-family:var(--font-body); font-weight:600; font-size:0.66rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--accent); vertical-align:middle; margin-left:0.5rem; }
 
   /* ---------- REVIEWS ---------- */
+  .reviews-heading { display:flex; flex-direction:column; }
+  .reviews-rating { display:flex; align-items:center; gap:0.7rem; margin-bottom:0.9rem; }
+  .reviews-stars { display:flex; gap:0.2rem; color:var(--accent); }
+  .reviews-stars svg { width:1.9rem; height:1.9rem; }
+  .reviews-rating-value { font-weight:700; color:var(--ink); font-size:1.4rem; }
   .review-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
   .review-card { border:1px solid var(--line); border-radius:18px; padding:1.7rem; background:var(--card); display:flex; flex-direction:column; gap:1rem; }
   .review-stars { display:flex; gap:0.15rem; color:var(--accent); }
@@ -233,10 +238,10 @@
   .pdp-info .eyebrow { margin-bottom:0.9rem; }
   .pdp-info h1 { font-size:clamp(2.4rem, 1.8rem + 1.8vw, 3.6rem); font-weight:800; letter-spacing:-0.03em; }
   .pdp-hook { font-size:var(--fs-lead); font-weight:500; color:var(--ink); margin-top:1rem; line-height:1.5; font-style:italic; }
-  .pdp-rating { display:flex; align-items:center; gap:0.5rem; margin-top:0.7rem; }
-  .pdp-stars { display:flex; gap:0.15rem; color:var(--rose); }
-  .pdp-stars svg { width:1.05rem; height:1.05rem; }
-  .pdp-rating-value { font-weight:600; color:var(--ink-soft); font-size:0.92rem; }
+  .pdp-rating { display:flex; align-items:center; gap:0.7rem; margin-bottom:0.9rem; }
+  .pdp-stars { display:flex; gap:0.2rem; color:var(--accent); }
+  .pdp-stars svg { width:1.9rem; height:1.9rem; }
+  .pdp-rating-value { font-weight:700; color:var(--ink); font-size:1.4rem; }
   .pdp-price { font-family:var(--font-body); font-weight:700; font-size:clamp(2.2rem,1.7rem + 1.4vw,2.8rem); margin:1.3rem 0; letter-spacing:-0.01em; display:flex; align-items:center; flex-wrap:wrap; gap:0.6rem; }
   .pdp-price del { font-family:var(--font-body); font-weight:400; font-size:1.3rem; color:var(--ink-soft); text-decoration-color:var(--accent); }
   .pdp-price .flag, .pdp-price .save { font-family:var(--font-body); font-size:0.64rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--accent); border:1px dashed var(--accent); border-radius:999px; padding:0.25rem 0.6rem; font-weight:600; }
