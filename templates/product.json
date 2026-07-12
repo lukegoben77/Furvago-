@@ -279,6 +279,7 @@
         "step4": {
           "type": "step",
           "settings": {
+            "image": "shopify://shop_images/97c09175-c3a8-4a81-b8a3-1920173c8c1a.png",
             "icon": "check-circle",
             "title": "Leave it on as needed",
             "text": "Most owners remove it once the storm passes or once they're back home.",
