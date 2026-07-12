@@ -10,6 +10,7 @@
     --ink:#4a4e3a; --text-on-dark:#f1e9df;
     --ink-soft:#6b6e54; --muted:#8a8c6e;
     --accent:#9c5b44; --accent-deep:#874a36;
+    --rose:#a83b63;
     --line:rgba(138,140,110,0.4); --line-dark:rgba(241,233,223,0.16);
     --shadow:rgba(74,78,58,0.18);
     --font-display:'Bricolage Grotesque','Arial Black',-apple-system,sans-serif;
@@ -232,6 +233,10 @@
   .pdp-info .eyebrow { margin-bottom:0.9rem; }
   .pdp-info h1 { font-size:clamp(2.4rem, 1.8rem + 1.8vw, 3.6rem); font-weight:800; letter-spacing:-0.03em; }
   .pdp-hook { font-size:var(--fs-lead); font-weight:500; color:var(--ink); margin-top:1rem; line-height:1.5; font-style:italic; }
+  .pdp-rating { display:flex; align-items:center; gap:0.5rem; margin-top:0.7rem; }
+  .pdp-stars { display:flex; gap:0.15rem; color:var(--rose); }
+  .pdp-stars svg { width:1.05rem; height:1.05rem; }
+  .pdp-rating-value { font-weight:600; color:var(--ink-soft); font-size:0.92rem; }
   .pdp-price { font-family:var(--font-body); font-weight:700; font-size:clamp(2.2rem,1.7rem + 1.4vw,2.8rem); margin:1.3rem 0; letter-spacing:-0.01em; display:flex; align-items:center; flex-wrap:wrap; gap:0.6rem; }
   .pdp-price del { font-family:var(--font-body); font-weight:400; font-size:1.3rem; color:var(--ink-soft); text-decoration-color:var(--accent); }
   .pdp-price .flag, .pdp-price .save { font-family:var(--font-body); font-size:0.64rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--accent); border:1px dashed var(--accent); border-radius:999px; padding:0.25rem 0.6rem; font-weight:600; }

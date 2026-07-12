@@ -26,6 +26,16 @@
     <div class="pdp-info">
       {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
       <h1>{{ product.title }}</h1>
+      {%- if section.settings.show_rating -%}
+        <div class="pdp-rating">
+          <span class="pdp-stars" aria-hidden="true">
+            {%- for i in (1..5) -%}
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 17l-6.2 3.6 1.6-6.7L2.2 8.9l6.9-.6z"/></svg>
+            {%- endfor -%}
+          </span>
+          <span class="pdp-rating-value">{{ section.settings.rating_value }}</span>
+        </div>
+      {%- endif -%}
       {%- if section.settings.hook != blank -%}
         <p class="pdp-hook">{{ section.settings.hook }}</p>
       {%- endif -%}
@@ -129,6 +139,8 @@
   "name": "Product hero",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Furvago — the calming vest" },
+    { "type": "checkbox", "id": "show_rating", "label": "Show star rating under the title", "default": true },
+    { "type": "text", "id": "rating_value", "label": "Rating value", "default": "4.9" },
     { "type": "text", "id": "hook", "label": "Hook line (italic)", "default": "The first time you put it on, watch their shoulders drop." },
     { "type": "textarea", "id": "subhead", "label": "Subhead", "default": "Built for the exact moments that undo them — the thunder rolling in, the fireworks starting, the click of the door as you leave." },
     { "type": "text", "id": "gray_swatch_position", "label": "Gray swatch photo focal point (CSS background-position)", "info": "Nudge this if the Gray color swatch crops awkwardly. Lower percentage moves the visible crop up (toward the head), higher moves it down (toward the vest/body). e.g. \"center 40%\" or \"center 65%\".", "default": "center 55%" }
