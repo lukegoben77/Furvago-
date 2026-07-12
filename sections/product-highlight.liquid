@@ -18,7 +18,7 @@
         <div class="highlight-price">
           {%- if featured != blank -%}
             {{ featured.price | money }}
-            {%- if featured.compare_at_price > featured.price %} <del style="font-family:var(--font-mono);font-weight:400;font-size:1.05rem;color:var(--ink);opacity:0.6;">{{ featured.compare_at_price | money }}</del>{% endif -%}
+            {%- if featured.compare_at_price > featured.price %} <del style="font-family:var(--font-body);font-weight:400;font-size:1.05rem;color:var(--ink);opacity:0.6;">{{ featured.compare_at_price | money }}</del>{% endif -%}
           {%- else -%}
             {{ section.settings.fallback_price }}
           {%- endif -%}
