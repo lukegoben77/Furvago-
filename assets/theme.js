@@ -11,6 +11,15 @@
     return format.replace(/\{\{\s*amount[a-z_]*\s*\}\}/, value);
   }
 
+  /* mirrors Shopify's money_without_trailing_zeros filter: whole-dollar amounts
+     drop the decimals, amounts with cents keep them */
+  function moneyNoTrailingZeros(cents){
+    if (cents % 100 !== 0) return money(cents);
+    var format = (window.theme && window.theme.moneyFormat) || '${{amount}}';
+    var value = Math.round(cents / 100).toString();
+    return format.replace(/\{\{\s*amount[a-z_]*\s*\}\}/, value);
+  }
+
   /* ---------- SCROLL LOCK ----------
      iOS Safari can leave a stale repaint behind the status bar/notch after a
      fixed full-screen overlay (menu, cart drawer) closes if body is locked
@@ -106,7 +115,7 @@
       if(saveEl){
         saveEl.style.display = hasCompare ? '' : 'none';
         if(hasCompare){
-          saveEl.textContent = 'Save ' + money(currentVariant.compare_at_price - currentVariant.price);
+          saveEl.textContent = 'Save ' + moneyNoTrailingZeros(currentVariant.compare_at_price - currentVariant.price);
         }
       }
       if(atc){

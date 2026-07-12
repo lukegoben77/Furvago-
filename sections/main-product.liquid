@@ -38,7 +38,7 @@
         <span class="save" id="priceSave"{% unless has_compare %} style="display:none;"{% endunless %}>
           {%- if has_compare -%}
             {%- assign save_amount = current_variant.compare_at_price | minus: current_variant.price -%}
-            Save {{ save_amount | money }}
+            Save {{ save_amount | money_without_trailing_zeros }}
           {%- endif -%}
         </span>
       </div>
