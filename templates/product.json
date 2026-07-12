@@ -126,7 +126,8 @@
         "prose_style": "pdp",
         "image": "shopify://shop_images/4bdd43de-fd35-4bb8-b007-7e4dbb974fce.png",
         "mood_quote": "The moment right before the vest goes on.",
-        "mood_sub": "Mood photo — pending embed"
+        "mood_sub": "Mood photo — pending embed",
+        "show_lines": false
       }
     },
     "triggers": {

@@ -176,6 +176,11 @@
   }
 
   /* ---------- CART (Shopify AJAX API) ---------- */
+  var cartVariantCompare = {};
+  var cartVariantCompareEl = document.getElementById('CartVariantCompareData');
+  if(cartVariantCompareEl){
+    try { cartVariantCompare = JSON.parse(cartVariantCompareEl.textContent); } catch(e){ cartVariantCompare = {}; }
+  }
   var scrim = document.getElementById('scrim'), drawer = document.getElementById('cartDrawer');
   function openCart(){ if(!drawer) return; scrim.classList.add('show'); drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false'); lockScroll(); }
   function closeCart(){ if(!drawer) return; scrim.classList.remove('show'); drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); unlockScroll(); }
@@ -199,11 +204,17 @@
     body.innerHTML = cartJson.items.map(function(item, i){
       var img = item.image ? ('<img src="' + item.image + '&width=260" alt=""/>') : '<img src="" alt=""/>';
       if(item.image && item.image.indexOf('?') === -1) img = '<img src="' + item.image + '?width=260" alt=""/>';
+      var compareAt = cartVariantCompare[String(item.variant_id)] || 0;
+      var priceHtml = '';
+      if(compareAt > item.price){
+        priceHtml += '<del class="cl-compare">' + money(compareAt * item.quantity) + '</del>';
+      }
+      priceHtml += '<span class="cl-current">' + money(item.final_line_price) + '</span>';
       return '<div class="cart-line">' + img +
         '<div class="cl-info"><div class="cl-name">' + item.product_title + '</div>' +
         '<div class="cl-variant">' + (item.variant_title || '') + '</div>' +
         '<div class="cl-qty"><button data-act="dec" data-line="' + (i + 1) + '" aria-label="Decrease">–</button><span>' + item.quantity + '</span><button data-act="inc" data-line="' + (i + 1) + '" aria-label="Increase">+</button></div></div>' +
-        '<div class="cl-price">' + money(item.final_line_price) + '</div></div>';
+        '<div class="cl-price">' + priceHtml + '</div></div>';
     }).join('');
   }
 

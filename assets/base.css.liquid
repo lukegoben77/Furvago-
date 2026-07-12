@@ -118,6 +118,7 @@
   /* ---------- STORM / PROBLEM ---------- */
   .storm { background:var(--dark); color:var(--text-on-dark); position:relative; overflow:hidden; }
   .storm::before { content:""; position:absolute; inset:0; background-image:repeating-linear-gradient(74deg, transparent 0 22px, rgba(241,233,223,0.05) 22px 23px); pointer-events:none; }
+  .storm.no-lines::before, .storm.no-lines .photo-slot.mood-storm::before { content:none; }
   @media (prefers-reduced-motion:no-preference){ .storm.is-active::before { animation:rain 0.9s linear infinite; } }
   @keyframes rain { to { background-position:0 26px; } }
   .storm .wrap { position:relative; }
@@ -358,7 +359,8 @@
   .cart-line .cl-variant { font-size:0.85rem; color:var(--ink-soft); margin-top:0.15rem; }
   .cart-line .cl-qty { display:inline-flex; align-items:center; gap:0.8rem; margin-top:0.7rem; border:1px solid var(--line); border-radius:999px; padding:0.25rem 0.6rem; }
   .cart-line .cl-qty button { width:1.3rem; height:1.3rem; display:grid; place-items:center; font-size:1rem; line-height:1; color:var(--ink-soft); background:none; border:none; }
-  .cart-line .cl-price { font-family:var(--font-body); font-weight:700; }
+  .cart-line .cl-price { display:flex; flex-direction:column; align-items:flex-end; gap:0.1rem; font-family:var(--font-body); font-weight:700; }
+  .cart-line .cl-compare { font-weight:400; font-size:0.82rem; color:var(--ink-soft); }
   .cart-empty { text-align:center; color:var(--ink-soft); padding:3rem 1rem; }
   .cart-empty svg { width:2.5rem; height:2.5rem; color:var(--muted); margin:0 auto 1rem; }
   .cart-foot { padding:1.3rem var(--edge); border-top:1px solid var(--line); }

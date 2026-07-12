@@ -1,3 +1,11 @@
+{%- assign cart_product = all_products[settings.product_handle] -%}
+<script type="application/json" id="CartVariantCompareData">
+{
+  {%- for v in cart_product.variants -%}
+    "{{ v.id }}": {{ v.compare_at_price | default: 0 }}{% unless forloop.last %},{% endunless %}
+  {%- endfor -%}
+}
+</script>
 <div class="scrim" id="scrim"></div>
 <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
   <div class="cart-head">
@@ -24,7 +32,12 @@
               <button data-act="inc" data-line="{{ forloop.index }}" aria-label="Increase">+</button>
             </div>
           </div>
-          <div class="cl-price">{{ item.final_line_price | money }}</div>
+          <div class="cl-price">
+            {%- if item.variant.compare_at_price > item.variant.price -%}
+              <del class="cl-compare">{{ item.variant.compare_at_price | times: item.quantity | money }}</del>
+            {%- endif -%}
+            <span class="cl-current">{{ item.final_line_price | money }}</span>
+          </div>
         </div>
       {%- endfor -%}
     {%- endif -%}

@@ -1,4 +1,4 @@
-<section class="storm reveal-trigger">
+<section class="storm reveal-trigger{% if section.settings.show_lines == false %} no-lines{% endif %}">
   <div class="wrap storm-grid">
     <div class="storm-heading">
       {%- if section.settings.eyebrow != blank -%}<p class="eyebrow on-dark">{{ section.settings.eyebrow }}</p>{%- endif -%}
@@ -45,7 +45,8 @@
     ], "default": "plain" },
     { "type": "image_picker", "id": "image", "label": "Photo (replaces the mood panel)" },
     { "type": "text", "id": "mood_quote", "label": "Mood panel quote", "default": "The sound they can't unhear — and the corner they hide in until it stops." },
-    { "type": "text", "id": "mood_sub", "label": "Mood panel subline", "default": "Thunder · Fireworks · The empty house" }
+    { "type": "text", "id": "mood_sub", "label": "Mood panel subline", "default": "Thunder · Fireworks · The empty house" },
+    { "type": "checkbox", "id": "show_lines", "label": "Show diagonal rain-line texture/animation", "default": true }
   ],
   "blocks": [
     {
