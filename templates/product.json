@@ -264,7 +264,7 @@
         "step2": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/6a59789e-8282-44a9-acc3-e55740bae380.png",
+            "image": "shopify://shop_images/79e7fd3a-9afe-4a79-9d37-3890279e6240.png",
             "icon": "clasp",
             "title": "Wrap and fasten",
             "text": "Snug but not tight — you should be able to slip two flat fingers underneath.",
@@ -274,7 +274,7 @@
         "step3": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/6a59789e-8282-44a9-acc3-e55740bae380.png",
+            "image": "shopify://shop_images/73b373eb-f0b5-4a51-9a0c-6080989bf1b9.png",
             "icon": "clock",
             "title": "Time it right",
             "text": "When you can, put it on 15–20 minutes before a trigger you know is coming.",
@@ -284,7 +284,7 @@
         "step4": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/97c09175-c3a8-4a81-b8a3-1920173c8c1a.png",
+            "image": "shopify://shop_images/e523c3e8-f508-43fd-a3f9-6fbb3cd56283.png",
             "icon": "check-circle",
             "title": "Leave it on as needed",
             "text": "Most owners remove it once the storm passes or once they're back home.",
