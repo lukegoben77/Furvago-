@@ -43,11 +43,14 @@
         "eyebrow": "Furvago — the calming vest",
         "heading": "A calming vest for",
         "heading_accent": "anxious dogs.",
+        "image": "shopify://shop_images/0106702c-eb7f-4663-bb06-3908625e0d3f.png",
         "image_position": "center 30%",
         "text_position": "left",
         "lead": "A gentle, wrapped-hug pressure vest for the dogs who tremble through thunderstorms, panic at fireworks, and pace by the door the moment you leave.",
         "button1_label": "Shop the vest",
-        "button2_label": "See how it works"
+        "button1_link": "",
+        "button2_label": "See how it works",
+        "button2_link": ""
       }
     },
     "storm": {
@@ -85,8 +88,10 @@
         "heading": "Recognizing anxiety in your dog.",
         "body": "<p>Every storm season, every firework night, every time you reach for your keys — it starts again. The shaking you can't soothe. The hiding you can't coax them out of. You've tried holding them close, and wished you could stay that way all night.</p>",
         "prose_style": "plain",
+        "image": "shopify://shop_images/4bdd43de-fd35-4bb8-b007-7e4dbb974fce.png",
         "mood_quote": "The sound they can't unhear — and the corner they hide in until it stops.",
-        "mood_sub": "Thunder · Fireworks · The empty house"
+        "mood_sub": "Thunder · Fireworks · The empty house",
+        "show_lines": true
       }
     },
     "helps": {
@@ -122,6 +127,7 @@
       "settings": {
         "eyebrow": "How it helps",
         "heading": "How gentle, constant pressure helps.",
+        "image": "shopify://shop_images/68e2e307-a9f2-4bb5-9dc0-160b3d6d7852.png",
         "body": "Furvago is designed to apply gentle, constant pressure around your dog's torso — the same comforting principle behind swaddling a baby or a weighted blanket. Many dog owners report their dogs settle faster and rest more easily once it's on."
       }
     },
@@ -174,9 +180,11 @@
       "settings": {
         "eyebrow": "The Furvago calming vest",
         "heading": "One vest, available in three colors.",
+        "image": "shopify://shop_images/eb0e2616-9ffc-4d4a-be71-7c0d74608020.png",
         "body": "Our whole store is built around getting this one thing right — a vest that helps your dog feel safe when the world feels like too much. Choose your size and color, and we'll take it from there.",
         "fallback_price": "$44.99",
-        "button_label": "Shop the vest"
+        "button_label": "Shop the vest",
+        "button_link": ""
       }
     },
     "homereviews": {
@@ -214,7 +222,8 @@
       ],
       "settings": {
         "heading": "What customers are saying.",
-        "tag": "Placeholder reviews"
+        "tag": "Placeholder reviews",
+        "note": ""
       }
     },
     "cta": {
@@ -223,7 +232,8 @@
         "eyebrow": "Give them somewhere safe to go",
         "heading": "Be prepared for the next storm.",
         "body": "Free shipping, a 30-day return window, and a vest built to help your dog through the nights that scare them most.",
-        "button_label": "Shop the vest"
+        "button_label": "Shop the vest",
+        "button_link": ""
       }
     }
   },
