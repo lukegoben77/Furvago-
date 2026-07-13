@@ -361,40 +361,48 @@
           "type": "row",
           "settings": {
             "size": "XS",
-            "weight": "5–10 lb",
-            "girth": "11–14 in"
+            "weight": "3–8 lb",
+            "girth": "9–12 in"
           }
         },
         "row2": {
           "type": "row",
           "settings": {
             "size": "S",
-            "weight": "10–25 lb",
-            "girth": "14–19 in"
+            "weight": "8–15 lb",
+            "girth": "12–16 in"
           }
         },
         "row3": {
           "type": "row",
           "settings": {
             "size": "M",
-            "weight": "25–45 lb",
-            "girth": "19–25 in"
+            "weight": "15–31 lb",
+            "girth": "15–20 in"
           }
         },
         "row4": {
           "type": "row",
           "settings": {
             "size": "L",
-            "weight": "45–70 lb",
-            "girth": "25–31 in"
+            "weight": "31–49 lb",
+            "girth": "18–26 in"
           }
         },
         "row5": {
           "type": "row",
           "settings": {
             "size": "XL",
-            "weight": "70–100 lb",
-            "girth": "31–37 in"
+            "weight": "49–66 lb",
+            "girth": "22–31 in"
+          }
+        },
+        "row_8Pfncz": {
+          "type": "row",
+          "settings": {
+            "size": "2XL",
+            "weight": "66–88 lb",
+            "girth": "25–35 in"
           }
         },
         "tip1": {
@@ -425,6 +433,7 @@
         "row3",
         "row4",
         "row5",
+        "row_8Pfncz",
         "tip1",
         "tip2",
         "tip3"
