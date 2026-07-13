@@ -496,7 +496,7 @@
           "settings": {
             "label": "Price",
             "brand_value": "$49.99",
-            "other_value": "$35–$65"
+            "other_value": "$35–$75"
           }
         }
       },
@@ -529,7 +529,7 @@
         "rev2": {
           "type": "review",
           "settings": {
-            "stars": 5,
+            "stars": 4,
             "quote": "\"We put it on before we leave the house now, and come home to a much calmer dog.\"",
             "byline": "Placeholder review"
           }
