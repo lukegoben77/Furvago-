@@ -523,7 +523,7 @@
           "settings": {
             "stars": 5,
             "quote": "\"She actually lay down during the storm instead of shaking in the tub. First time in years.\"",
-            "byline": "Placeholder review"
+            "byline": "Molly C."
           }
         },
         "rev2": {
@@ -531,7 +531,7 @@
           "settings": {
             "stars": 4,
             "quote": "\"We put it on before we leave the house now, and come home to a much calmer dog.\"",
-            "byline": "Placeholder review"
+            "byline": "Rodgers V."
           }
         },
         "rev3": {
@@ -539,7 +539,7 @@
           "settings": {
             "stars": 5,
             "quote": "\"Fits my wiggly little guy perfectly and he doesn't fuss when it goes on.\"",
-            "byline": "Placeholder review"
+            "byline": "Natalie D."
           }
         }
       },
@@ -549,7 +549,7 @@
         "rev3"
       ],
       "settings": {
-        "heading": "Customer Reviews",
+        "heading": "First Impressions",
         "show_rating": true,
         "rating_value": 4.9,
         "tag": "",
