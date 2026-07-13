@@ -161,13 +161,44 @@
       });
     });
 
-    document.querySelectorAll('.gallery-thumbs button').forEach(function(b){
-      b.addEventListener('click', function(){
-        var galleryMain = document.getElementById('galleryMain');
-        if(galleryMain && b.dataset.img) galleryMain.src = b.dataset.img;
-        document.querySelectorAll('.gallery-thumbs button').forEach(function(x){ x.classList.toggle('active', x === b); });
-      });
+    var galleryThumbs = Array.prototype.slice.call(document.querySelectorAll('.gallery-thumbs button'));
+    function activateGalleryThumb(thumb){
+      if(!thumb) return;
+      var galleryMain = document.getElementById('galleryMain');
+      if(galleryMain && thumb.dataset.img) galleryMain.src = thumb.dataset.img;
+      galleryThumbs.forEach(function(x){ x.classList.toggle('active', x === thumb); });
+      thumb.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+    }
+    galleryThumbs.forEach(function(b){
+      b.addEventListener('click', function(){ activateGalleryThumb(b); });
     });
+
+    /* swipe the main product image left/right on mobile to move between images */
+    if(galleryThumbs.length > 1){
+      var galleryMainWrap = document.querySelector('.gallery-main');
+      if(galleryMainWrap){
+        var swipeStartX = 0, swipeStartY = 0, swiping = false;
+        galleryMainWrap.addEventListener('touchstart', function(e){
+          if(e.touches.length !== 1) return;
+          swipeStartX = e.touches[0].clientX;
+          swipeStartY = e.touches[0].clientY;
+          swiping = true;
+        }, {passive:true});
+        galleryMainWrap.addEventListener('touchend', function(e){
+          if(!swiping) return;
+          swiping = false;
+          var dx = e.changedTouches[0].clientX - swipeStartX;
+          var dy = e.changedTouches[0].clientY - swipeStartY;
+          if(Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+          var activeIdx = 0;
+          for(var i = 0; i < galleryThumbs.length; i++){
+            if(galleryThumbs[i].classList.contains('active')) { activeIdx = i; break; }
+          }
+          var nextIdx = Math.max(0, Math.min(galleryThumbs.length - 1, dx < 0 ? activeIdx + 1 : activeIdx - 1));
+          if(nextIdx !== activeIdx) activateGalleryThumb(galleryThumbs[nextIdx]);
+        }, {passive:true});
+      }
+    }
 
     updateProductUI();
 
