@@ -29,8 +29,8 @@
         "reassure3": {
           "type": "reassure",
           "settings": {
-            "icon": "calendar",
-            "text": "Ships in 8–15 business days with tracking"
+            "icon": "check",
+            "text": "Secure Checkout"
           }
         },
         "acc1": {
