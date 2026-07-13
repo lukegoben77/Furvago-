@@ -5,26 +5,17 @@
 <section class="pdp">
   <div class="wrap pdp-grid">
     <div class="gallery">
-      <div class="gallery-main">
-        {%- if current_variant.featured_image -%}
-          <img id="galleryMain" src="{{ current_variant.featured_image | image_url: width: 1000 }}" alt="{{ current_variant.featured_image.alt | escape }}" width="1000" height="1000" fetchpriority="high" />
-        {%- elsif product.featured_image -%}
-          <img id="galleryMain" src="{{ product.featured_image | image_url: width: 1000 }}" alt="{{ product.featured_image.alt | escape }}" width="1000" height="1000" fetchpriority="high" />
+      <div class="gallery-main" id="galleryMain">
+        {%- if product.images.size > 0 -%}
+          {%- for image in product.images -%}
+            <img data-position="{{ image.position }}" src="{{ image | image_url: width: 1000 }}" alt="{{ image.alt | default: product.title | escape }}" width="1000" height="1000" {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %} />
+          {%- endfor -%}
         {%- else -%}
-          <img id="galleryMain" src="{{ 'product-black.jpg' | asset_url }}" alt="{{ product.title | escape }}" width="1000" height="1000" fetchpriority="high" />
-        {%- endif -%}
-        {%- if product.images.size > 1 -%}
-          <button type="button" class="gallery-nav-next" id="galleryNext" aria-label="Show next product image">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
-          </button>
+          <img src="{{ 'product-black.jpg' | asset_url }}" alt="{{ product.title | escape }}" width="1000" height="1000" fetchpriority="high" />
         {%- endif -%}
       </div>
       {%- if product.images.size > 1 -%}
-        <div class="gallery-thumbs" role="tablist" aria-label="Product images">
-          {%- for image in product.images -%}
-            <button {% if image == product.featured_image %}class="active" {% endif %}data-img="{{ image | image_url: width: 1000 }}" data-position="{{ image.position }}" aria-label="{{ image.alt | default: product.title | escape }}"><img src="{{ image | image_url: width: 260 }}" alt="" width="260" height="260" /></button>
-          {%- endfor -%}
-        </div>
+        <div class="gallery-dots" id="dots-gallery" role="tablist" aria-label="Product images"></div>
       {%- endif -%}
     </div>
 
