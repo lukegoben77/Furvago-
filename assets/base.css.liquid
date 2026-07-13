@@ -473,18 +473,18 @@
 
     /* PDP carousels: triggers, features, steps, expect-stages */
     .expect-grid { grid-template-columns:minmax(0,1fr); }
-    .trigger-grid, .feature-grid, .step-grid, .expect-list {
+    .trigger-grid, .feature-grid, .step-grid, .expect-list, .review-strip {
       display:flex; flex-direction:row; flex-wrap:nowrap;
       overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none;
       gap:1rem; padding-bottom:0.4rem;
       min-width:0;
     }
     /* .wrap-nested carousels: break out full-bleed by cancelling .wrap's own padding (--edge) */
-    .trigger-grid, .feature-grid, .expect-list { margin:0 calc(var(--edge) * -1); padding-left:var(--edge); padding-right:var(--edge); }
+    .trigger-grid, .feature-grid, .expect-list, .review-strip { margin:0 calc(var(--edge) * -1); padding-left:var(--edge); padding-right:var(--edge); }
     /* .step-grid lives inside .cta-band, which has its own (larger) padding — cancel that instead */
     .step-grid { margin:0 calc(clamp(2.5rem, 6vw, 4.5rem) * -1); padding-left:clamp(2.5rem, 6vw, 4.5rem); padding-right:clamp(2.5rem, 6vw, 4.5rem); }
-    .trigger-grid::-webkit-scrollbar, .feature-grid::-webkit-scrollbar, .step-grid::-webkit-scrollbar, .expect-list::-webkit-scrollbar { display:none; }
-    .trigger-grid > *, .feature-grid > *, .expect-list > * {
+    .trigger-grid::-webkit-scrollbar, .feature-grid::-webkit-scrollbar, .step-grid::-webkit-scrollbar, .expect-list::-webkit-scrollbar, .review-strip::-webkit-scrollbar { display:none; }
+    .trigger-grid > *, .feature-grid > *, .expect-list > *, .review-strip > * {
       flex:0 0 87vw; max-width:87vw; scroll-snap-align:start;
     }
     .step-grid > * {
