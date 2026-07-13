@@ -172,9 +172,22 @@
     galleryThumbs.forEach(function(b){
       b.addEventListener('click', function(){ activateGalleryThumb(b); });
     });
+    function activeGalleryIdx(){
+      for(var i = 0; i < galleryThumbs.length; i++){
+        if(galleryThumbs[i].classList.contains('active')) return i;
+      }
+      return 0;
+    }
 
     /* swipe the main product image left/right on mobile to move between images */
     if(galleryThumbs.length > 1){
+      var galleryNext = document.getElementById('galleryNext');
+      if(galleryNext){
+        galleryNext.addEventListener('click', function(){
+          var activeIdx = activeGalleryIdx();
+          activateGalleryThumb(galleryThumbs[(activeIdx + 1) % galleryThumbs.length]);
+        });
+      }
       var galleryMainWrap = document.querySelector('.gallery-main');
       if(galleryMainWrap){
         var swipeStartX = 0, swipeStartY = 0, swiping = false;
@@ -190,10 +203,7 @@
           var dx = e.changedTouches[0].clientX - swipeStartX;
           var dy = e.changedTouches[0].clientY - swipeStartY;
           if(Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
-          var activeIdx = 0;
-          for(var i = 0; i < galleryThumbs.length; i++){
-            if(galleryThumbs[i].classList.contains('active')) { activeIdx = i; break; }
-          }
+          var activeIdx = activeGalleryIdx();
           var nextIdx = Math.max(0, Math.min(galleryThumbs.length - 1, dx < 0 ? activeIdx + 1 : activeIdx - 1));
           if(nextIdx !== activeIdx) activateGalleryThumb(galleryThumbs[nextIdx]);
         }, {passive:true});

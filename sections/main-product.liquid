@@ -13,6 +13,11 @@
         {%- else -%}
           <img id="galleryMain" src="{{ 'product-black.jpg' | asset_url }}" alt="{{ product.title | escape }}" width="1000" height="1000" fetchpriority="high" />
         {%- endif -%}
+        {%- if product.images.size > 1 -%}
+          <button type="button" class="gallery-nav-next" id="galleryNext" aria-label="Show next product image">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+        {%- endif -%}
       </div>
       {%- if product.images.size > 1 -%}
         <div class="gallery-thumbs" role="tablist" aria-label="Product images">
