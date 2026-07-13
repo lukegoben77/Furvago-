@@ -84,6 +84,15 @@
   var jumpSGAcc = document.getElementById('jumpSizeGuideAcc');
   if(jumpSGAcc) jumpSGAcc.addEventListener('click', jumpToSizeGuide);
 
+  /* ---------- REVIEWS JUMP LINK (star rating above the title) ---------- */
+  var pdpRatingLink = document.getElementById('pdpRatingLink');
+  if(pdpRatingLink){
+    pdpRatingLink.addEventListener('click', function(){
+      var reviews = document.getElementById('pdp-reviews');
+      if(reviews) reviews.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  }
+
   /* ---------- PRODUCT: variants, gallery, options ---------- */
   var productJsonEl = document.getElementById('ProductJson');
   var productData = null, selectedOptions = [], currentVariant = null;

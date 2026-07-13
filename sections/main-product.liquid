@@ -22,7 +22,9 @@
     <div class="pdp-info">
       {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
       {%- if section.settings.show_rating -%}
-        {%- render 'star-rating', rating: section.settings.rating_value -%}
+        <a id="pdpRatingLink" class="pdp-rating-link" aria-label="Jump to reviews">
+          {%- render 'star-rating', rating: section.settings.rating_value -%}
+        </a>
       {%- endif -%}
       <h1>{{ product.title }}</h1>
       {%- if section.settings.hook != blank -%}
