@@ -8,7 +8,7 @@
       <div class="gallery-main" id="galleryMain">
         {%- if product.images.size > 0 -%}
           {%- for image in product.images -%}
-            <img data-position="{{ image.position }}" src="{{ image | image_url: width: 1000 }}" alt="{{ image.alt | default: product.title | escape }}" width="1000" height="1000" {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %} />
+            <img data-position="{{ image.position }}" data-variant-ids="{{ image.variant_ids | join: ',' }}" src="{{ image | image_url: width: 1000 }}" alt="{{ image.alt | default: product.title | escape }}" width="1000" height="1000" {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %} />
           {%- endfor -%}
         {%- else -%}
           <img src="{{ 'product-black.jpg' | asset_url }}" alt="{{ product.title | escape }}" width="1000" height="1000" fetchpriority="high" />
