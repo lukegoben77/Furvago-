@@ -50,7 +50,7 @@
         ],
         "settings": {
           "logo_height": 49,
-          "logo_offset": 8,
+          "logo_offset": -23,
           "menu_foot": "Free shipping · 30-day returns"
         }
       },

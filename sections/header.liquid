@@ -8,9 +8,9 @@
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span></button>
     <a href="{{ routes.root_url }}" class="nav-logo" aria-label="{{ shop.name }} home">
       {%- if section.settings.logo -%}
-        <img src="{{ section.settings.logo | image_url: width: 720 }}" alt="{{ shop.name }}" width="720" height="169" style="height:{{ section.settings.logo_height }}px; margin-left:{{ section.settings.logo_offset }}px;" />
+        <img src="{{ section.settings.logo | image_url: width: 720 }}" alt="{{ shop.name }}" width="720" height="169" style="height:{{ section.settings.logo_height }}px; transform:translateX({{ section.settings.logo_offset }}px);" />
       {%- else -%}
-        <img src="{{ 'logo-dark.png' | asset_url }}" alt="{{ shop.name }}" width="720" height="169" style="height:{{ section.settings.logo_height }}px; margin-left:{{ section.settings.logo_offset }}px;" />
+        <img src="{{ 'logo-dark.png' | asset_url }}" alt="{{ shop.name }}" width="720" height="169" style="height:{{ section.settings.logo_height }}px; transform:translateX({{ section.settings.logo_offset }}px);" />
       {%- endif -%}
     </a>
     <div class="nav-right">
@@ -35,7 +35,7 @@
   "settings": [
     { "type": "image_picker", "id": "logo", "label": "Logo (falls back to the bundled Furvago logo)" },
     { "type": "range", "id": "logo_height", "label": "Logo height", "min": 24, "max": 56, "step": 1, "unit": "px", "default": 42 },
-    { "type": "range", "id": "logo_offset", "label": "Logo horizontal nudge", "min": -30, "max": 30, "step": 1, "unit": "px", "info": "Fine-tune left/right position if the logo looks off-center — useful when a logo has an icon on one side of the wordmark. The default suits the bundled Furvago logo.", "default": -19 },
+    { "type": "range", "id": "logo_offset", "label": "Logo horizontal nudge", "min": -30, "max": 30, "step": 1, "unit": "px", "info": "Fine-tune left/right position if the logo looks off-center — useful when a logo has an icon on one side of the wordmark. The default suits the bundled Furvago logo.", "default": -20 },
     { "type": "text", "id": "menu_foot", "label": "Mobile menu footer line", "default": "Free shipping · 30-day returns" }
   ],
   "blocks": [
