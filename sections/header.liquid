@@ -1,5 +1,11 @@
 <div class="nav-shell">
   <nav class="nav" id="nav" aria-label="Primary">
+    <ul class="nav-links">
+      {%- for block in section.blocks -%}
+        <li {{ block.shopify_attributes }}><a href="{{ block.settings.link | default: routes.root_url }}"{% if block.settings.link == request.path %} class="active"{% endif %}>{{ block.settings.label }}</a></li>
+      {%- endfor -%}
+    </ul>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span></button>
     <a href="{{ routes.root_url }}" class="nav-logo" aria-label="{{ shop.name }} home">
       {%- if section.settings.logo -%}
         <img src="{{ section.settings.logo | image_url: width: 720 }}" alt="{{ shop.name }}" width="720" height="169" />
@@ -7,17 +13,11 @@
         <img src="{{ 'logo-dark.png' | asset_url }}" alt="{{ shop.name }}" width="720" height="169" />
       {%- endif -%}
     </a>
-    <ul class="nav-links">
-      {%- for block in section.blocks -%}
-        <li {{ block.shopify_attributes }}><a href="{{ block.settings.link | default: routes.root_url }}"{% if block.settings.link == request.path %} class="active"{% endif %}>{{ block.settings.label }}</a></li>
-      {%- endfor -%}
-    </ul>
     <div class="nav-right">
       <button class="cart-btn" id="cartBtn" aria-label="Open cart">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
         <span class="cart-count" id="cartCount">{{ cart.item_count }}</span>
       </button>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span></button>
     </div>
   </nav>
 </div>

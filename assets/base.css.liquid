@@ -66,7 +66,7 @@
   .nav { width:100%; max-width:var(--maxw); margin:0 auto; display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); align-items:center; gap:1.5rem; padding:1.05rem var(--edge); transition:padding .25s ease; }
   .nav.is-scrolled { padding-top:0.75rem; padding-bottom:0.75rem; }
   .nav-logo { grid-row:1; grid-column:2; justify-self:center; display:flex; align-items:center; flex:none; }
-  .nav-logo img { height:2.05rem; width:auto; }
+  .nav-logo img { height:2.6rem; width:auto; margin-left:-1.2rem; }
   .nav-links { grid-row:1; grid-column:1; justify-self:start; display:flex; gap:1.7rem; align-items:center; }
   .nav-links a { text-decoration:none; font-size:0.94rem; font-weight:500; color:rgba(241,233,223,0.72); transition:color .15s ease; }
   .nav-links a:hover, .nav-links a.active { color:var(--text-on-dark); }
@@ -74,7 +74,7 @@
   .cart-btn { position:relative; width:2.5rem; height:2.5rem; border-radius:50%; border:1px solid rgba(241,233,223,0.28); background:transparent; display:grid; place-items:center; color:var(--text-on-dark); flex:none; }
   .cart-btn svg { width:1.15rem; height:1.15rem; }
   .cart-count { position:absolute; top:-3px; right:-3px; min-width:1.15rem; height:1.15rem; padding:0 0.28rem; background:var(--accent); color:var(--text-on-dark); border-radius:999px; font-size:0.68rem; font-weight:700; display:grid; place-items:center; font-family:var(--font-mono); }
-  .menu-btn { display:none; width:2.6rem; height:2.6rem; border-radius:50%; border:1px solid rgba(241,233,223,0.28); background:transparent; align-items:center; justify-content:center; flex:none; }
+  .menu-btn { grid-row:1; grid-column:1; justify-self:start; display:none; width:2.6rem; height:2.6rem; border-radius:50%; border:1px solid rgba(241,233,223,0.28); background:transparent; align-items:center; justify-content:center; flex:none; }
   .menu-btn span, .menu-btn span::before, .menu-btn span::after { content:""; display:block; width:15px; height:2px; background:var(--text-on-dark); position:relative; transition:transform .2s ease,opacity .2s ease; }
   .menu-btn span::before { position:absolute; top:-5px; } .menu-btn span::after { position:absolute; top:5px; }
   .menu-btn[aria-expanded="true"] span { background:transparent; }
