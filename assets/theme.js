@@ -55,13 +55,29 @@
       });
     }
     var announceMsgs = Array.prototype.slice.call(document.querySelectorAll('.announce-msg'));
-    if(announceMsgs.length > 1 && !window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+    if(announceMsgs.length > 1){
       var announceIdx = 0;
-      setInterval(function(){
+      var announceReducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+      function showAnnounce(idx){
         announceMsgs[announceIdx].classList.remove('is-active');
-        announceIdx = (announceIdx + 1) % announceMsgs.length;
+        announceIdx = (idx + announceMsgs.length) % announceMsgs.length;
         announceMsgs[announceIdx].classList.add('is-active');
-      }, 4500);
+      }
+      var announceTimer = null;
+      function restartAnnounceTimer(){
+        if(announceReducedMotion) return;
+        if(announceTimer) clearInterval(announceTimer);
+        announceTimer = setInterval(function(){ showAnnounce(announceIdx + 1); }, 4500);
+      }
+      restartAnnounceTimer();
+      var announcePrev = document.getElementById('announcePrev');
+      var announceNext = document.getElementById('announceNext');
+      if(announcePrev){
+        announcePrev.addEventListener('click', function(){ showAnnounce(announceIdx - 1); restartAnnounceTimer(); });
+      }
+      if(announceNext){
+        announceNext.addEventListener('click', function(){ showAnnounce(announceIdx + 1); restartAnnounceTimer(); });
+      }
     }
   }
 

@@ -10,6 +10,11 @@
 </script>
 <div class="announcement-bar" id="announcementBar">
   <div class="wrap announce-inner">
+    {%- if section.blocks.size > 1 -%}
+      <button type="button" class="announce-nav announce-prev" id="announcePrev" aria-label="Previous message">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+    {%- endif -%}
     <div class="announce-track" id="announceTrack">
       {%- for block in section.blocks -%}
         <div class="announce-msg{% if forloop.first %} is-active{% endif %}" {{ block.shopify_attributes }}>
@@ -18,6 +23,11 @@
         </div>
       {%- endfor -%}
     </div>
+    {%- if section.blocks.size > 1 -%}
+      <button type="button" class="announce-nav announce-next" id="announceNext" aria-label="Next message">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    {%- endif -%}
     <button type="button" class="announce-close" id="announceClose" aria-label="Dismiss announcement">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
