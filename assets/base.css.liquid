@@ -73,12 +73,12 @@
   .announce-nav svg { width:1rem; height:1rem; }
   .announce-prev { position:absolute; left:var(--edge); top:50%; transform:translateY(-50%); }
   .announce-next { position:absolute; right:var(--edge); top:50%; transform:translateY(-50%); }
-  .announce-track { display:grid; height:1.3rem; overflow:hidden; }
+  .announce-track { display:grid; height:1.45rem; overflow:hidden; }
   .announce-msg { grid-area:1/1; display:flex; align-items:center; justify-content:center; gap:0.55em; text-align:center; white-space:nowrap; transform:translateY(100%); transition:transform .45s cubic-bezier(.4,0,.2,1); }
   .announce-msg.is-active { transform:translateY(0); }
   .announce-msg.announce-no-transition { transition:none; }
   .announce-msg svg { width:0.95rem; height:0.95rem; flex:none; color:var(--accent); }
-  .announce-msg span { font-family:var(--font-body); font-weight:700; font-size:0.82rem; letter-spacing:0.02em; line-height:1.3; }
+  .announce-msg span { font-family:var(--font-body); font-weight:700; font-size:0.92rem; letter-spacing:0.02em; line-height:1.3; }
   @media (prefers-reduced-motion:reduce){ .announce-msg{transition:none;} }
   .nav { width:100%; max-width:var(--maxw); margin:0 auto; display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); align-items:center; gap:1.5rem; padding:1.05rem var(--edge); transition:padding .25s ease; }
   .nav.is-scrolled { padding-top:0.75rem; padding-bottom:0.75rem; }
@@ -542,10 +542,10 @@
 
     /* full-bleed hero: shorter on mobile, badges dropped so headline/subhead/CTA stay comfortably reachable */
     .hero-overlay { min-height:64vh; padding-top:calc(var(--nav-h) + var(--announce-h) + 1.1rem); padding-bottom:2rem; }
-    .announce-inner { min-height:1.7rem; padding:0.25rem 3.4rem; gap:0.5rem; }
-    .announce-track { height:1.9rem; }
+    .announce-inner { min-height:1.9rem; padding:0.25rem 3.4rem; gap:0.5rem; }
+    .announce-track { height:2.2rem; }
     .announce-msg { white-space:normal; }
-    .announce-msg span { font-size:0.74rem; }
+    .announce-msg span { font-size:0.82rem; }
     .hero-copy { max-width:100%; }
     .hero-copy .hero-lead { max-width:100%; }
     .hero-badges { display:none; }
