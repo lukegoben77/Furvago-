@@ -44,16 +44,8 @@
   }
 
   /* ---------- ANNOUNCEMENT BAR ---------- */
-  var ANNOUNCE_KEY = 'furvagoAnnouncementDismissed';
   var announceBar = document.getElementById('announcementBar');
   if(announceBar){
-    var announceClose = document.getElementById('announceClose');
-    if(announceClose){
-      announceClose.addEventListener('click', function(){
-        try { sessionStorage.setItem(ANNOUNCE_KEY, '1'); } catch(e){}
-        document.documentElement.classList.add('announcement-dismissed');
-      });
-    }
     var announceMsgs = Array.prototype.slice.call(document.querySelectorAll('.announce-msg'));
     if(announceMsgs.length > 1){
       var announceIdx = 0;
