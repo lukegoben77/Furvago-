@@ -441,7 +441,7 @@
       "settings": {
         "heading": "How To Measure Your Dog",
         "note": "Getting the fit right matters more than picking a favorite color.",
-        "placeholder_note": "Placeholder sizing — final measurements to be confirmed",
+        "placeholder_note": "",
         "col1": "Size",
         "col2": "Approx. weight",
         "col3": "Chest girth",
