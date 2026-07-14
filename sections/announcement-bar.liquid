@@ -1,0 +1,57 @@
+{%- if section.settings.enabled and section.blocks.size > 0 -%}
+<script>
+  (function(){
+    try {
+      if (sessionStorage.getItem('furvagoAnnouncementDismissed') === '1') {
+        document.documentElement.classList.add('announcement-dismissed');
+      }
+    } catch (e) {}
+  })();
+</script>
+<div class="announcement-bar" id="announcementBar">
+  <div class="wrap announce-inner">
+    <div class="announce-track" id="announceTrack">
+      {%- for block in section.blocks -%}
+        <div class="announce-msg{% if forloop.first %} is-active{% endif %}" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon != 'none' -%}{% render 'icon', name: block.settings.icon, width: '1.05' %}{%- endif -%}
+          <span>{{ block.settings.text }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+    <button type="button" class="announce-close" id="announceClose" aria-label="Dismiss announcement">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Show announcement bar", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "options": [
+          { "value": "none", "label": "None" },
+          { "value": "truck", "label": "Shipping truck" },
+          { "value": "cloud-rain", "label": "Storm cloud" }
+        ], "default": "truck" },
+        { "type": "text", "id": "text", "label": "Message", "default": "Free shipping, no minimum" }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "default": {
+    "blocks": [
+      { "type": "message", "settings": { "icon": "truck", "text": "Free shipping, no minimum — 30-day returns, used or not" } },
+      { "type": "message", "settings": { "icon": "cloud-rain", "text": "Storm season is here — get it before the next one" } },
+      { "type": "message", "settings": { "icon": "truck", "text": "Ships in 8–15 business days with tracking" } }
+    ]
+  }
+}
+{% endschema %}

@@ -43,6 +43,28 @@
     window.scrollTo(0, scrollLockY);
   }
 
+  /* ---------- ANNOUNCEMENT BAR ---------- */
+  var ANNOUNCE_KEY = 'furvagoAnnouncementDismissed';
+  var announceBar = document.getElementById('announcementBar');
+  if(announceBar){
+    var announceClose = document.getElementById('announceClose');
+    if(announceClose){
+      announceClose.addEventListener('click', function(){
+        try { sessionStorage.setItem(ANNOUNCE_KEY, '1'); } catch(e){}
+        document.documentElement.classList.add('announcement-dismissed');
+      });
+    }
+    var announceMsgs = Array.prototype.slice.call(document.querySelectorAll('.announce-msg'));
+    if(announceMsgs.length > 1 && !window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+      var announceIdx = 0;
+      setInterval(function(){
+        announceMsgs[announceIdx].classList.remove('is-active');
+        announceIdx = (announceIdx + 1) % announceMsgs.length;
+        announceMsgs[announceIdx].classList.add('is-active');
+      }, 4500);
+    }
+  }
+
   /* ---------- MOBILE MENU ---------- */
   var menuBtn = document.getElementById('menuBtn'), mobileMenu = document.getElementById('mobileMenu');
   function closeMenu(){

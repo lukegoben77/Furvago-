@@ -10,6 +10,36 @@
 {
   "current": {
     "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "announce-0": {
+            "type": "message",
+            "settings": {
+              "icon": "truck",
+              "text": "Free shipping, no minimum — 30-day returns, used or not"
+            }
+          },
+          "announce-1": {
+            "type": "message",
+            "settings": {
+              "icon": "cloud-rain",
+              "text": "Storm season is here — get it before the next one"
+            }
+          },
+          "announce-2": {
+            "type": "message",
+            "settings": {
+              "icon": "truck",
+              "text": "Ships in 8–15 business days with tracking"
+            }
+          }
+        },
+        "block_order": ["announce-0", "announce-1", "announce-2"],
+        "settings": {
+          "enabled": true
+        }
+      },
       "header": {
         "type": "header",
         "blocks": {
