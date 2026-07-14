@@ -49,8 +49,8 @@
           "header-3"
         ],
         "settings": {
-          "shop_label": "Shop",
-          "shop_link": "shopify://products/pet-anxiety-wrap",
+          "logo_height": 49,
+          "logo_offset": 8,
           "menu_foot": "Free shipping · 30-day returns"
         }
       },
