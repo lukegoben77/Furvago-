@@ -31,11 +31,15 @@
             "type": "message",
             "settings": {
               "icon": "truck",
-              "text": "Ships in 8–15 business days with tracking"
+              "text": "Ships in 8–15 business days"
             }
           }
         },
-        "block_order": ["announce-0", "announce-1", "announce-2"],
+        "block_order": [
+          "announce-0",
+          "announce-1",
+          "announce-2"
+        ],
         "settings": {
           "enabled": true
         }
