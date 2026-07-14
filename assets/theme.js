@@ -50,25 +50,56 @@
     if(announceMsgs.length > 1){
       var announceIdx = 0;
       var announceReducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-      function showAnnounce(idx){
-        announceMsgs[announceIdx].classList.remove('is-active');
-        announceIdx = (idx + announceMsgs.length) % announceMsgs.length;
-        announceMsgs[announceIdx].classList.add('is-active');
+
+      /* slides the outgoing message up/out while the incoming one slides up/in
+         from the opposite edge (direction depends on prev vs next) */
+      function showAnnounce(targetIdxRaw, dir){
+        var total = announceMsgs.length;
+        var targetIdx = (targetIdxRaw + total) % total;
+        if(targetIdx === announceIdx) return;
+        var current = announceMsgs[announceIdx];
+        var next = announceMsgs[targetIdx];
+
+        if(announceReducedMotion){
+          current.classList.remove('is-active');
+          next.classList.add('is-active');
+          announceIdx = targetIdx;
+          return;
+        }
+
+        next.classList.add('announce-no-transition');
+        next.style.transform = 'translateY(' + (dir > 0 ? '100%' : '-100%') + ')';
+        void next.offsetHeight;
+        next.classList.remove('announce-no-transition');
+
+        current.classList.remove('is-active');
+        current.style.transform = 'translateY(' + (dir > 0 ? '-100%' : '100%') + ')';
+        next.classList.add('is-active');
+        next.style.transform = '';
+
+        announceIdx = targetIdx;
+        setTimeout(function(){
+          current.classList.add('announce-no-transition');
+          current.style.transform = '';
+          void current.offsetHeight;
+          current.classList.remove('announce-no-transition');
+        }, 480);
       }
+
       var announceTimer = null;
       function restartAnnounceTimer(){
         if(announceReducedMotion) return;
         if(announceTimer) clearInterval(announceTimer);
-        announceTimer = setInterval(function(){ showAnnounce(announceIdx + 1); }, 4500);
+        announceTimer = setInterval(function(){ showAnnounce(announceIdx + 1, 1); }, 4500);
       }
       restartAnnounceTimer();
       var announcePrev = document.getElementById('announcePrev');
       var announceNext = document.getElementById('announceNext');
       if(announcePrev){
-        announcePrev.addEventListener('click', function(){ showAnnounce(announceIdx - 1); restartAnnounceTimer(); });
+        announcePrev.addEventListener('click', function(){ showAnnounce(announceIdx - 1, -1); restartAnnounceTimer(); });
       }
       if(announceNext){
-        announceNext.addEventListener('click', function(){ showAnnounce(announceIdx + 1); restartAnnounceTimer(); });
+        announceNext.addEventListener('click', function(){ showAnnounce(announceIdx + 1, 1); restartAnnounceTimer(); });
       }
     }
   }
