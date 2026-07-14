@@ -133,6 +133,47 @@
         "show_lines": false
       }
     },
+    "pdpreviews": {
+      "type": "reviews",
+      "blocks": {
+        "rev1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "\"Our dog used to panic the second the sky got dark. Now he curls up beside us instead of hiding. It's not magic, but it's made storm nights so much easier for all of us.\"",
+            "byline": "Molly C."
+          }
+        },
+        "rev2": {
+          "type": "review",
+          "settings": {
+            "stars": 4,
+            "quote": "\"It didn't eliminate my dog's anxiety completely, but it definitely helped him settle much faster during storms. He still gets nervous, just not nearly as overwhelmed as before. I'm glad I gave it a try.\"",
+            "byline": "Rodgers V."
+          }
+        },
+        "rev3": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "quote": "\"The first time she stayed out in the living room instead of running to hide, I knew something had changed.\"",
+            "byline": "Natalie D."
+          }
+        }
+      },
+      "block_order": [
+        "rev1",
+        "rev2",
+        "rev3"
+      ],
+      "settings": {
+        "heading": "First Impressions",
+        "show_rating": true,
+        "rating_value": 4.9,
+        "tag": "",
+        "note": ""
+      }
+    },
     "triggers": {
       "type": "card-carousel",
       "blocks": {
@@ -515,47 +556,6 @@
         "col_other": "Generic Vest"
       }
     },
-    "pdpreviews": {
-      "type": "reviews",
-      "blocks": {
-        "rev1": {
-          "type": "review",
-          "settings": {
-            "stars": 5,
-            "quote": "\"Our dog used to panic the second the sky got dark. Now he curls up beside us instead of hiding. It's not magic, but it's made storm nights so much easier for all of us.\"",
-            "byline": "Molly C."
-          }
-        },
-        "rev2": {
-          "type": "review",
-          "settings": {
-            "stars": 4,
-            "quote": "\"It didn't eliminate my dog's anxiety completely, but it definitely helped him settle much faster during storms. He still gets nervous, just not nearly as overwhelmed as before. I'm glad I gave it a try.\"",
-            "byline": "Rodgers V."
-          }
-        },
-        "rev3": {
-          "type": "review",
-          "settings": {
-            "stars": 5,
-            "quote": "\"The first time she stayed out in the living room instead of running to hide, I knew something had changed.\"",
-            "byline": "Natalie D."
-          }
-        }
-      },
-      "block_order": [
-        "rev1",
-        "rev2",
-        "rev3"
-      ],
-      "settings": {
-        "heading": "First Impressions",
-        "show_rating": true,
-        "rating_value": 4.9,
-        "tag": "",
-        "note": ""
-      }
-    },
     "pdpfaq": {
       "type": "faq-accordion",
       "blocks": {
@@ -628,6 +628,7 @@
   "order": [
     "main",
     "problem",
+    "pdpreviews",
     "triggers",
     "features",
     "howworks",
@@ -635,7 +636,6 @@
     "expect",
     "sizeguide",
     "compare",
-    "pdpreviews",
     "pdpfaq"
   ]
 }
