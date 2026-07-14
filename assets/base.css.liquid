@@ -71,12 +71,12 @@
   .nav-links a { text-decoration:none; font-size:0.94rem; font-weight:500; color:rgba(241,233,223,0.72); transition:color .15s ease; }
   .nav-links a:hover, .nav-links a.active { color:var(--text-on-dark); }
   .nav-right { grid-row:1; grid-column:3; justify-self:end; display:flex; align-items:center; gap:0.55rem; }
-  .cart-btn { position:relative; width:2.5rem; height:2.5rem; border-radius:50%; border:1px solid rgba(241,233,223,0.28); background:transparent; display:grid; place-items:center; color:var(--text-on-dark); flex:none; }
-  .cart-btn svg { width:1.15rem; height:1.15rem; }
+  .cart-btn { position:relative; width:2.9rem; height:2.9rem; border-radius:50%; border:1px solid rgba(241,233,223,0.28); background:transparent; display:grid; place-items:center; color:var(--text-on-dark); flex:none; }
+  .cart-btn svg { width:1.35rem; height:1.35rem; }
   .cart-count { position:absolute; top:-3px; right:-3px; min-width:1.15rem; height:1.15rem; padding:0 0.28rem; background:var(--accent); color:var(--text-on-dark); border-radius:999px; font-size:0.68rem; font-weight:700; display:grid; place-items:center; font-family:var(--font-mono); }
-  .menu-btn { grid-row:1; grid-column:1; justify-self:start; display:none; width:2.6rem; height:2.6rem; border-radius:50%; border:1px solid rgba(241,233,223,0.28); background:transparent; align-items:center; justify-content:center; flex:none; }
-  .menu-btn span, .menu-btn span::before, .menu-btn span::after { content:""; display:block; width:15px; height:2px; background:var(--text-on-dark); position:relative; transition:transform .2s ease,opacity .2s ease; }
-  .menu-btn span::before { position:absolute; top:-5px; } .menu-btn span::after { position:absolute; top:5px; }
+  .menu-btn { grid-row:1; grid-column:1; justify-self:start; display:none; width:3rem; height:3rem; border-radius:50%; border:1px solid rgba(241,233,223,0.28); background:transparent; align-items:center; justify-content:center; flex:none; }
+  .menu-btn span, .menu-btn span::before, .menu-btn span::after { content:""; display:block; width:17px; height:2px; background:var(--text-on-dark); position:relative; transition:transform .2s ease,opacity .2s ease; }
+  .menu-btn span::before { position:absolute; top:-6px; } .menu-btn span::after { position:absolute; top:6px; }
   .menu-btn[aria-expanded="true"] span { background:transparent; }
   .menu-btn[aria-expanded="true"] span::before { transform:translateY(5px) rotate(45deg); }
   .menu-btn[aria-expanded="true"] span::after { transform:translateY(-5px) rotate(-45deg); }
