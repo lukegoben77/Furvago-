@@ -462,6 +462,8 @@
     .help-visual{max-width:30rem;}
     .footer-cols{grid-template-columns:1fr 1fr;}
     .gallery{position:static;}
+    /* full-bleed hero photo: fill edge-to-edge instead of sitting inset inside .wrap's padding */
+    .gallery-main{width:calc(100% + var(--edge) * 2); margin-left:calc(var(--edge) * -1); margin-right:calc(var(--edge) * -1); border-radius:0;}
     .about-values{grid-template-columns:1fr;}
     .sticky-atc{display:flex;}
 
