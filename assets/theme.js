@@ -145,12 +145,15 @@
   var jumpSGAcc = document.getElementById('jumpSizeGuideAcc');
   if(jumpSGAcc) jumpSGAcc.addEventListener('click', jumpToSizeGuide);
 
-  /* ---------- REVIEWS JUMP LINK (star rating above the title) ---------- */
+  /* ---------- REVIEWS JUMP LINK (star rating above the title) ----------
+     Prefers the Judge.me widget (id it renders its reviews into) since
+     that's the real reviews list; falls back to the theme's own "First
+     Impressions" section if Judge.me isn't present on the page. */
   var pdpRatingLink = document.getElementById('pdpRatingLink');
   if(pdpRatingLink){
     pdpRatingLink.addEventListener('click', function(){
-      var reviews = document.getElementById('pdp-reviews');
-      if(reviews) reviews.scrollIntoView({behavior:'smooth', block:'start'});
+      var target = document.getElementById('judgeme_product_reviews') || document.getElementById('pdp-reviews');
+      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
     });
   }
 
