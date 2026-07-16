@@ -9,7 +9,7 @@
             {%- if block.settings.image -%}
               <img src="{{ block.settings.image | image_url: width: 700 }}" alt="{{ block.settings.image.alt | default: block.settings.title | escape }}" loading="lazy" />
             {%- else -%}
-              {% render 'icon', name: block.settings.icon, width: '1.7' %}
+              <span class="step-emoji" role="img" aria-label="{{ block.settings.title | escape }}">{{ block.settings.emoji }}</span>
             {%- endif -%}
           </div>
           <div class="card-copy">
@@ -41,13 +41,8 @@
       "type": "step",
       "name": "Step",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "Photo (replaces the icon below if set)" },
-        { "type": "select", "id": "icon", "label": "Icon (used if no photo is chosen)", "options": [
-          { "value": "head-slide", "label": "Over the head" },
-          { "value": "clasp", "label": "Clasp" },
-          { "value": "clock", "label": "Clock" },
-          { "value": "check-circle", "label": "Check circle" }
-        ], "default": "head-slide" },
+        { "type": "image_picker", "id": "image", "label": "Photo (replaces the emoji below if set)" },
+        { "type": "text", "id": "emoji", "label": "Emoji (used if no photo is chosen)", "info": "Paste any emoji — shown large above the step text.", "default": "🐕‍🦺" },
         { "type": "text", "id": "title", "label": "Title", "default": "Slide it over their head" },
         { "type": "textarea", "id": "text", "label": "Body", "default": "Let the collar opening rest naturally at the base of the neck." },
         { "type": "text", "id": "pill", "label": "Pill badge", "default": "Under a minute" }

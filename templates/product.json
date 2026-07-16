@@ -309,7 +309,7 @@
         "step2": {
           "type": "step",
           "settings": {
-            "icon": "clasp",
+            "emoji": "🐕‍🦺",
             "title": "Wrap and fasten",
             "text": "Snug but not tight — you should be able to slip two flat fingers underneath.",
             "pill": "Two-finger fit"
@@ -318,7 +318,7 @@
         "step3": {
           "type": "step",
           "settings": {
-            "icon": "clock",
+            "emoji": "⏰",
             "title": "Time it right",
             "text": "When you can, put it on 15–20 minutes before a trigger you know is coming.",
             "pill": "15–20 min early"
@@ -327,7 +327,7 @@
         "step4": {
           "type": "step",
           "settings": {
-            "icon": "check-circle",
+            "emoji": "✅",
             "title": "Leave it on as needed",
             "text": "Most owners remove it once the storm passes or once they're back home.",
             "pill": "Until they're settled"
