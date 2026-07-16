@@ -14,6 +14,7 @@
 
   {{ content_for_header }}
 
+  <link rel="preload" href="{{ 'bricolage.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ 'intertight.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
   {{ 'base.css' | asset_url | stylesheet_tag }}
   <noscript><style>.reveal{opacity:1!important;transform:none!important}.cart-drawer,.scrim,.sticky-atc{display:none!important}</style></noscript>
