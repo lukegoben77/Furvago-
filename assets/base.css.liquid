@@ -435,6 +435,13 @@
   .field input:focus, .field textarea:focus { border-color:var(--accent); outline:none; }
   .form-msg { font-size:0.9rem; color:var(--accent); min-height:1.2em; }
 
+  /* ---------- JUDGE.ME REVIEWS WIDGET ----------
+     The app renders its own markup we don't control; contain it to the
+     viewport and align it with the page's normal edge padding so it
+     doesn't sit flush against the screen edges or overflow on mobile. */
+  #judgeme_product_reviews { max-width:100%; box-sizing:border-box; padding:0 var(--edge); overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  #judgeme_product_reviews img, #judgeme_product_reviews video, #judgeme_product_reviews iframe { max-width:100%; height:auto; }
+
   /* ---------- FOOTER ---------- */
   footer { background:var(--dark); color:var(--text-on-dark); padding:clamp(3rem,6vw,4.5rem) 0 1.5rem; }
   .footer-top { display:grid; grid-template-columns:1.3fr 1fr; gap:2.5rem; padding-bottom:clamp(2.5rem,6vw,3.5rem); border-bottom:1px solid var(--line-dark); }
