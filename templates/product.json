@@ -304,33 +304,27 @@
       }
     },
     "howtouse": {
-      "type": "how-to-use",
+      "type": "video-with-text",
       "blocks": {
         "step2": {
-          "type": "step",
+          "type": "point",
           "settings": {
-            "emoji": "🐕‍🦺",
             "title": "Wrap and fasten",
-            "text": "Snug but not tight — you should be able to slip two flat fingers underneath.",
-            "pill": "Two-finger fit"
+            "text": "Snug but not tight — you should be able to slip two flat fingers underneath."
           }
         },
         "step3": {
-          "type": "step",
+          "type": "point",
           "settings": {
-            "emoji": "⏰",
             "title": "Time it right",
-            "text": "When you can, put it on 15–20 minutes before a trigger you know is coming.",
-            "pill": "15–20 min early"
+            "text": "When you can, put it on 15–20 minutes before a trigger you know is coming."
           }
         },
         "step4": {
-          "type": "step",
+          "type": "point",
           "settings": {
-            "emoji": "✅",
             "title": "Leave it on as needed",
-            "text": "Most owners remove it once the storm passes or once they're back home.",
-            "pill": "Until they're settled"
+            "text": "Most owners remove it once the storm passes or once they're back home."
           }
         }
       },
@@ -340,8 +334,11 @@
         "step4"
       ],
       "settings": {
-        "eyebrow": "",
+        "eyebrow": "In practice",
         "heading": "Ten Minutes Ahead Of The Moment",
+        "body": "Ten minutes ahead of the moment, this is all it takes.",
+        "autoplay": false,
+        "loop": false,
         "closing": "Three minutes of prep, and they're ready for whatever's coming."
       }
     },

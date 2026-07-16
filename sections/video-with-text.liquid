@@ -1,0 +1,64 @@
+<section>
+  <div class="wrap help-grid">
+    <div class="help-visual reveal">
+      <div class="hero-panel">
+        <div class="product-frame">
+          {%- if section.settings.video -%}
+            {{ section.settings.video | video_tag: image_size: '1000x', controls: true, autoplay: section.settings.autoplay, loop: section.settings.loop, muted: section.settings.autoplay }}
+          {%- else -%}
+            <img src="{{ 'product-navy.jpg' | asset_url }}" alt="A dog resting calmly in the navy Furvago vest" width="1000" height="1000" />
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+    <div class="help-heading">
+      {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+    <div class="help-body">
+      {%- if section.settings.body != blank -%}<p>{{ section.settings.body }}</p>{%- endif -%}
+      <div class="help-points">
+        {%- for block in section.blocks -%}
+          <div class="help-point" {{ block.shopify_attributes }}><span class="pnum">{{ forloop.index | prepend: '0' }}</span><div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div></div>
+        {%- endfor -%}
+      </div>
+      {%- if section.settings.closing != blank -%}
+        <p class="carousel-closing" style="text-align:left;margin-left:0;">{{ section.settings.closing }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Video with text",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "In practice" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Watch how it goes on." },
+    { "type": "video", "id": "video", "label": "Video (falls back to the bundled navy vest photo)" },
+    { "type": "checkbox", "id": "autoplay", "label": "Autoplay (muted, loops silently)", "default": false },
+    { "type": "checkbox", "id": "loop", "label": "Loop video", "default": false },
+    { "type": "textarea", "id": "body", "label": "Body", "default": "Ten minutes ahead of the moment, this is all it takes." },
+    { "type": "text", "id": "closing", "label": "Closing line", "default": "Three minutes of prep, and they're ready for whatever's coming." }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Numbered point",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Wrap and fasten" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Snug but not tight — you should be able to slip two flat fingers underneath." }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "default": {
+    "blocks": [
+      { "type": "point", "settings": { "title": "Wrap and fasten", "text": "Snug but not tight — you should be able to slip two flat fingers underneath." } },
+      { "type": "point", "settings": { "title": "Time it right", "text": "When you can, put it on 15–20 minutes before a trigger you know is coming." } },
+      { "type": "point", "settings": { "title": "Leave it on as needed", "text": "Most owners remove it once the storm passes or once they're back home." } }
+    ]
+  },
+  "presets": [ { "name": "Video with text" } ]
+}
+{% endschema %}
