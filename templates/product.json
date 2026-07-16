@@ -390,6 +390,7 @@
         "stage2",
         "stage3"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "",
         "heading": "What To Expect",
