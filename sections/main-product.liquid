@@ -89,7 +89,7 @@
       <form method="post" action="{{ routes.cart_add_url }}" id="productForm" class="atc-row">
         <input type="hidden" name="id" id="variantId" value="{{ current_variant.id }}">
         <button type="submit" class="btn btn-primary" id="addToCart"{% unless current_variant.available %} disabled{% endunless %}>
-          {%- if current_variant.available -%}Add to cart — {{ current_variant.price | money }}{%- else -%}Sold out{%- endif -%}
+          {%- if current_variant.available -%}Add to cart{%- else -%}Sold out{%- endif -%}
         </button>
       </form>
 

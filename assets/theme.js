@@ -257,7 +257,7 @@
       }
       if(atc){
         atc.disabled = !currentVariant.available;
-        atc.textContent = currentVariant.available ? ('Add to cart — ' + money(currentVariant.price)) : 'Sold out';
+        atc.textContent = currentVariant.available ? 'Add to cart' : 'Sold out';
       }
       updateGalleryForVariant(currentVariant.id);
     } else if(atc){
