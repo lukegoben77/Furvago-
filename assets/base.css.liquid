@@ -278,8 +278,8 @@
   .size-btn.active { background:var(--dark); color:var(--text-on-dark); border-color:var(--dark); }
   .atc-row { display:flex; gap:0.8rem; margin-top:1.6rem; }
   .atc-row .btn-primary { flex:1; white-space:normal; text-align:center; }
-  .pdp-reassure { margin-top:1.2rem; display:flex; flex-direction:column; gap:0.7rem; }
-  .pdp-reassure .r { display:flex; gap:0.7rem; align-items:center; font-size:0.98rem; color:var(--ink-soft); }
+  .pdp-reassure { margin-top:1.2rem; display:flex; flex-direction:row; flex-wrap:wrap; column-gap:1.4rem; row-gap:0.6rem; }
+  .pdp-reassure .r { display:flex; gap:0.5rem; align-items:center; font-size:0.98rem; color:var(--ink-soft); white-space:nowrap; }
   .pdp-reassure svg { width:1.4rem; height:1.4rem; color:var(--accent); flex:none; }
   /* ---------- PDP LONG-FORM SECTIONS (full width) ---------- */
   .pdp-prose { max-width:44rem; }
@@ -367,6 +367,7 @@
   .sticky-atc .sa-price { font-family:var(--font-body); font-weight:500; font-size:0.85rem; color:var(--ink-soft); }
   .sticky-atc .btn { padding:0.75em 1.4em; font-size:1.05rem; }
   #addToCart, #addToCartExpect { font-size:1.2rem; }
+  #addToCart, #addToCartExpect, #stickyAdd { border-radius:12px; }
 
   /* ---------- CART DRAWER ---------- */
   .scrim { position:fixed; inset:0; background:rgba(45,42,33,0.5); z-index:110; opacity:0; visibility:hidden; transition:opacity .3s ease,visibility .3s ease; }
