@@ -183,7 +183,7 @@
         "card1": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/5d5b95b7-a5f6-4844-a658-2c7caec8bd3e.png",
+            "image": "shopify://shop_images/142de56d-1312-4bae-83ae-3d3cd401e19e.png",
             "default_asset": "none",
             "image_position": "",
             "image_zoom": 1,
@@ -301,45 +301,6 @@
         "heading": "How Gentle Pressure Helps",
         "image": "shopify://shop_images/68e2e307-a9f2-4bb5-9dc0-160b3d6d7852.png",
         "body": "<p>The idea behind Furvago isn't new or complicated: steady, even pressure has a long, well-understood history of helping calm an anxious body — it's the same principle behind swaddling a newborn or wrapping up in a weighted blanket. The vest wraps snugly around your dog's chest and torso and stays there, applying that same gentle, constant pressure for as long as it's on.</p><p>Many dog owners report their dogs settle faster, pace less, and seem more comfortable with it on — especially during storms, fireworks, and time alone. It isn't a sedative, and it isn't a cure. We haven't run a clinical trial and we won't pretend we have. For some dogs, it's a small help. For a lot of dogs, it becomes part of the routine on the nights that are hardest.</p><p>If your dog's anxiety is severe, or you're not seeing any difference after several tries, that's worth a conversation with your vet — the vest is meant to sit alongside good veterinary care, not replace it.</p>"
-      }
-    },
-    "howtouse": {
-      "type": "video-with-text",
-      "blocks": {
-        "step2": {
-          "type": "point",
-          "settings": {
-            "title": "Wrap and fasten",
-            "text": "Snug but not tight — you should be able to slip two flat fingers underneath."
-          }
-        },
-        "step3": {
-          "type": "point",
-          "settings": {
-            "title": "Time it right",
-            "text": "When you can, put it on 15–20 minutes before a trigger you know is coming."
-          }
-        },
-        "step4": {
-          "type": "point",
-          "settings": {
-            "title": "Leave it on as needed",
-            "text": "Most owners remove it once the storm passes or once they're back home."
-          }
-        }
-      },
-      "block_order": [
-        "step2",
-        "step3",
-        "step4"
-      ],
-      "settings": {
-        "eyebrow": "In practice",
-        "heading": "Ten Minutes Ahead Of The Moment",
-        "body": "Ten minutes ahead of the moment, this is all it takes.",
-        "autoplay": false,
-        "loop": false,
-        "closing": "Three minutes of prep, and they're ready for whatever's coming."
       }
     },
     "expect": {
@@ -649,7 +610,6 @@
     "triggers",
     "features",
     "howworks",
-    "howtouse",
     "expect",
     "sizeguide",
     "compare",
