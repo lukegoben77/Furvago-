@@ -183,7 +183,7 @@
         "heading": "Like a hug that doesn't let go.",
         "image": "shopify://shop_images/c71d6e70-72a7-4e20-a417-5bb085b10d66.png",
         "video": "shopify://files/videos/5000485510287.mp4",
-        "autoplay": false,
+        "autoplay": true,
         "loop": false,
         "body": "Furvago is designed to apply gentle, constant pressure around your dog's torso — the same comforting principle behind swaddling a baby or a weighted blanket. Many dog owners report their dogs settle faster and rest more easily once it's on."
       }
