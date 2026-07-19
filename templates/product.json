@@ -148,7 +148,7 @@
         "rev2": {
           "type": "review",
           "settings": {
-            "stars": 4,
+            "stars": 5,
             "quote": "\"It didn't eliminate my dog's anxiety completely, but it definitely helped him settle much faster during storms. He still gets nervous, just not nearly as overwhelmed as before. I'm glad I gave it a try.\"",
             "byline": "Rodgers V.",
             "image": "shopify://shop_images/b277748f-6649-4a0a-aefa-dbeb23394f0c.png"
@@ -171,8 +171,6 @@
       ],
       "settings": {
         "heading": "First Impressions",
-        "show_rating": true,
-        "rating_value": 4.9,
         "tag": "",
         "note": ""
       }
@@ -301,45 +299,6 @@
         "heading": "How Gentle Pressure Helps",
         "image": "shopify://shop_images/68e2e307-a9f2-4bb5-9dc0-160b3d6d7852.png",
         "body": "<p>The idea behind Furvago isn't new or complicated: steady, even pressure has a long, well-understood history of helping calm an anxious body — it's the same principle behind swaddling a newborn or wrapping up in a weighted blanket. The vest wraps snugly around your dog's chest and torso and stays there, applying that same gentle, constant pressure for as long as it's on.</p><p>Many dog owners report their dogs settle faster, pace less, and seem more comfortable with it on — especially during storms, fireworks, and time alone. It isn't a sedative, and it isn't a cure. We haven't run a clinical trial and we won't pretend we have. For some dogs, it's a small help. For a lot of dogs, it becomes part of the routine on the nights that are hardest.</p><p>If your dog's anxiety is severe, or you're not seeing any difference after several tries, that's worth a conversation with your vet — the vest is meant to sit alongside good veterinary care, not replace it.</p>"
-      }
-    },
-    "howtouse": {
-      "type": "video-with-text",
-      "blocks": {
-        "point1": {
-          "type": "point",
-          "settings": {
-            "title": "Wrap and fasten",
-            "text": "Snug but not tight — you should be able to slip two flat fingers underneath."
-          }
-        },
-        "point2": {
-          "type": "point",
-          "settings": {
-            "title": "Time it right",
-            "text": "When you can, put it on 15–20 minutes before a trigger you know is coming."
-          }
-        },
-        "point3": {
-          "type": "point",
-          "settings": {
-            "title": "Leave it on as needed",
-            "text": "Most owners remove it once the storm passes or once they're back home."
-          }
-        }
-      },
-      "block_order": [
-        "point1",
-        "point2",
-        "point3"
-      ],
-      "settings": {
-        "eyebrow": "In practice",
-        "heading": "Ten Minutes Ahead Of The Moment",
-        "autoplay": false,
-        "loop": false,
-        "body": "Ten minutes ahead of the moment, this is all it takes.",
-        "closing": "Three minutes of prep, and they're ready for whatever's coming."
       }
     },
     "expect": {
@@ -640,16 +599,26 @@
         "judge_me_reviews_review_widget_WjMaP3"
       ],
       "settings": {}
+    },
+    "how_it_helps_EA3HUY": {
+      "type": "how-it-helps",
+      "name": "How it helps",
+      "settings": {
+        "eyebrow": "How it helps",
+        "heading": "Like a hug that doesn't let go.",
+        "image": "shopify://shop_images/c71d6e70-72a7-4e20-a417-5bb085b10d66.png",
+        "body": "Furvago is designed to apply gentle, constant pressure around your dog's torso — the same comforting principle behind swaddling a baby or a weighted blanket. Many dog owners report their dogs settle faster and rest more easily once it's on."
+      }
     }
   },
   "order": [
     "main",
     "problem",
     "pdpreviews",
+    "how_it_helps_EA3HUY",
     "triggers",
     "features",
     "howworks",
-    "howtouse",
     "expect",
     "sizeguide",
     "compare",
