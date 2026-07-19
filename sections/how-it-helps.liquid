@@ -1,10 +1,24 @@
 <section>
+  {% style %}
+    .hth-media { border-radius:18px; overflow:hidden; box-shadow:0 20px 40px -22px var(--shadow); position:relative; background:var(--bg); }
+    .hth-media img, .hth-media video { display:block; width:100%; height:auto; }
+    .hth-watch-badge { position:absolute; top:1rem; left:1rem; display:inline-flex; align-items:center; gap:0.4em; background:rgba(74,78,58,0.55); backdrop-filter:blur(3px); color:var(--text-on-dark); font-family:var(--font-body); font-weight:600; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:0.4em 0.75em; border-radius:999px; pointer-events:none; }
+    .hth-watch-badge svg { width:0.85rem; height:0.85rem; flex:none; }
+    .hth-steps { margin-top:1.9rem; display:grid; }
+    .hth-step { display:grid; grid-template-columns:2.5rem 1fr; gap:1rem; position:relative; padding-bottom:1.7rem; }
+    .hth-step:last-child { padding-bottom:0; }
+    .hth-step:not(:last-child)::before { content:""; position:absolute; left:1.25rem; top:2.5rem; bottom:-0.2rem; width:2px; background:var(--line); transform:translateX(-50%); }
+    .hth-step-num { width:2.5rem; height:2.5rem; border-radius:50%; background:var(--accent); color:var(--text-on-dark); display:grid; place-items:center; font-family:var(--font-display); font-weight:700; font-size:1rem; flex:none; position:relative; z-index:1; }
+    .hth-step h3 { font-size:1.14rem; margin:0 0 0.3rem; }
+    .hth-step p { margin:0; font-size:0.96rem; color:var(--ink-soft); line-height:1.5; }
+  {% endstyle %}
   <div class="wrap help-grid">
     <div class="help-visual reveal">
       <div class="hero-panel">
-        <div class="product-frame">
+        <div class="hth-media">
           {%- if section.settings.video -%}
             {{ section.settings.video | video_tag: image_size: '1000x', controls: true, autoplay: section.settings.autoplay, loop: section.settings.loop, muted: section.settings.autoplay }}
+            <span class="hth-watch-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch</span>
           {%- elsif section.settings.image -%}
             <img src="{{ section.settings.image | image_url: width: 1000 }}" alt="{{ section.settings.image.alt | escape }}" width="1000" height="1000" />
           {%- else -%}
@@ -14,16 +28,22 @@
       </div>
     </div>
     <div class="help-heading">
-      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
       <h2>{{ section.settings.heading }}</h2>
     </div>
     <div class="help-body">
-      <p>{{ section.settings.body }}</p>
-      <div class="help-points">
+      {%- if section.settings.body != blank -%}<p>{{ section.settings.body }}</p>{%- endif -%}
+      <div class="hth-steps">
         {%- for block in section.blocks -%}
-          <div class="help-point" {{ block.shopify_attributes }}><span class="pnum">{{ forloop.index | prepend: '0' }}</span><div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div></div>
+          <div class="hth-step" {{ block.shopify_attributes }}>
+            <span class="hth-step-num">{{ forloop.index }}</span>
+            <div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div>
+          </div>
         {%- endfor -%}
       </div>
+      {%- if section.settings.closing != blank -%}
+        <p class="carousel-closing" style="text-align:left;margin-left:0;">{{ section.settings.closing }}</p>
+      {%- endif -%}
     </div>
   </div>
 </section>
@@ -34,11 +54,12 @@
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "How it helps" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Like a hug that doesn't let go." },
-    { "type": "image_picker", "id": "image", "label": "Photo (falls back to the bundled navy vest photo)" },
+    { "type": "image_picker", "id": "image", "label": "Photo (falls back to the bundled navy vest photo, unused if a video is set)" },
     { "type": "video", "id": "video", "label": "Video (optional — takes priority over the photo above if set)" },
     { "type": "checkbox", "id": "autoplay", "label": "Autoplay (muted, loops silently)", "default": false },
     { "type": "checkbox", "id": "loop", "label": "Loop video", "default": false },
-    { "type": "textarea", "id": "body", "label": "Body", "default": "Furvago is designed to apply gentle, constant pressure around your dog's torso — the same comforting principle behind swaddling a baby or a weighted blanket. Many dog owners report their dogs settle faster and rest more easily once it's on." }
+    { "type": "textarea", "id": "body", "label": "Body", "default": "Furvago is designed to apply gentle, constant pressure around your dog's torso — the same comforting principle behind swaddling a baby or a weighted blanket. Many dog owners report their dogs settle faster and rest more easily once it's on." },
+    { "type": "text", "id": "closing", "label": "Closing line (optional, italic)" }
   ],
   "blocks": [
     {
@@ -51,6 +72,22 @@
     }
   ],
   "max_blocks": 6,
-  "presets": [ { "name": "How it helps" } ]
+  "presets": [
+    { "name": "How it helps" },
+    {
+      "name": "Video with text",
+      "settings": {
+        "eyebrow": "In practice",
+        "heading": "Ten Minutes Ahead Of The Moment",
+        "body": "Ten minutes ahead of the moment, this is all it takes.",
+        "closing": "Three minutes of prep, and they're ready for whatever's coming."
+      },
+      "blocks": [
+        { "type": "point", "settings": { "title": "Wrap and fasten", "text": "Snug but not tight — you should be able to slip two flat fingers underneath." } },
+        { "type": "point", "settings": { "title": "Time it right", "text": "When you can, put it on 15–20 minutes before a trigger you know is coming." } },
+        { "type": "point", "settings": { "title": "Leave it on as needed", "text": "Most owners remove it once the storm passes or once they're back home." } }
+      ]
+    }
+  ]
 }
 {% endschema %}
