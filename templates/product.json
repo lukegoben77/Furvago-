@@ -175,6 +175,16 @@
         "note": ""
       }
     },
+    "how_it_helps_EA3HUY": {
+      "type": "how-it-helps",
+      "name": "How it helps",
+      "settings": {
+        "eyebrow": "How it helps",
+        "heading": "Like a hug that doesn't let go.",
+        "image": "shopify://shop_images/c71d6e70-72a7-4e20-a417-5bb085b10d66.png",
+        "body": "Furvago is designed to apply gentle, constant pressure around your dog's torso — the same comforting principle behind swaddling a baby or a weighted blanket. Many dog owners report their dogs settle faster and rest more easily once it's on."
+      }
+    },
     "triggers": {
       "type": "card-carousel",
       "blocks": {
@@ -297,7 +307,7 @@
       "settings": {
         "eyebrow": "",
         "heading": "How Gentle Pressure Helps",
-        "image": "shopify://shop_images/68e2e307-a9f2-4bb5-9dc0-160b3d6d7852.png",
+        "image": "shopify://shop_images/c69e9cb9-b56c-4f80-b500-8cc37340b1d1.png",
         "body": "<p>The idea behind Furvago isn't new or complicated: steady, even pressure has a long, well-understood history of helping calm an anxious body — it's the same principle behind swaddling a newborn or wrapping up in a weighted blanket. The vest wraps snugly around your dog's chest and torso and stays there, applying that same gentle, constant pressure for as long as it's on.</p><p>Many dog owners report their dogs settle faster, pace less, and seem more comfortable with it on — especially during storms, fireworks, and time alone. It isn't a sedative, and it isn't a cure. We haven't run a clinical trial and we won't pretend we have. For some dogs, it's a small help. For a lot of dogs, it becomes part of the routine on the nights that are hardest.</p><p>If your dog's anxiety is severe, or you're not seeing any difference after several tries, that's worth a conversation with your vet — the vest is meant to sit alongside good veterinary care, not replace it.</p>"
       }
     },
@@ -599,16 +609,6 @@
         "judge_me_reviews_review_widget_WjMaP3"
       ],
       "settings": {}
-    },
-    "how_it_helps_EA3HUY": {
-      "type": "how-it-helps",
-      "name": "How it helps",
-      "settings": {
-        "eyebrow": "How it helps",
-        "heading": "Like a hug that doesn't let go.",
-        "image": "shopify://shop_images/c71d6e70-72a7-4e20-a417-5bb085b10d66.png",
-        "body": "Furvago is designed to apply gentle, constant pressure around your dog's torso — the same comforting principle behind swaddling a baby or a weighted blanket. Many dog owners report their dogs settle faster and rest more easily once it's on."
-      }
     }
   },
   "order": [
