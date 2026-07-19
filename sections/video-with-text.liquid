@@ -1,13 +1,32 @@
 {%- comment -%} Video + text section for the PDP "how to use" spot {%- endcomment -%}
-<section class="how-to-use-video-section">
+<section class="video-with-text">
+  {% style %}
+    .vwt-frame { background:var(--card); border-radius:28px; padding:clamp(1rem,2.5vw,1.75rem); position:relative; overflow:hidden; }
+    .vwt-frame .paw-print { position:absolute; top:-6%; right:-8%; width:46%; color:var(--dark); opacity:0.09; pointer-events:none; }
+    .vwt-video { border-radius:18px; overflow:hidden; box-shadow:0 20px 40px -22px var(--shadow); position:relative; background:var(--bg); }
+    .vwt-video video, .vwt-video img { display:block; width:100%; height:auto; }
+    .vwt-play-badge { position:absolute; top:1rem; left:1rem; display:inline-flex; align-items:center; gap:0.4em; background:rgba(74,78,58,0.55); backdrop-filter:blur(3px); color:var(--text-on-dark); font-family:var(--font-body); font-weight:600; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; padding:0.4em 0.75em; border-radius:999px; pointer-events:none; }
+    .vwt-play-badge svg { width:0.85rem; height:0.85rem; flex:none; }
+    .vwt-steps { margin-top:1.9rem; display:grid; }
+    .vwt-step { display:grid; grid-template-columns:2.5rem 1fr; gap:1rem; position:relative; padding-bottom:1.7rem; }
+    .vwt-step:last-child { padding-bottom:0; }
+    .vwt-step:not(:last-child)::before { content:""; position:absolute; left:1.25rem; top:2.5rem; bottom:-0.2rem; width:2px; background:var(--line); transform:translateX(-50%); }
+    .vwt-step-num { width:2.5rem; height:2.5rem; border-radius:50%; background:var(--accent); color:var(--text-on-dark); display:grid; place-items:center; font-family:var(--font-display); font-weight:700; font-size:1rem; flex:none; position:relative; z-index:1; }
+    .vwt-step h3 { font-size:1.14rem; margin:0 0 0.3rem; }
+    .vwt-step p { margin:0; font-size:0.96rem; color:var(--ink-soft); line-height:1.5; }
+  {% endstyle %}
   <div class="wrap help-grid">
     <div class="help-visual reveal">
-      <div class="hero-panel">
-        <div class="product-frame">
+      <div class="vwt-frame">
+        <svg class="paw-print" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><circle cx="30" cy="30" r="10"/><circle cx="70" cy="30" r="10"/><circle cx="20" cy="55" r="8"/><circle cx="80" cy="55" r="8"/><ellipse cx="50" cy="68" rx="22" ry="18"/></svg>
+        <div class="vwt-video">
           {%- if section.settings.video -%}
             {{ section.settings.video | video_tag: image_size: '1000x', controls: true, autoplay: section.settings.autoplay, loop: section.settings.loop, muted: section.settings.autoplay }}
           {%- else -%}
-            <img src="{{ 'product-navy.jpg' | asset_url }}" alt="A dog resting calmly in the navy Furvago vest" width="1000" height="1000" />
+            <img src="{{ 'product-navy.jpg' | asset_url }}" alt="A dog resting calmly in the navy Furvago vest" width="1000" height="1000" loading="lazy">
+          {%- endif -%}
+          {%- if section.settings.show_badge -%}
+            <span class="vwt-play-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>{{ section.settings.badge_text }}</span>
           {%- endif -%}
         </div>
       </div>
@@ -18,9 +37,12 @@
     </div>
     <div class="help-body">
       {%- if section.settings.body != blank -%}<p>{{ section.settings.body }}</p>{%- endif -%}
-      <div class="help-points">
+      <div class="vwt-steps">
         {%- for block in section.blocks -%}
-          <div class="help-point" {{ block.shopify_attributes }}><span class="pnum">{{ forloop.index | prepend: '0' }}</span><div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div></div>
+          <div class="vwt-step" {{ block.shopify_attributes }}>
+            <span class="vwt-step-num">{{ forloop.index }}</span>
+            <div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div>
+          </div>
         {%- endfor -%}
       </div>
       {%- if section.settings.closing != blank -%}
@@ -39,6 +61,8 @@
     { "type": "video", "id": "video", "label": "Video (falls back to the bundled navy vest photo)" },
     { "type": "checkbox", "id": "autoplay", "label": "Autoplay (muted, loops silently)", "default": false },
     { "type": "checkbox", "id": "loop", "label": "Loop video", "default": false },
+    { "type": "checkbox", "id": "show_badge", "label": "Show \"Watch\" badge on the video", "default": true },
+    { "type": "text", "id": "badge_text", "label": "Badge text", "default": "Watch" },
     { "type": "textarea", "id": "body", "label": "Body", "default": "Ten minutes ahead of the moment, this is all it takes." },
     { "type": "text", "id": "closing", "label": "Closing line", "default": "Three minutes of prep, and they're ready for whatever's coming." }
   ],
