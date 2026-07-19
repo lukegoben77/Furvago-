@@ -23,7 +23,7 @@
       {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
       {%- if section.settings.show_rating -%}
         <a id="pdpRatingLink" class="pdp-rating-link" aria-label="Jump to reviews">
-          {%- render 'star-rating', rating: section.settings.rating_value -%}
+          {%- render 'star-rating', rating: section.settings.rating_value, count: product.metafields.reviews.rating_count.value -%}
         </a>
       {%- endif -%}
       <h1>{{ product.title }}</h1>

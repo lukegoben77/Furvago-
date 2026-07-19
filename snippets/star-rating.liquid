@@ -1,7 +1,8 @@
 {%- comment -%}
   Renders a 5-star row proportionally filled to `rating` (e.g. 4.9 fills
   98% of the star row, leaving a sliver of the 5th star unfilled) plus
-  the numeric value. Usage: {% render 'star-rating', rating: section.settings.rating_value %}
+  the numeric value, and optionally a "(N reviews)" count.
+  Usage: {% render 'star-rating', rating: section.settings.rating_value, count: product.metafields.reviews.rating_count %}
 {%- endcomment -%}
 {%- assign rating_pct = rating | times: 20 -%}
 {%- if rating_pct > 100 -%}{%- assign rating_pct = 100 -%}{%- endif -%}
@@ -16,4 +17,7 @@
     </span>
   </span>
   <span class="star-rating-value">{{ rating }}</span>
+  {%- if count and count > 0 -%}
+    <span class="star-rating-count">({{ count }} review{% if count != 1 %}s{% endif %})</span>
+  {%- endif -%}
 </div>
