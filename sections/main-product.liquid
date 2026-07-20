@@ -30,9 +30,12 @@
       {%- if section.settings.hook != blank -%}
         <p class="pdp-hook">{{ section.settings.hook }}</p>
       {%- endif -%}
-      {%- if section.settings.subhead != blank -%}
-        <p style="color:var(--ink-soft);font-size:1rem;margin-top:0.6rem;line-height:1.5;">{{ section.settings.subhead }}</p>
-      {%- endif -%}
+      <ul class="pdp-benefits">
+        {%- if section.settings.benefit1 != blank -%}<li>{% render 'icon', name: 'check', width: '1.1' %}<span>{{ section.settings.benefit1 }}</span></li>{%- endif -%}
+        {%- if section.settings.benefit2 != blank -%}<li>{% render 'icon', name: 'check', width: '1.1' %}<span>{{ section.settings.benefit2 }}</span></li>{%- endif -%}
+        {%- if section.settings.benefit3 != blank -%}<li>{% render 'icon', name: 'check', width: '1.1' %}<span>{{ section.settings.benefit3 }}</span></li>{%- endif -%}
+        {%- if section.settings.benefit4 != blank -%}<li>{% render 'icon', name: 'check', width: '1.1' %}<span>{{ section.settings.benefit4 }}</span></li>{%- endif -%}
+      </ul>
       <div class="pdp-price">
         <span id="priceCurrent">{{ current_variant.price | money }}</span>
         <del id="priceCompare"{% unless has_compare %} style="display:none;"{% endunless %}>{{ current_variant.compare_at_price | money }}</del>
@@ -133,7 +136,10 @@
     { "type": "checkbox", "id": "show_rating", "label": "Show star rating above the title", "default": true },
     { "type": "number", "id": "rating_value", "label": "Rating value", "default": 4.9 },
     { "type": "text", "id": "hook", "label": "Hook line (italic)", "default": "The first time you put it on, watch their shoulders drop." },
-    { "type": "textarea", "id": "subhead", "label": "Subhead", "default": "Built for the exact moments that undo them — the thunder rolling in, the fireworks starting, the click of the door as you leave." },
+    { "type": "text", "id": "benefit1", "label": "Feature/benefit 1", "default": "Adjustable, secure fit for XS–XL dogs" },
+    { "type": "text", "id": "benefit2", "label": "Feature/benefit 2", "default": "Soft, breathable fabric that stays comfortable all day" },
+    { "type": "text", "id": "benefit3", "label": "Feature/benefit 3", "default": "On in under a minute — no wrestling required" },
+    { "type": "text", "id": "benefit4", "label": "Feature/benefit 4", "default": "30-day returns, used or not" },
     { "type": "text", "id": "gray_swatch_position", "label": "Gray swatch photo focal point (CSS background-position)", "info": "Nudge this if the Gray color swatch crops awkwardly. Lower percentage moves the visible crop up (toward the head), higher moves it down (toward the vest/body). e.g. \"center 40%\" or \"center 65%\".", "default": "center 55%" }
   ],
   "blocks": [

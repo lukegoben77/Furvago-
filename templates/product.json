@@ -88,7 +88,10 @@
         "show_rating": true,
         "rating_value": 4.9,
         "hook": "The first time you put it on, watch the pacing stop.",
-        "subhead": "Built for the exact moments that undo them — the thunder rolling in, the fireworks starting, the click of the door as you leave.",
+        "benefit1": "Adjustable, secure fit for XS–XL dogs",
+        "benefit2": "Soft, breathable fabric that stays comfortable all day",
+        "benefit3": "On in under a minute — no wrestling required",
+        "benefit4": "30-day returns, used or not",
         "gray_swatch_position": "center 55%"
       }
     },
