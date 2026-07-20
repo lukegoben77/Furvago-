@@ -12,12 +12,6 @@
           {%- if block.settings.image != blank -%}
             <img class="review-photo" src="{{ block.settings.image | image_url: width: 600 }}" alt="" width="600" height="600" loading="lazy">
           {%- endif -%}
-          <div class="review-stars" aria-label="{{ block.settings.stars }} out of 5">
-            {%- for i in (1..block.settings.stars) -%}
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 17l-6.2 3.6 1.6-6.7L2.2 8.9l6.9-.6z"/></svg>
-            {%- endfor -%}
-          </div>
-          <blockquote>{{ block.settings.quote }}</blockquote>
           <div class="review-meta">
             <div class="review-who">
               <span class="review-byline">{{ block.settings.byline }}</span>
@@ -30,6 +24,12 @@
               {%- endif -%}
             </div>
           </div>
+          <div class="review-stars" aria-label="{{ block.settings.stars }} out of 5">
+            {%- for i in (1..block.settings.stars) -%}
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 17l-6.2 3.6 1.6-6.7L2.2 8.9l6.9-.6z"/></svg>
+            {%- endfor -%}
+          </div>
+          <blockquote>{{ block.settings.quote }}</blockquote>
         </div>
       {%- endfor -%}
     </div>
