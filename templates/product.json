@@ -16,21 +16,21 @@
           "type": "reassure",
           "settings": {
             "icon": "truck",
-            "text": "Free shipping, no minimum"
+            "text": "Free shipping"
           }
         },
         "reassure2": {
           "type": "reassure",
           "settings": {
             "icon": "returns",
-            "text": "30-day returns, used or not"
+            "text": "30-day returns"
           }
         },
         "reassure3": {
           "type": "reassure",
           "settings": {
             "icon": "check",
-            "text": "Secure Checkout"
+            "text": "Secure checkout"
           }
         },
         "acc1": {
