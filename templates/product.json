@@ -184,17 +184,17 @@
         "rev3"
       ],
       "settings": {
-        "heading": "First Impressions",
+        "heading": "What Owners Are Noticing",
         "tag": "",
-        "note": ""
+        "note": "Feedback from dogs wearing the vest right now"
       }
     },
     "how_it_helps_EA3HUY": {
       "type": "how-it-helps",
       "name": "How it helps",
       "settings": {
-        "eyebrow": "How it helps",
-        "heading": "Like a hug that doesn't let go",
+        "eyebrow": "",
+        "heading": "Like A Hug That Doesn't Let Go",
         "image": "shopify://shop_images/c71d6e70-72a7-4e20-a417-5bb085b10d66.png",
         "video": "shopify://files/videos/5000485510287.mp4",
         "autoplay": true,
