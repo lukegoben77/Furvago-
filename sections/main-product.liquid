@@ -34,7 +34,7 @@
         {%- if section.settings.benefit1 != blank -%}<li><span class="b-icon">{% render 'icon', name: 'clasp', width: '1.3' %}</span><span>{{ section.settings.benefit1 }}</span></li>{%- endif -%}
         {%- if section.settings.benefit2 != blank -%}<li><span class="b-icon">{% render 'icon', name: 'shirt', width: '1.3' %}</span><span>{{ section.settings.benefit2 }}</span></li>{%- endif -%}
         {%- if section.settings.benefit3 != blank -%}<li><span class="b-icon">{% render 'icon', name: 'clock', width: '1.3' %}</span><span>{{ section.settings.benefit3 }}</span></li>{%- endif -%}
-        {%- if section.settings.benefit4 != blank -%}<li><span class="b-icon">{% render 'icon', name: 'returns', width: '1.3' %}</span><span>{{ section.settings.benefit4 }}</span></li>{%- endif -%}
+        {%- if section.settings.benefit4 != blank -%}<li><span class="b-icon">{% render 'icon', name: 'washing-machine', width: '1.3' %}</span><span>{{ section.settings.benefit4 }}</span></li>{%- endif -%}
       </ul>
       <div class="pdp-price">
         <span id="priceCurrent">{{ current_variant.price | money }}</span>
@@ -139,7 +139,7 @@
     { "type": "text", "id": "benefit1", "label": "Feature/benefit 1", "default": "Adjustable fit" },
     { "type": "text", "id": "benefit2", "label": "Feature/benefit 2", "default": "Breathable fabric" },
     { "type": "text", "id": "benefit3", "label": "Feature/benefit 3", "default": "On in a minute" },
-    { "type": "text", "id": "benefit4", "label": "Feature/benefit 4", "default": "30-day returns" },
+    { "type": "text", "id": "benefit4", "label": "Feature/benefit 4", "default": "Machine washable" },
     { "type": "text", "id": "gray_swatch_position", "label": "Gray swatch photo focal point (CSS background-position)", "info": "Nudge this if the Gray color swatch crops awkwardly. Lower percentage moves the visible crop up (toward the head), higher moves it down (toward the vest/body). e.g. \"center 40%\" or \"center 65%\".", "default": "center 55%" }
   ],
   "blocks": [
