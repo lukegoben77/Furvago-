@@ -92,6 +92,8 @@
         "benefit2": "Breathable fabric",
         "benefit3": "On in a minute",
         "benefit4": "Machine washable",
+        "show_stock_message": true,
+        "stock_message": "Limited stock available",
         "gray_swatch_position": "center 55%"
       }
     },

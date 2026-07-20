@@ -96,6 +96,10 @@
         </button>
       </form>
 
+      {%- if section.settings.show_stock_message and current_variant.available -%}
+        <p class="pdp-stock-msg">{% render 'icon', name: 'bolt', width: '0.9' %}{{ section.settings.stock_message }}</p>
+      {%- endif -%}
+
       <div class="pdp-reassure">
         {%- for block in section.blocks -%}
           {%- if block.type == 'reassure' -%}
@@ -140,6 +144,8 @@
     { "type": "text", "id": "benefit2", "label": "Feature/benefit 2", "default": "Breathable fabric" },
     { "type": "text", "id": "benefit3", "label": "Feature/benefit 3", "default": "On in a minute" },
     { "type": "text", "id": "benefit4", "label": "Feature/benefit 4", "default": "Machine washable" },
+    { "type": "checkbox", "id": "show_stock_message", "label": "Show stock urgency message below Add to cart", "default": true },
+    { "type": "text", "id": "stock_message", "label": "Stock message", "default": "Limited stock available" },
     { "type": "text", "id": "gray_swatch_position", "label": "Gray swatch photo focal point (CSS background-position)", "info": "Nudge this if the Gray color swatch crops awkwardly. Lower percentage moves the visible crop up (toward the head), higher moves it down (toward the vest/body). e.g. \"center 40%\" or \"center 65%\".", "default": "center 55%" }
   ],
   "blocks": [
