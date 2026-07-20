@@ -1,5 +1,12 @@
 {%- assign cart_product = all_products[settings.product_handle] -%}
 {%- assign cvcd_any = false -%}
+{%- assign total_savings = 0 -%}
+{%- for item in cart.items -%}
+  {%- if item.variant.compare_at_price > item.variant.price -%}
+    {%- assign item_savings = item.variant.compare_at_price | minus: item.variant.price | times: item.quantity -%}
+    {%- assign total_savings = total_savings | plus: item_savings -%}
+  {%- endif -%}
+{%- endfor -%}
 <script type="application/json" id="CartVariantCompareData">
 {
   {%- for v in cart_product.variants -%}
@@ -58,8 +65,19 @@
     {%- endif -%}
   </div>
   <div class="cart-foot">
-    <div class="cart-subtotal"><span class="lbl">Subtotal</span><span class="val" id="cartSubtotal">{{ cart.total_price | money }}</span></div>
+    <div class="cart-subtotal">
+      <span class="lbl">Subtotal</span>
+      <span class="cart-subtotal-right">
+        <span class="val" id="cartSubtotal">{{ cart.total_price | money }}</span>
+        <span class="cart-savings" id="cartSavings"{% unless total_savings > 0 %} style="display:none;"{% endunless %}>Save {{ total_savings | money }}</span>
+      </span>
+    </div>
     <p class="cart-note">Shipping &amp; taxes calculated at checkout.</p>
     <button class="btn btn-dark btn-block" id="checkoutBtn">Checkout</button>
+    <div class="cart-trust">
+      <div class="r">{% render 'icon', name: 'truck', width: '1.3' %}<span>Free shipping</span></div>
+      <div class="r">{% render 'icon', name: 'shield-check', width: '1.3' %}<span>30-day returns</span></div>
+      <div class="r">{% render 'icon', name: 'lock', width: '1.3' %}<span>Secure checkout</span></div>
+    </div>
   </div>
 </aside>
