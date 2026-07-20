@@ -96,7 +96,7 @@
       <div class="pdp-reassure">
         {%- for block in section.blocks -%}
           {%- if block.type == 'reassure' -%}
-            <div class="r" {{ block.shopify_attributes }}>{% render 'icon', name: block.settings.icon %}{{ block.settings.text }}</div>
+            <div class="r" {{ block.shopify_attributes }}>{% render 'icon', name: block.settings.icon %}<span>{{ block.settings.text }}</span></div>
           {%- endif -%}
         {%- endfor -%}
       </div>
@@ -144,6 +144,8 @@
         { "type": "select", "id": "icon", "label": "Icon", "options": [
           { "value": "truck", "label": "Shipping truck" },
           { "value": "returns", "label": "Return arrow" },
+          { "value": "shield-check", "label": "Shield with check" },
+          { "value": "lock", "label": "Padlock" },
           { "value": "calendar", "label": "Calendar" },
           { "value": "pin", "label": "Teardrop" },
           { "value": "check", "label": "Checkmark" }

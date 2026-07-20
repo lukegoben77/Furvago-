@@ -22,14 +22,14 @@
         "reassure2": {
           "type": "reassure",
           "settings": {
-            "icon": "returns",
+            "icon": "shield-check",
             "text": "30-day returns"
           }
         },
         "reassure3": {
           "type": "reassure",
           "settings": {
-            "icon": "check",
+            "icon": "lock",
             "text": "Secure checkout"
           }
         },
