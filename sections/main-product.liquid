@@ -97,7 +97,7 @@
       </form>
 
       {%- if section.settings.show_stock_message and current_variant.available -%}
-        <p class="pdp-stock-msg">{% render 'icon', name: 'bolt', width: '0.9' %}{{ section.settings.stock_message }}</p>
+        <p class="pdp-stock-msg">{% render 'icon', name: 'warning', width: '0.9' %}{{ section.settings.stock_message }}</p>
       {%- endif -%}
 
       <div class="pdp-reassure">
