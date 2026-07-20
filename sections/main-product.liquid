@@ -31,10 +31,10 @@
         <p class="pdp-hook">{{ section.settings.hook }}</p>
       {%- endif -%}
       <ul class="pdp-benefits">
-        {%- if section.settings.benefit1 != blank -%}<li>{% render 'icon', name: 'check', width: '1.1' %}<span>{{ section.settings.benefit1 }}</span></li>{%- endif -%}
-        {%- if section.settings.benefit2 != blank -%}<li>{% render 'icon', name: 'check', width: '1.1' %}<span>{{ section.settings.benefit2 }}</span></li>{%- endif -%}
-        {%- if section.settings.benefit3 != blank -%}<li>{% render 'icon', name: 'check', width: '1.1' %}<span>{{ section.settings.benefit3 }}</span></li>{%- endif -%}
-        {%- if section.settings.benefit4 != blank -%}<li>{% render 'icon', name: 'check', width: '1.1' %}<span>{{ section.settings.benefit4 }}</span></li>{%- endif -%}
+        {%- if section.settings.benefit1 != blank -%}<li><span class="b-icon">{% render 'icon', name: 'clasp', width: '1.3' %}</span><span>{{ section.settings.benefit1 }}</span></li>{%- endif -%}
+        {%- if section.settings.benefit2 != blank -%}<li><span class="b-icon">{% render 'icon', name: 'shirt', width: '1.3' %}</span><span>{{ section.settings.benefit2 }}</span></li>{%- endif -%}
+        {%- if section.settings.benefit3 != blank -%}<li><span class="b-icon">{% render 'icon', name: 'clock', width: '1.3' %}</span><span>{{ section.settings.benefit3 }}</span></li>{%- endif -%}
+        {%- if section.settings.benefit4 != blank -%}<li><span class="b-icon">{% render 'icon', name: 'returns', width: '1.3' %}</span><span>{{ section.settings.benefit4 }}</span></li>{%- endif -%}
       </ul>
       <div class="pdp-price">
         <span id="priceCurrent">{{ current_variant.price | money }}</span>
