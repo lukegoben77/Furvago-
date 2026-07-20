@@ -18,7 +18,18 @@
             {%- endfor -%}
           </div>
           <blockquote>{{ block.settings.quote }}</blockquote>
-          <p class="review-byline">{{ block.settings.byline }}</p>
+          <div class="review-meta">
+            <div class="review-who">
+              <span class="review-byline">{{ block.settings.byline }}</span>
+              {%- if block.settings.location != blank -%}<span class="review-location">{{ block.settings.location }}</span>{%- endif -%}
+            </div>
+            <div class="review-meta-right">
+              {%- if block.settings.date != blank -%}<span class="review-date">{{ block.settings.date }}</span>{%- endif -%}
+              {%- if block.settings.verified -%}
+                <span class="review-verified">{% render 'icon', name: 'shield-check', width: '0.85' %}Verified</span>
+              {%- endif -%}
+            </div>
+          </div>
         </div>
       {%- endfor -%}
     </div>
@@ -42,6 +53,9 @@
         { "type": "range", "id": "stars", "label": "Stars", "min": 1, "max": 5, "step": 1, "default": 5 },
         { "type": "textarea", "id": "quote", "label": "Quote", "default": "\"Write the review here.\"" },
         { "type": "text", "id": "byline", "label": "Byline", "default": "Placeholder review" },
+        { "type": "text", "id": "location", "label": "Location (optional)", "info": "e.g. Austin, TX" },
+        { "type": "text", "id": "date", "label": "Date (optional)", "info": "e.g. \"2 weeks ago\" or \"June 2026\"" },
+        { "type": "checkbox", "id": "verified", "label": "Show \"Verified\" badge", "default": false },
         { "type": "image_picker", "id": "image", "label": "Product photo (optional)", "info": "Shows above the review text on this card." }
       ]
     }
