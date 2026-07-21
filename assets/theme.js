@@ -318,22 +318,8 @@
     var body = document.getElementById('cartBody');
     var countEl = document.getElementById('cartCount');
     var subEl = document.getElementById('cartSubtotal');
-    var savingsEl = document.getElementById('cartSavings');
     if(countEl) countEl.textContent = cartJson.item_count;
     if(subEl) subEl.textContent = money(cartJson.total_price);
-    if(savingsEl){
-      var totalSavings = 0;
-      cartJson.items.forEach(function(item){
-        var compareAt = cartVariantCompare[String(item.variant_id)] || 0;
-        if(compareAt > item.price) totalSavings += (compareAt - item.price) * item.quantity;
-      });
-      if(totalSavings > 0){
-        savingsEl.textContent = 'Save ' + money(totalSavings);
-        savingsEl.style.display = '';
-      } else {
-        savingsEl.style.display = 'none';
-      }
-    }
     if(!body) return;
     if(cartJson.items.length === 0){
       body.innerHTML = '<div class="cart-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg><p>Your cart is empty.</p></div>';
